@@ -6,6 +6,9 @@
 - En al menos un caso, la fecha de toma de pruebas es copia de la fecha de nacimiento. 
 - He agregado una columna `fecha_posib_incorr` para marcar esos registros. Son 144 registros que tienen este problema.
 
+
+## Información relevante
+
 Fuente de datos:
 https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa
 
@@ -58,3 +61,8 @@ Luego del primer paso de limpieza de datos:
  PCR:20478  
  PR :88191 
 ```
+
+Los archivos "limpios" son:
+
+- DATOSABIERTOS_SISCOVID.Rdata
+- DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz
