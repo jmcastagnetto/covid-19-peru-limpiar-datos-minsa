@@ -1,2 +1,2 @@
-[ ] Corregir las múltiples denominaciones para "CALLAO"
-[ ] Revisar otros casos de múltiples denominaciones (ej. HUAROCHIRÍ y HUAROCHIRI)
+- [ ] Corregir las múltiples denominaciones para "CALLAO"
+- [ ] Revisar otros casos de múltiples denominaciones (ej. HUAROCHIRÍ y HUAROCHIRI)
