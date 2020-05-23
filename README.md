@@ -5,6 +5,7 @@
 - La limpieza de datos no está completa aún, hay fechas de tomas de prueba que parecen ser incorrectas, y que al convertir dan fechas inconsistentes con el primer caso reportado (2020-03-06). 
 - En al menos un caso, la fecha de toma de pruebas es copia de la fecha de nacimiento. 
 - He agregado una columna `fecha_prueba_antes_primer_caso` para marcar esos registros. Son 126 registros que tienen este problema.
+
 **2020-05-23**
 
 - Los datos han cambiado de formato, ya no incluyen la fecha de nacimiento, sino la edad en años.
@@ -12,7 +13,8 @@
 - El campo de tipo de prueba (antes `TIPO_PRUEBA`) se llama ahora `METODODX`
 - Hay 4,543 registros sin fecha de resultado conocida
 - Ya no hay incosistencias en los formatos de fecha, todos los registros con valores son de la forma "DD/MM/YYYY"
-- Tampoco hay fechas anteriores al primer caso reportado oficialmente.
+- Tampoco hay errores como fechas anteriores al primer caso reportado oficialmente.
+- Usando edad, departamento, provincia y distrito se han podidor reconstruir unos 2,933 registros de casos con fallecimientos
 
 
 ## Información relevante
