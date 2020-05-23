@@ -1,12 +1,22 @@
 library(tidyverse)
 
-casos_raw <- read_csv("datos/DATOSABIERTOS_SISCOVID-utf8.csv.gz",
-                    col_types = cols(.default = col_character()))
 
-casos_clean <- casos_raw %>%
+# casos -------------------------------------------------------------------
+
+casos <- read_csv(
+  "datos/DATOSABIERTOS_SISCOVID-utf8.csv.gz",
+  col_types = cols(
+      UUID = col_character(),
+      DEPARTAMENTO = col_character(),
+      PROVINCIA = col_character(),
+      DISTRITO = col_character(),
+      METODODX = col_character(),
+      EDAD = col_integer(),
+      SEXO = col_character(),
+      FECHA_RESULTADO = col_date(format = "%d/%m/%Y")
+    )
+  ) %>%
   mutate(
-    EDAD = as.integer(EDAD),
-    FECHA_RESULTADO = lubridate::dmy(FECHA_RESULTADO),
     SEXO = str_to_title(SEXO)
   ) %>%
   mutate_at(
@@ -15,12 +25,77 @@ casos_clean <- casos_raw %>%
   ) %>%
   janitor::clean_names()
 
-save(
-  casos_raw, casos_clean,
-  file = "datos/DATOSABIERTOS_SISCOVID.Rdata"
+write_csv(
+  casos,
+  path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz"
 )
 
+# fallecimientos ----------------------------------------------------------
+
+fallecimientos <- read_csv(
+  "datos/FALLECIDOS_CDC-utf8.csv.gz",
+  col_types = cols(
+    UUID = col_character(),
+    FECHA_FALLECIMIENTO = col_date(format = "%d/%m/%Y"),
+    SEXO = col_character(),
+    FECHA_NAC = col_date(format = "%d/%m/%Y"),
+    DEPARTAMENTO = col_character(),
+    PROVINCIA = col_character(),
+    DISTRITO = col_character()
+  )
+) %>%
+  mutate(
+    SEXO = str_to_title(SEXO),
+    EDAD = round(lubridate::interval(FECHA_NAC, FECHA_FALLECIMIENTO) / lubridate::years(), 2)
+  ) %>%
+  mutate_at(
+    vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO),
+    factor
+  ) %>%
+  janitor::clean_names()
+
 write_csv(
-   casos_clean,
-   path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz"
+  fallecimientos,
+  path = "datos/FALLECIDOS_CDC-utf8-limpio.csv.gz"
 )
+
+# unir datos --------------------------------------------------------------
+
+reconstruido <- casos %>%
+  full_join(
+    fallecimientos %>%
+      mutate(
+        edad = round(edad, 0)
+      ),
+    by = c("sexo", "departamento", "provincia", "distrito", "edad")
+  ) %>%
+  filter(!is.na(uuid.y) &
+           fecha_resultado < fecha_fallecimiento &
+           fecha_nac < fecha_resultado) %>%
+  distinct() %>%
+  rename(
+    uuid_caso = uuid.x,
+    uuid_fallecimiento = uuid.y
+  ) %>%
+  arrange(uuid_caso) %>%
+  left_join(
+    reconstruido %>%
+      group_by(uuid_caso) %>%
+      tally() %>%
+      rename(
+        coincidencias = n
+      ),
+    by = "uuid_caso"
+  )
+
+write_csv(
+  reconstruido,
+  path = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
+)
+
+save(
+  casos, fallecimientos, reconstruido,
+  file = "datos/datos_abiertos_minsa_covid-19_peru.Rdata"
+)
+
+
