@@ -8,6 +8,11 @@
 **2020-05-23**
 
 - Los datos han cambiado de formato, ya no incluyen la fecha de nacimiento, sino la edad en años.
+- El campo de fecha que se tiene ahora ya no es `FECHA_PRUEBA` sino `FECHA_RESULTADO`
+- El campo de tipo de prueba (antes `TIPO_PRUEBA`) se llama ahora `METODODX`
+- Hay 4,543 registros sin fecha de resultado conocida
+- Ya no hay incosistencias en los formatos de fecha, todos los registros con valores son de la forma "DD/MM/YYYY"
+- Tampoco hay fechas anteriores al primer caso reportado oficialmente.
 
 
 ## Información relevante
@@ -28,41 +33,38 @@ Luego del primer paso de limpieza de datos:
 
 ```
 > summary(casos_clean)
-     uuid           fecha_nacimiento    
- Length:108669      Min.   :1914-06-16  
- Class :character   1st Qu.:1965-06-06  
- Mode  :character   Median :1977-10-24  
-                    Mean   :1976-07-18  
-                    3rd Qu.:1989-01-06  
-                    Max.   :2020-11-03  
-                    NA's   :3792        
-        sexo           departamento  
- Femenino :39773   LIMA      :65508  
- Masculino:62076   CALLAO    : 7148  
- NA's     : 6820   LAMBAYEQUE: 6205  
-                   PIURA     : 3948  
-                   ANCASH    : 2895  
-                   (Other)   :21289  
-                   NA's      : 1676  
-                   provincia    
- LIMA                   :63440  
- PROV. CONST. DEL CALLAO: 6148  
- CHICLAYO               : 4065  
- CALLAO                 : 2620  
- CORONEL PORTILLO       : 2461  
- (Other)                :29879  
- NA's                   :   56  
-                   distrito      fecha_prueba       
- SAN JUAN DE LURIGANCHO: 6301   Min.   :1981-10-28  
- CALLAO                : 6002   1st Qu.:2020-04-23  
- LIMA                  : 4766   Median :2020-05-04  
- ATE                   : 4090   Mean   :2020-04-30  
- COMAS                 : 3585   3rd Qu.:2020-05-12  
- (Other)               :83865   Max.   :2020-06-06  
- NA's                  :   60                       
- tipo_prueba
- PCR:20478  
- PR :88191 
+     uuid                departamento  
+ Length:108769      LIMA       :68018  
+ Class :character   CALLAO     : 7685  
+ Mode  :character   LAMBAYEQUE : 5581  
+                    PIURA      : 3496  
+                    LORETO     : 3166  
+                    LA LIBERTAD: 2542  
+                    (Other)    :18281  
+            provincia    
+ LIMA            :65507  
+ CALLAO          : 7597  
+ EN INVESTIGACIÓN: 5572  
+ CHICLAYO        : 3750  
+ MAYNAS          : 2522  
+ CORONEL PORTILLO: 2338  
+ (Other)         :21483  
+                   distrito     metododx   
+ LIMA                  : 7712   PCR:30351  
+ EN INVESTIGACIÓN      : 5572   PR :78418  
+ SAN JUAN DE LURIGANCHO: 5247              
+ CALLAO                : 4649              
+ SAN MARTIN DE PORRES  : 3901              
+ LA VICTORIA           : 3786              
+ (Other)               :77902              
+      edad              sexo       fecha_resultado     
+ Min.   :  0.0   Femenino :36881   Min.   :2020-03-06  
+ 1st Qu.: 30.0   Masculino:51949   1st Qu.:2020-04-24  
+ Median : 42.0   NA's     :19939   Median :2020-05-04  
+ Mean   : 42.9                     Mean   :2020-05-02  
+ 3rd Qu.: 54.0                     3rd Qu.:2020-05-13  
+ Max.   :106.0                     Max.   :2020-05-20  
+ NA's   :2068                      NA's   :4543 
 ```
 
 Los archivos "limpios" son:
