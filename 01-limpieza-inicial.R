@@ -77,7 +77,9 @@ reconstruido <- casos %>%
     uuid_caso = uuid.x,
     uuid_fallecimiento = uuid.y
   ) %>%
-  arrange(uuid_caso) %>%
+  arrange(uuid_caso)
+
+reconstruido <- reconstruido %>%
   left_join(
     reconstruido %>%
       group_by(uuid_caso) %>%
