@@ -17,3 +17,6 @@ Rscript 01-limpieza-inicial.R
 
 # Reconstruir timeseries
 Rscript 02-reconstruir-timeseries.R
+
+# Regenerar el README
+Rscript build-readme.R

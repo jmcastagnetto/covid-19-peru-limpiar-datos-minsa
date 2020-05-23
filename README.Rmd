@@ -1,0 +1,70 @@
+---
+output: md_document
+---
+
+```{r include=FALSE, echo=FALSE}
+load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
+```
+
+
+**Última actualización**: `r lubridate::now(tzone = "UTC")` UTC
+
+## Notas 
+
+**2020-05-22**
+
+- La limpieza de datos no está completa aún, hay fechas de tomas de prueba que parecen ser incorrectas, y que al convertir dan fechas inconsistentes con el primer caso reportado (2020-03-06). 
+- En al menos un caso, la fecha de toma de pruebas es copia de la fecha de nacimiento. 
+- He agregado una columna `fecha_prueba_antes_primer_caso` para marcar esos registros. Son 126 registros que tienen este problema.
+
+**2020-05-23**
+
+- Los datos han cambiado de formato, ya no incluyen la fecha de nacimiento, sino la edad en años.
+- El campo de fecha que se tiene ahora ya no es `FECHA_PRUEBA` sino `FECHA_RESULTADO`
+- El campo de tipo de prueba (antes `TIPO_PRUEBA`) se llama ahora `METODODX`
+- Hay 4,543 registros sin fecha de resultado conocida
+- Ya no hay incosistencias en los formatos de fecha, todos los registros con valores son de la forma "DD/MM/YYYY"
+- Tampoco hay errores como fechas anteriores al primer caso reportado oficialmente.
+- Usando edad, departamento, provincia y distrito se han podidor reconstruir unos 2,933 registros de casos con fallecimientos
+
+
+## Información relevante
+
+Fuente de datos:
+https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa
+
+Descargado: 2020-05-21, 23:05 (PET)
+
+Preproceso con iconv:
+
+```
+$ unzip -p DATOSABIERTOS_SISCOVID.zip | iconv  -f ISO_8859-1 -t UTF-8 - > DATOSABIERTOS_SISCOVID-utf8.csv
+$ gzip -9 DATOSABIERTOS_SISCOVID-utf8.csv
+```
+
+Luego del primer paso de limpieza de datos:
+
+```{r comment=""}
+summary(casos)
+```
+
+```{r comment=""}
+summary(fallecimientos)
+```
+
+```{r comment=""}
+summary(reconstruido)
+```
+
+Los archivos "limpios" son:
+
+- datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz
+- datos/FALLECIDOS_CDC-utf8-limpio.csv.gz
+
+Y algunos reconstruidos con los anteriores:
+
+- datos/casos_fallecimientos_reconstruccion_posible.csv.gz
+- datos/timeseries-casos.csv.gz
+- datos/timeseries-casos-lugares.csv.gz
+- datos/timeseries-fallecimientos.csv.gz
+- datos/timeseries-fallecimientos-lugares.csv.gz
