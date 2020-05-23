@@ -28,8 +28,7 @@ casos_clean <- casos_raw %>%
   ) %>%
   janitor::clean_names() %>%
   mutate(
-    fecha_posib_incorr = (fecha_nacimiento == fecha_prueba_conv |
-                          fecha_prueba_conv < lubridate::ymd("2020-03-06"))
+    fecha_prueba_antes_primer_caso = (fecha_prueba_conv < lubridate::ymd("2020-03-06"))
   )
 
 save(
@@ -37,7 +36,7 @@ save(
   file = "datos/DATOSABIERTOS_SISCOVID.Rdata"
 )
 
-write_csv(
-  casos_clean,
-  path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz"
-)
+# write_csv(
+#   casos_clean,
+#   path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz"
+# )
