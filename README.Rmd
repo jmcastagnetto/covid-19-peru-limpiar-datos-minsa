@@ -30,10 +30,10 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 
 ## Información relevante
 
-Fuente de datos:
-https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa
+Fuentes de datos:
 
-Descargado: 2020-05-21, 23:05 (PET)
+- https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa
+- https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
 
 Preproceso con iconv:
 

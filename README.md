@@ -1,4 +1,4 @@
-**Última actualización**: 2020-05-23 23:12:02 UTC
+**Última actualización**: 2020-05-24 01:24:59 UTC
 
 Notas
 -----
@@ -32,10 +32,10 @@ Notas
 Información relevante
 ---------------------
 
-Fuente de datos:
-<a href="https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa" class="uri">https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa</a>
+Fuentes de datos:
 
-Descargado: 2020-05-21, 23:05 (PET)
+-   <a href="https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa" class="uri">https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa</a>
+-   <a href="https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa" class="uri">https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa</a>
 
 Preproceso con iconv:
 
