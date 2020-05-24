@@ -3,6 +3,7 @@ output: md_document
 ---
 
 ```{r include=FALSE, echo=FALSE}
+library(tidyverse)
 load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 ```
 
@@ -55,6 +56,8 @@ summary(fallecimientos)
 ```{r comment=""}
 summary(reconstruido)
 ```
+
+Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
 
 Los archivos "limpios" son:
 

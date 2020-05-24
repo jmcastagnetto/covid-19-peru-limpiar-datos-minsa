@@ -1,4 +1,4 @@
-**Última actualización**: 2020-05-24 19:25:47 UTC
+**Última actualización**: 2020-05-24 19:33:39 UTC
 
 Notas
 -----
@@ -124,6 +124,9 @@ Luego del primer paso de limpieza de datos:
      3rd Qu.:1968-01-30   3rd Qu.:2.000  
      Max.   :2018-03-08   Max.   :5.000  
                                          
+
+Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
+lugar en 3042 casos reconstruídos.
 
 Los archivos “limpios” son:
 
