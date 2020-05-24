@@ -1,4 +1,4 @@
-**Última actualización**: 2020-05-24 01:24:59 UTC
+**Última actualización**: 2020-05-24 19:25:47 UTC
 
 Notas
 -----
@@ -74,54 +74,54 @@ Luego del primer paso de limpieza de datos:
     summary(fallecimientos)
 
          uuid           fecha_fallecimiento         sexo        fecha_nac         
-     Length:3244        Min.   :2020-03-19   Femenino : 914   Min.   :1915-06-19  
-     Class :character   1st Qu.:2020-04-19   Masculino:2330   1st Qu.:1944-07-11  
-     Mode  :character   Median :2020-04-29                    Median :1953-11-24  
-                        Mean   :2020-04-27                    Mean   :1954-09-30  
-                        3rd Qu.:2020-05-06                    3rd Qu.:1963-10-31  
-                        Max.   :2020-05-21                    Max.   :2020-02-08  
-                                                              NA's   :523         
+     Length:3373        Min.   :2020-03-19   Femenino : 955   Min.   :1915-06-19  
+     Class :character   1st Qu.:2020-04-19   Masculino:2418   1st Qu.:1944-08-30  
+     Mode  :character   Median :2020-04-30                    Median :1953-10-31  
+                        Mean   :2020-04-27                    Mean   :1954-10-04  
+                        3rd Qu.:2020-05-07                    3rd Qu.:1963-09-28  
+                        Max.   :2020-05-22                    Max.   :2020-02-08  
+                                                              NA's   :536         
          departamento     provincia                   distrito         edad       
-     LIMA      :1164   NULL    :927   NULL                : 625   Min.   :  0.17  
-     LAMBAYEQUE: 516   LIMA    :801   CHICLAYO            : 113   1st Qu.: 56.49  
-     PIURA     : 409   PIURA   :243   CALLAO              : 106   Median : 66.39  
-     LORETO    : 264   CHICLAYO:208   SAN MARTIN DE PORRES:  90   Mean   : 65.57  
-     ANCASH    : 196   CALLAO  :124   CASTILLA            :  89   3rd Qu.: 75.80  
-     CALLAO    : 192   (Other) :870   (Other)             :2150   Max.   :104.86  
-     (Other)   : 503   NA's    : 71   NA's                :  71   NA's   :523     
+     LIMA      :1206   NULL    :974   NULL                : 634   Min.   :  0.17  
+     LAMBAYEQUE: 542   LIMA    :843   CHICLAYO            : 122   1st Qu.: 56.53  
+     PIURA     : 426   PIURA   :251   CALLAO              : 108   Median : 66.51  
+     LORETO    : 273   CHICLAYO:208   SAN MARTIN DE PORRES: 101   Mean   : 65.56  
+     ANCASH    : 208   CALLAO  :126   CHIMBOTE            :  94   3rd Qu.: 75.63  
+     CALLAO    : 194   (Other) :900   (Other)             :2243   Max.   :104.86  
+     (Other)   : 524   NA's    : 71   NA's                :  71   NA's   :536     
 
     summary(reconstruido)
 
-      uuid_caso             departamento             provincia   
-     Length:4505        LIMA      :2904   LIMA            :2904  
-     Class :character   LAMBAYEQUE: 495   CHICLAYO        : 435  
-     Mode  :character   PIURA     : 397   CALLAO          : 327  
-                        CALLAO    : 327   PIURA           : 300  
-                        ANCASH    : 104   SANTA           :  96  
-                        ICA       :  78   CORONEL PORTILLO:  70  
-                        (Other)   : 200   (Other)         : 373  
+      uuid_caso             departamento     provincia   
+     Length:4837        LIMA      :3135   LIMA    :3135  
+     Class :character   LAMBAYEQUE: 495   CHICLAYO: 435  
+     Mode  :character   PIURA     : 438   CALLAO  : 375  
+                        CALLAO    : 375   PIURA   : 312  
+                        ANCASH    : 104   SANTA   :  96  
+                        ICA       :  88   SULLANA :  85  
+                        (Other)   : 202   (Other) : 399  
                        distrito    metododx        edad               sexo     
-     LIMA                  : 761   PCR:1850   Min.   :  2.00   Femenino : 844  
-     SAN JUAN DE LURIGANCHO: 481   PR :2655   1st Qu.: 52.00   Masculino:3661  
-     CHICLAYO              : 386              Median : 60.00                   
-     SAN MARTIN DE PORRES  : 317              Mean   : 59.62                   
-     CALLAO                : 300              3rd Qu.: 68.00                   
-     LA VICTORIA           : 215              Max.   :100.00                   
-     (Other)               :2045                                               
+     LIMA                  : 775   PCR:1930   Min.   :  2.00   Femenino : 901  
+     SAN JUAN DE LURIGANCHO: 498   PR :2907   1st Qu.: 52.00   Masculino:3936  
+     SAN MARTIN DE PORRES  : 447              Median : 60.00                   
+     CHICLAYO              : 386              Mean   : 59.48                   
+     CALLAO                : 348              3rd Qu.: 68.00                   
+     COMAS                 : 244              Max.   :100.00                   
+     (Other)               :2139                                               
      fecha_resultado      uuid_fallecimiento fecha_fallecimiento 
-     Min.   :2020-03-07   Length:4505        Min.   :2020-03-19  
+     Min.   :2020-03-07   Length:4837        Min.   :2020-03-19  
      1st Qu.:2020-04-10   Class :character   1st Qu.:2020-04-23  
      Median :2020-04-18   Mode  :character   Median :2020-04-29  
-     Mean   :2020-04-17                      Mean   :2020-04-27  
+     Mean   :2020-04-17                      Mean   :2020-04-28  
      3rd Qu.:2020-04-25                      3rd Qu.:2020-05-04  
-     Max.   :2020-05-19                      Max.   :2020-05-20  
+     Max.   :2020-05-19                      Max.   :2020-05-21  
                                                                  
        fecha_nac          coincidencias  
      Min.   :1920-04-18   Min.   :1.000  
-     1st Qu.:1952-06-02   1st Qu.:1.000  
-     Median :1960-07-16   Median :1.000  
-     Mean   :1960-09-01   Mean   :1.477  
-     3rd Qu.:1967-12-01   3rd Qu.:2.000  
+     1st Qu.:1952-06-21   1st Qu.:1.000  
+     Median :1960-09-05   Median :1.000  
+     Mean   :1960-10-21   Mean   :1.514  
+     3rd Qu.:1968-01-30   3rd Qu.:2.000  
      Max.   :2018-03-08   Max.   :5.000  
                                          
 
