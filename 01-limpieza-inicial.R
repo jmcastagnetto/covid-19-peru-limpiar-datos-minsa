@@ -14,7 +14,8 @@ casos <- read_csv(
       EDAD = col_integer(),
       SEXO = col_character(),
       FECHA_RESULTADO = col_date(format = "%d/%m/%Y")
-    )
+    ),
+    na = c("", "NA", "NULL")
   ) %>%
   mutate(
     SEXO = str_to_title(SEXO)
