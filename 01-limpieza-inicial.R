@@ -31,6 +31,9 @@ write_csv(
   path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv"
 )
 
+# limpiar archivos extra
+file.remove("datos/DATOSABIERTOS_SISCOVID-utf8.csv")
+
 # fallecimientos ----------------------------------------------------------
 
 fallecimientos <- read_csv(
@@ -59,6 +62,9 @@ write_csv(
   fallecimientos,
   path = "datos/FALLECIDOS_CDC-utf8-limpio.csv"
 )
+
+# limpiar archivos extra
+file.remove("datos/FALLECIDOS_CDC-utf8.csv")
 
 # unir datos --------------------------------------------------------------
 
