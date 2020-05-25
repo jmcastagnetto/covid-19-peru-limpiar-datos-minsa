@@ -4,7 +4,7 @@ library(tidyverse)
 # casos -------------------------------------------------------------------
 
 casos <- read_csv(
-  "datos/DATOSABIERTOS_SISCOVID-utf8.csv.gz",
+  "datos/DATOSABIERTOS_SISCOVID-utf8.csv",
   col_types = cols(
       UUID = col_character(),
       DEPARTAMENTO = col_character(),
@@ -27,13 +27,13 @@ casos <- read_csv(
 
 write_csv(
   casos,
-  path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz"
+  path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv"
 )
 
 # fallecimientos ----------------------------------------------------------
 
 fallecimientos <- read_csv(
-  "datos/FALLECIDOS_CDC-utf8.csv.gz",
+  "datos/FALLECIDOS_CDC-utf8.csv",
   col_types = cols(
     UUID = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%d/%m/%Y"),
@@ -56,7 +56,7 @@ fallecimientos <- read_csv(
 
 write_csv(
   fallecimientos,
-  path = "datos/FALLECIDOS_CDC-utf8-limpio.csv.gz"
+  path = "datos/FALLECIDOS_CDC-utf8-limpio.csv"
 )
 
 # unir datos --------------------------------------------------------------
@@ -92,7 +92,7 @@ reconstruido <- reconstruido %>%
 
 write_csv(
   reconstruido,
-  path = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
+  path = "datos/casos_fallecimientos_reconstruccion_posible.csv"
 )
 
 save(

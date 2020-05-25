@@ -56,20 +56,20 @@ timeseries_fallecimientos_lugares <- fallecimientos %>%
 
 write_csv(
  timeseries_casos,
- path = "datos/timeseries-casos.csv.gz"
+ path = "datos/timeseries-casos.csv"
 )
 
 write_csv(
   timeseries_casos_lugares,
-  path = "datos/timeseries-casos-lugares.csv.gz"
+  path = "datos/timeseries-casos-lugares.csv"
 )
 
 write_csv(
   timeseries_fallecimientos,
-  path = "datos/timeseries-fallecimientos.csv.gz"
+  path = "datos/timeseries-fallecimientos.csv"
 )
 
 write_csv(
   timeseries_fallecimientos_lugares,
-  path = "datos/timeseries-fallecimientos-lugares.csv.gz"
+  path = "datos/timeseries-fallecimientos-lugares.csv"
 )
