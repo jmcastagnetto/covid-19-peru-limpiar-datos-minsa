@@ -20,3 +20,6 @@ Rscript 02-reconstruir-timeseries.R
 
 # Regenerar el README
 Rscript build-readme.R
+
+# cacular y guardar los sha256 de los archivos de datos
+sha256sum -b datos/* datos/originales/* > sha256sum-archivos-datos.txt
