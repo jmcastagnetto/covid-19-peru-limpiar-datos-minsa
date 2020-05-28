@@ -37,7 +37,7 @@ file.remove("datos/positivos_covid-utf8.csv")
 # fallecimientos ----------------------------------------------------------
 
 fallecimientos <- read_csv(
-  "datos/FALLECIDOS_CDC-utf8.csv",
+  "datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     UUID = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%d/%m/%Y"),

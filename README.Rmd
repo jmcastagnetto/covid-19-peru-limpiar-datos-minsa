@@ -28,6 +28,11 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 - Tampoco hay errores como fechas anteriores al primer caso reportado oficialmente.
 - Usando edad, departamento, provincia y distrito se han podidor reconstruir unos 2,933 registros de casos con fallecimientos
 
+**2020-05-28**
+
+- Hay nuevos datasets de positivos y fallecimientos, ahora ambos en formato CSV, pero no en UTF-8:
+  - ["Casos positivos por COVID-19 - [Ministerio de Salud - MINSA]"](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa)
+  - ["Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]"](https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa)
 
 ## Información relevante
 
@@ -35,13 +40,6 @@ Fuentes de datos:
 
 - https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa
 - https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa
-
-Preproceso con iconv:
-
-```
-$ unzip -p DATOSABIERTOS_SISCOVID.zip | iconv  -f ISO_8859-1 -t UTF-8 - > DATOSABIERTOS_SISCOVID-utf8.csv
-$ gzip -9 DATOSABIERTOS_SISCOVID-utf8.csv
-```
 
 Luego del primer paso de limpieza de datos:
 
