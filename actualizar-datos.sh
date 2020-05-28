@@ -1,15 +1,14 @@
 #! /bin/bash -x
 
 # descargar archivos
-wget https://www.datosabiertos.gob.pe/sites/default/files/DATOSABIERTOS_SISCOVID.zip -O datos/originales/DATOSABIERTOS_SISCOVID.zip 
-wget https://www.datosabiertos.gob.pe/sites/default/files/FALLECIDOS_CDC.csv -O datos/originales/FALLECIDOS_CDC.csv
+wget https://www.datosabiertos.gob.pe/node/6447/download -O datos/originales/positivos_covid.csv
+wget https://www.datosabiertos.gob.pe/node/6460/download -O datos/originales/fallecidos_covid.csv
 
 # Pre-proceso de los datos de casos
-unzip -p datos/originales/DATOSABIERTOS_SISCOVID.zip | iconv  -f ISO_8859-1 -t UTF-8 - > datos/DATOSABIERTOS_SISCOVID-utf8.csv
-#gzip -9f datos/DATOSABIERTOS_SISCOVID-utf8.csv
+iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
 
 # Pre-proceso de los datos de fallecidos
-iconv -f ISO_8859-1 -t UTF-8 datos/originales/FALLECIDOS_CDC.csv > datos/FALLECIDOS_CDC-utf8.csv
+iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
 #gzip -9f datos/FALLECIDOS_*.csv
 
 # Limpieza inicial

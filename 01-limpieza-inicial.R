@@ -4,7 +4,7 @@ library(tidyverse)
 # casos -------------------------------------------------------------------
 
 casos <- read_csv(
-  "datos/DATOSABIERTOS_SISCOVID-utf8.csv",
+  "datos/positivos_covid-utf8.csv",
   col_types = cols(
       UUID = col_character(),
       DEPARTAMENTO = col_character(),
@@ -28,11 +28,11 @@ casos <- read_csv(
 
 write_csv(
   casos,
-  path = "datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv"
+  path = "datos/positivos_covid-utf8-limpio.csv"
 )
 
 # limpiar archivos extra
-file.remove("datos/DATOSABIERTOS_SISCOVID-utf8.csv")
+file.remove("datos/positivos_covid-utf8.csv")
 
 # fallecimientos ----------------------------------------------------------
 
@@ -60,11 +60,11 @@ fallecimientos <- read_csv(
 
 write_csv(
   fallecimientos,
-  path = "datos/FALLECIDOS_CDC-utf8-limpio.csv"
+  path = "datos/fallecidos_covid-utf8-limpio.csv"
 )
 
 # limpiar archivos extra
-file.remove("datos/FALLECIDOS_CDC-utf8.csv")
+file.remove("datos/fallecidos_covid-utf8.csv")
 
 # unir datos --------------------------------------------------------------
 
