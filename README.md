@@ -1,4 +1,4 @@
-**Última actualización**: 2020-05-29 17:02:23 UTC
+**Última actualización**: 2020-05-29 18:43:24 UTC
 
 Notas
 -----
@@ -150,6 +150,10 @@ lugar en 5300 casos reconstruídos.
 
 ![“Fallecimientos acumulados.
 MINSA”](fallecimientos-acumulados-minsa.png)
+
+![“Distribución de tiempos desde detección a fallecimiento, por número
+de registros
+coincidentes”](deteccion-fallecimiento-por-coincidentes.png)
 
 Los archivos “limpios” son:
 

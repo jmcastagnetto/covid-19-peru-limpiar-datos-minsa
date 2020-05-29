@@ -230,6 +230,49 @@ ggsave(
 
 !["Fallecimientos acumulados. MINSA"](fallecimientos-acumulados-minsa.png)
 
+```{r echo=FALSE}
+plot_reconstruido_df <- reconstruido %>% 
+  mutate(
+    dias_caso_fall = lubridate::interval(
+      fecha_resultado,
+      fecha_fallecimiento
+    ) %/% lubridate::days()
+  )
+
+plot_reconstruido_dist <- ggplot(
+  plot_reconstruido_df,
+  aes(x = dias_caso_fall, y = sexo)
+) +
+  geom_violin(aes(fill = sexo), 
+              draw_quantiles = c(.25, .5, .75),
+              show.legend = FALSE) +
+  facet_wrap(~coincidencias) +
+  labs(
+    x = "Días entre prueba positiva y fallecimiento",
+    y = "",
+    title = "Distribución de detección a fallecimiento por número de registros coincidentes",
+    subtitle = paste0(
+      "Coincidencias estimadas usando sexo, edad y lugar. Actualizado el: ",
+      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_linedraw() +
+  theme(
+    plot.title.position = "plot",
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = plot_reconstruido_dist,
+  filename = "deteccion-fallecimiento-por-coincidentes.png",
+  width = 6.5,
+  height = 4
+)
+
+
+```
+
+!["Distribución de tiempos desde detección a fallecimiento, por número de registros coincidentes"](deteccion-fallecimiento-por-coincidentes.png)
 
 
 Los archivos "limpios" son:
