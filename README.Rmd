@@ -57,7 +57,7 @@ summary(reconstruido)
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
 
-```{r}
+```{r echo=FALSE}
 plot_df <- casos %>% 
   mutate(
     sexo = str_replace_na(sexo, "No registrado")
@@ -145,7 +145,7 @@ ggsave(
 
 !["Positivos acumulados. MINSA"](positivos-acumulados-minsa.png)
 
-```{r}
+```{r echo=FALSE}
 plot_fall_df <- fallecimientos %>% 
   group_by(fecha_fallecimiento, sexo) %>% 
   tally() %>% 
