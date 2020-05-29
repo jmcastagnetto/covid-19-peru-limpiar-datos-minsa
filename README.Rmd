@@ -57,6 +57,181 @@ summary(reconstruido)
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
 
+```{r}
+plot_df <- casos %>% 
+  mutate(
+    sexo = str_replace_na(sexo, "No registrado")
+  ) %>% 
+  group_by(fecha_resultado, sexo) %>% 
+  tally() %>% 
+  filter(!is.na(fecha_resultado)) %>% 
+  arrange(fecha_resultado)
+
+Sys.setlocale("LC_TIME", "es_PE.utf8")
+plot_casos <- ggplot(
+  plot_df,
+  aes(x = fecha_resultado, y = n, group = sexo, fill = sexo)
+) +
+  geom_col() +
+  labs(
+    fill = "Sexo",
+    x = "Fecha de resultado",
+    y = "",
+    title = "Positivos COVID-19 por día, de \"positivos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(plot_df$fecha_resultado), " al ",
+      max(plot_df$fecha_resultado),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = c(.2, .8),
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = plot_casos,
+  filename = "positivos-por-dia-minsa.png",
+  width = 6.5,
+  height = 4
+)
+
+plot_acum_df <- casos %>% 
+  group_by(fecha_resultado) %>% 
+  tally() %>% 
+  filter(!is.na(fecha_resultado)) %>% 
+  arrange(fecha_resultado) %>% 
+  mutate(
+    n_acum = cumsum(n)
+  )
+
+plot_casos_acum <- ggplot(
+  plot_acum_df,
+  aes(x = fecha_resultado, y = n_acum)
+) +
+  geom_point(size = .5) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    x = "Fecha de resultado",
+    y = "",
+    title = "Positivos COVID-19 acumulados, de \"positivos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(plot_df$fecha_resultado), " al ",
+      max(plot_df$fecha_resultado),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = plot_casos_acum,
+  filename = "positivos-acumulados-minsa.png",
+  width = 6.5,
+  height = 4
+)
+
+```
+
+!["Positivos por día. MINSA"](positivos-por-dia-minsa.png)
+
+!["Positivos acumulados. MINSA"](positivos-acumulados-minsa.png)
+
+```{r}
+plot_fall_df <- fallecimientos %>% 
+  group_by(fecha_fallecimiento, sexo) %>% 
+  tally() %>% 
+  arrange(fecha_fallecimiento)
+
+plot_fallecimientos <- ggplot(
+  plot_fall_df,
+  aes(x = fecha_fallecimiento, y = n, 
+      group = sexo, fill = sexo)
+) +
+  geom_col() +
+  labs(
+    fill = "Sexo",
+    x = "Fecha de fallecimiento",
+    y = "",
+    title = "Fallecimientos COVID-19 por día, de \"fallecidos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(plot_fall_df$fecha_fallecimiento), " al ",
+      max(plot_fall_df$fecha_fallecimiento),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = c(.2, .8),
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = plot_fallecimientos,
+  filename = "fallecimientos-por-dia-minsa.png",
+  width = 6.5,
+  height = 4
+)
+
+plot_fall_acum_df <- fallecimientos %>% 
+  group_by(fecha_fallecimiento) %>% 
+  tally() %>% 
+  filter(!is.na(fecha_fallecimiento)) %>% 
+  arrange(fecha_fallecimiento) %>% 
+  mutate(
+    n_acum = cumsum(n)
+  )
+
+plot_fallecimientos_acum <- ggplot(
+  plot_fall_acum_df,
+  aes(x = fecha_fallecimiento, y = n_acum)
+) +
+  geom_point(size = .5) +
+  geom_line() +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    x = "Fecha de fallecimiento",
+    y = "",
+    title = "Fallecimientos COVID-19 acumulados, de \"fallecidos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(plot_df$fecha_resultado), " al ",
+      max(plot_df$fecha_resultado),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = plot_fallecimientos_acum,
+  filename = "fallecimientos-acumulados-minsa.png",
+  width = 6.5,
+  height = 4
+)
+
+```
+
+
+!["Fallecimientos por día. MINSA"](fallecimientos-por-dia-minsa.png)
+
+!["Fallecimientos acumulados. MINSA"](fallecimientos-acumulados-minsa.png)
+
+
+
 Los archivos "limpios" son:
 
 - datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz
