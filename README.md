@@ -1,4 +1,4 @@
-**Última actualización**: 2020-05-31 21:38:45 UTC
+**Última actualización**: 2020-05-31 22:20:24 UTC
 
 Notas
 -----
@@ -37,6 +37,15 @@ Notas
         MINSA\]”](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa)
     -   [“Fallecidos por COVID-19 - \[Ministerio de Salud -
         MINSA\]”](https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa)
+
+**2020-05-31**
+
+-   Nuevo cambio de formato en los datos de fallecimientos: en 749 de
+    registros no se consigna la fecha de nacimiento, pero se ha agregado
+    una columna `EDAD_DECLARADA`.
+-   He modificado el código para compensar por estos cambios.
+-   También, **todos los 141 fallecimientos asignados al 2020-05-29
+    están designados como de sexo `INDETERMINADO`**.
 
 Información relevante
 ---------------------
@@ -77,7 +86,7 @@ Luego del primer paso de limpieza de datos:
 
     summary(fallecimientos)
 
-         uuid           fecha_fallecimiento  edad_declarada             sexo     
+         uuid           fecha_fallecimiento       edad                  sexo     
      Length:4371        Min.   :2020-03-19   Min.   : 0.00   Femenino     :1189  
      Class :character   1st Qu.:2020-04-22   1st Qu.:56.00   Indeterminado: 141  
      Mode  :character   Median :2020-05-03   Median :66.00   Masculino    :3041  
@@ -93,7 +102,7 @@ Luego del primer paso de limpieza de datos:
      3rd Qu.:1963-08-15   LORETO    : 295   TRUJILLO: 116  
      Max.   :2020-02-08   ANCASH    : 262   (Other) :1093  
      NA's   :749          (Other)   : 756   NA's    :1338  
-                     distrito         edad       
+                     distrito      edad_calc     
      CALLAO              : 178   Min.   :  0.17  
      CHICLAYO            : 139   1st Qu.: 56.70  
      SAN MARTIN DE PORRES: 137   Median : 66.53  
@@ -105,40 +114,40 @@ Luego del primer paso de limpieza de datos:
     summary(reconstruido)
 
       uuid_caso              departamento     provincia   
-     Length:10543       LIMA       :7570   LIMA    :7500  
-     Class :character   CALLAO     : 963   CALLAO  : 963  
-     Mode  :character   PIURA      : 745   PIURA   : 494  
-                        LAMBAYEQUE : 546   CHICLAYO: 484  
-                        LA LIBERTAD: 198   TRUJILLO: 192  
-                        ICA        : 172   SULLANA : 171  
-                        (Other)    : 349   (Other) : 739  
+     Length:11403       LIMA       :8112   LIMA    :8021  
+     Class :character   CALLAO     :1014   CALLAO  :1014  
+     Mode  :character   PIURA      : 847   PIURA   : 552  
+                        LAMBAYEQUE : 584   CHICLAYO: 512  
+                        LA LIBERTAD: 228   TRUJILLO: 220  
+                        ICA        : 207   SULLANA : 199  
+                        (Other)    : 411   (Other) : 885  
                        distrito    metododx        edad                  sexo     
-     SAN JUAN DE LURIGANCHO:1896   PCR:3610   Min.   :  0.0   Femenino     :1576  
-     LIMA                  :1120   PR :6933   1st Qu.: 49.0   Masculino    :8967  
-     SAN MARTIN DE PORRES  :1082              Median : 58.0   Indeterminado:   0  
-     CALLAO                : 841              Mean   : 57.4                       
-     COMAS                 : 707              3rd Qu.: 67.0                       
-     CHICLAYO              : 426              Max.   :100.0                       
-     (Other)               :4471                                                  
-     fecha_resultado      uuid_fallecimiento fecha_fallecimiento  edad_declarada 
-     Min.   :2020-03-07   Length:10543       Min.   :2020-03-19   Min.   : 1.00  
-     1st Qu.:2020-04-14   Class :character   1st Qu.:2020-04-28   1st Qu.:49.00  
-     Median :2020-04-24   Mode  :character   Median :2020-05-09   Median :57.00  
-     Mean   :2020-04-25                      Mean   :2020-05-10   Mean   :56.93  
-     3rd Qu.:2020-05-05                      3rd Qu.:2020-05-27   3rd Qu.:66.00  
-     Max.   :2020-05-27                      Max.   :2020-05-28   Max.   :99.00  
-                                                                                 
-       fecha_nac          coincidencias 
-     Min.   :1920-04-18   Min.   :1.00  
-     1st Qu.:1953-07-26   1st Qu.:1.00  
-     Median :1962-10-15   Median :1.00  
-     Mean   :1962-12-17   Mean   :1.48  
-     3rd Qu.:1971-01-24   3rd Qu.:2.00  
-     Max.   :2019-11-28   Max.   :6.00  
-                                        
+     SAN JUAN DE LURIGANCHO:2031   PCR:3858   Min.   : 1.00   Femenino     :1736  
+     LIMA                  :1187   PR :7545   1st Qu.:49.00   Masculino    :9667  
+     SAN MARTIN DE PORRES  :1106              Median :57.00   Indeterminado:   0  
+     CALLAO                : 885              Mean   :57.12                       
+     COMAS                 : 746              3rd Qu.:66.00                       
+     CHICLAYO              : 445              Max.   :98.00                       
+     (Other)               :5003                                                  
+     fecha_resultado      uuid_fallecimiento fecha_fallecimiento 
+     Min.   :2020-03-07   Length:11403       Min.   :2020-03-19  
+     1st Qu.:2020-04-14   Class :character   1st Qu.:2020-04-28  
+     Median :2020-04-24   Mode  :character   Median :2020-05-09  
+     Mean   :2020-04-25                      Mean   :2020-05-10  
+     3rd Qu.:2020-05-06                      3rd Qu.:2020-05-27  
+     Max.   :2020-05-27                      Max.   :2020-05-28  
+                                                                 
+       fecha_nac            edad_calc     coincidencias  
+     Min.   :1921-09-03   Min.   : 0.66   Min.   :1.000  
+     1st Qu.:1953-05-01   1st Qu.:49.34   1st Qu.:1.000  
+     Median :1962-06-23   Median :57.86   Median :1.000  
+     Mean   :1962-08-10   Mean   :57.75   Mean   :1.521  
+     3rd Qu.:1971-01-20   3rd Qu.:67.05   3rd Qu.:2.000  
+     Max.   :2019-09-02   Max.   :98.65   Max.   :6.000  
+                                                         
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
-lugar en 6813 casos reconstruídos.
+lugar en 7167 casos reconstruídos.
 
     ## [1] "es_PE.utf8"
 

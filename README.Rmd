@@ -38,6 +38,7 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 
 - Nuevo cambio de formato en los datos de fallecimientos: en 749 de registros no se consigna la fecha de nacimiento, pero se ha agregado una columna `EDAD_DECLARADA`. 
 - He modificado el código para compensar por estos cambios.
+- También, **todos los 141 fallecimientos asignados al 2020-05-29 están designados como de sexo `INDETERMINADO`**.
 
 ## Información relevante
 
