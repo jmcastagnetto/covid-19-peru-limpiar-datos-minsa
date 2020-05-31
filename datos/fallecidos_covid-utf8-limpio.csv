@@ -1,4 +1,4 @@
-uuid,fecha_fallecimiento,edad_declarada,sexo,fecha_nac,departamento,provincia,distrito,edad
+uuid,fecha_fallecimiento,edad,sexo,fecha_nac,departamento,provincia,distrito,edad_calc
 056f73432adaf077b06ab0f9453ce753,2020-03-24,76,Masculino,NA,CUSCO,CUSCO,CUSCO,NA
 4bac0872ed7858eec6b438947227cf66,2020-03-27,64,Masculino,NA,CUSCO,CUSCO,CUSCO,NA
 27aa0530a6faa06b6589a9271853f66d,2020-05-09,63,Femenino,NA,TUMBES,TUMBES,PAMPAS DE HOSPITAL,NA

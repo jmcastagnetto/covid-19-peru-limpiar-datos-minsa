@@ -41,6 +41,7 @@ fallecimientos <- read_csv(
   col_types = cols(
     UUID = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%d/%m/%Y"),
+    EDAD_DECLARADA = col_number(),
     SEXO = col_character(),
     FECHA_NAC = col_date(format = "%d/%m/%Y"),
     DEPARTAMENTO = col_character(),
@@ -48,9 +49,12 @@ fallecimientos <- read_csv(
     DISTRITO = col_character()
   )
 ) %>%
+  rename(
+    EDAD = EDAD_DECLARADA
+  ) %>%
   mutate(
     SEXO = str_to_title(SEXO),
-    EDAD = round(lubridate::interval(FECHA_NAC, FECHA_FALLECIMIENTO) / lubridate::years(), 2)
+    EDAD_CALC = round(lubridate::interval(FECHA_NAC, FECHA_FALLECIMIENTO) / lubridate::years(), 2)
   ) %>%
   mutate_at(
     vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO),
@@ -70,10 +74,7 @@ file.remove("datos/fallecidos_covid-utf8.csv")
 
 reconstruido <- casos %>%
   full_join(
-    fallecimientos %>%
-      mutate(
-        edad = round(edad, 0)
-      ),
+    fallecimientos,
     by = c("sexo", "departamento", "provincia", "distrito", "edad")
   ) %>%
   filter(!is.na(uuid.y) &

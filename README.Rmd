@@ -34,6 +34,11 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
   - ["Casos positivos por COVID-19 - [Ministerio de Salud - MINSA]"](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa)
   - ["Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]"](https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa)
 
+**2020-05-31**
+
+- Nuevo cambio de formato en los datos de fallecimientos: en 749 de registros no se consigna la fecha de nacimiento, pero se ha agregado una columna `EDAD_DECLARADA`. 
+- He modificado el código para compensar por estos cambios.
+
 ## Información relevante
 
 Fuentes de datos:
