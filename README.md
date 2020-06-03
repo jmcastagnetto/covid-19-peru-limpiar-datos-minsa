@@ -1,4 +1,4 @@
-**Última actualización**: 2020-06-02 23:45:13 UTC
+**Última actualización**: 2020-06-03 23:39:39 UTC
 
 Notas
 -----
@@ -87,28 +87,28 @@ Luego del primer paso de limpieza de datos:
     summary(fallecimientos)
 
          uuid           fecha_fallecimiento       edad                  sexo     
-     Length:4634        Min.   :2020-03-19   Min.   : 0.00   Femenino     :1189  
-     Class :character   1st Qu.:2020-04-23   1st Qu.:57.00   Indeterminado: 404  
+     Length:4767        Min.   :2020-03-19   Min.   : 0.00   Femenino     :1189  
+     Class :character   1st Qu.:2020-04-23   1st Qu.:56.00   Indeterminado: 537  
      Mode  :character   Median :2020-05-05   Median :66.00   Masculino    :3041  
-                        Mean   :2020-05-04   Mean   :65.25                       
-                        3rd Qu.:2020-05-17   3rd Qu.:75.00                       
-                        Max.   :2020-05-31   Max.   :99.00                       
+                        Mean   :2020-05-05   Mean   :65.23                       
+                        3rd Qu.:2020-05-18   3rd Qu.:75.00                       
+                        Max.   :2020-06-01   Max.   :99.00                       
                                                                                  
        fecha_nac              departamento     provincia   
-     Min.   :1915-06-19   LIMA      :1786   LIMA    :1316  
-     1st Qu.:1944-10-12   LAMBAYEQUE: 616   PIURA   : 297  
-     Median :1953-09-28   PIURA     : 527   CHICLAYO: 217  
-     Mean   :1954-09-19   CALLAO    : 329   CALLAO  : 174  
-     3rd Qu.:1963-06-25   LORETO    : 297   TRUJILLO: 126  
-     Max.   :2020-02-08   ANCASH    : 270   (Other) :1166  
-     NA's   :747          (Other)   : 809   NA's    :1338  
+     Min.   :1915-06-19   LIMA      :1868   LIMA    :1395  
+     1st Qu.:1944-10-21   LAMBAYEQUE: 618   PIURA   : 299  
+     Median :1953-10-29   PIURA     : 531   CHICLAYO: 219  
+     Mean   :1954-09-29   CALLAO    : 338   CALLAO  : 183  
+     3rd Qu.:1963-07-21   LORETO    : 299   TRUJILLO: 131  
+     Max.   :2020-02-08   ANCASH    : 277   (Other) :1202  
+     NA's   :747          (Other)   : 836   NA's    :1338  
                        distrito      edad_calc     
-     CALLAO                : 188   Min.   :  0.17  
-     SAN MARTIN DE PORRES  : 145   1st Qu.: 56.84  
-     LIMA                  : 142   Median : 66.60  
-     SAN JUAN DE LURIGANCHO: 141   Mean   : 65.62  
-     CHICLAYO              : 140   3rd Qu.: 75.53  
-     (Other)               :3073   Max.   :104.86  
+     CALLAO                : 190   Min.   :  0.17  
+     LIMA                  : 151   1st Qu.: 56.77  
+     SAN MARTIN DE PORRES  : 149   Median : 66.52  
+     SAN JUAN DE LURIGANCHO: 148   Mean   : 65.60  
+     CHICLAYO              : 141   3rd Qu.: 75.52  
+     (Other)               :3183   Max.   :104.86  
      NA's                  : 805   NA's   :747     
 
     summary(reconstruido)
