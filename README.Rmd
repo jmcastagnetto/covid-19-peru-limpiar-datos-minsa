@@ -7,6 +7,8 @@ library(tidyverse)
 load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 ```
 
+[![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
+
 
 **Última actualización**: `r lubridate::now(tzone = "UTC")` UTC
 
