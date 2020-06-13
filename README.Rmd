@@ -42,6 +42,10 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 - He modificado el código para compensar por estos cambios.
 - También, **todos los 141 fallecimientos asignados al 2020-05-29 están designados como de sexo `INDETERMINADO`**.
 
+**2020-06-12**
+
+- Al menos a partir de ayer, ya aparecen nuevamente los valores definidos para el sexo en los datos.
+
 ## Información relevante
 
 Fuentes de datos:
