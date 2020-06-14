@@ -289,13 +289,14 @@ ggsave(
 
 Los archivos "limpios" son:
 
-- datos/DATOSABIERTOS_SISCOVID-utf8-limpio.csv.gz
-- datos/FALLECIDOS_CDC-utf8-limpio.csv.gz
+- [datos/fallecidos_covid-utf8-limpio.csv](datos/fallecidos_covid-utf8-limpio.csv)
+- [datos/positivos_covid-utf8-limpio.csv](datos/positivos_covid-utf8-limpio.csv)
 
-Y algunos reconstruidos con los anteriores:
+Y algunos reconstruidos a partir de los anteriores:
 
-- datos/casos_fallecimientos_reconstruccion_posible.csv.gz
-- datos/timeseries-casos.csv.gz
-- datos/timeseries-casos-lugares.csv.gz
-- datos/timeseries-fallecimientos.csv.gz
-- datos/timeseries-fallecimientos-lugares.csv.gz
+- [datos/casos_fallecimientos_reconstruccion_posible.csv](datos/casos_fallecimientos_reconstruccion_posible.csv)
+- [datos/timeseries-casos.csv](datos/timeseries-casos.csv)
+- [datos/timeseries-casos-lugares.csv](datos/timeseries-casos-lugares.csv)
+- [datos/timeseries-fallecimientos.csv](datos/timeseries-fallecimientos.csv)
+- [datos/timeseries-fallecimientos-lugares.csv](datos/timeseries-fallecimientos-lugares.csv)
+

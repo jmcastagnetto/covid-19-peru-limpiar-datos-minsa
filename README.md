@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-06-14 17:01:49 UTC
+**Última actualización**: 2020-06-14 17:12:33 UTC
 
 Notas
 -----
@@ -173,13 +173,13 @@ coincidentes”](deteccion-fallecimiento-por-coincidentes.png)
 
 Los archivos “limpios” son:
 
--   datos/DATOSABIERTOS\_SISCOVID-utf8-limpio.csv.gz
--   datos/FALLECIDOS\_CDC-utf8-limpio.csv.gz
+-   [datos/fallecidos\_covid-utf8-limpio.csv](datos/fallecidos_covid-utf8-limpio.csv)
+-   [datos/positivos\_covid-utf8-limpio.csv](datos/positivos_covid-utf8-limpio.csv)
 
-Y algunos reconstruidos con los anteriores:
+Y algunos reconstruidos a partir de los anteriores:
 
--   datos/casos\_fallecimientos\_reconstruccion\_posible.csv.gz
--   datos/timeseries-casos.csv.gz
--   datos/timeseries-casos-lugares.csv.gz
--   datos/timeseries-fallecimientos.csv.gz
--   datos/timeseries-fallecimientos-lugares.csv.gz
+-   [datos/casos\_fallecimientos\_reconstruccion\_posible.csv](datos/casos_fallecimientos_reconstruccion_posible.csv)
+-   [datos/timeseries-casos.csv](datos/timeseries-casos.csv)
+-   [datos/timeseries-casos-lugares.csv](datos/timeseries-casos-lugares.csv)
+-   [datos/timeseries-fallecimientos.csv](datos/timeseries-fallecimientos.csv)
+-   [datos/timeseries-fallecimientos-lugares.csv](datos/timeseries-fallecimientos-lugares.csv)
