@@ -13,11 +13,19 @@ timeseries_casos <- casos %>%
     pais = "Peru",
     iso3c = "PER",
     .before = 1
-  )
+  ) %>% # completar huecos en ts
+  complete(
+    fecha_resultado = seq.Date(min(fecha_resultado, na.rm = TRUE),
+                               max(fecha_resultado, na.rm = TRUE),
+                               by = "day"),
+    nesting(pais, iso3c)
+  ) %>%
+  group_by(pais, iso3c) %>%
+  fill(n, n_acum)
 
-timeseries_casos_lugares <- casos %>%
-  arrange(fecha_resultado, departamento, provincia, distrito) %>%
-  group_by(fecha_resultado, departamento, provincia, distrito) %>%
+timeseries_casos_departamento <- casos %>%
+  arrange(departamento, fecha_resultado) %>%
+  group_by(departamento, fecha_resultado) %>%
   tally() %>%
   mutate(
     n_acum = cumsum(n)
@@ -26,7 +34,19 @@ timeseries_casos_lugares <- casos %>%
     pais = "Peru",
     iso3c = "PER",
     .before = 1
-  )
+  ) %>%
+  complete(
+    fecha_resultado = seq.Date(
+      min(casos$fecha_resultado, na.rm = TRUE),
+      max(casos$fecha_resultado, na.rm = TRUE),
+      by = "day"),
+    nesting(pais, iso3c, departamento)
+  ) %>%
+  group_by(pais, iso3c, departamento) %>%
+  fill(n, n_acum) %>%
+  arrange(departamento, fecha_resultado) %>%
+  filter(!is.na(n) & !is.na(n_acum)) %>%
+  distinct()
 
 timeseries_fallecimientos <- fallecimientos %>%
   arrange(fecha_fallecimiento) %>%
@@ -39,11 +59,20 @@ timeseries_fallecimientos <- fallecimientos %>%
     pais = "Peru",
     iso3c = "PER",
     .before = 1
-  )
+  ) %>% # completar huecos en ts
+  complete(
+    fecha_fallecimiento = seq.Date(
+      min(fecha_fallecimiento, na.rm = TRUE),
+      max(fecha_fallecimiento, na.rm = TRUE),
+      by = "day"),
+    nesting(pais, iso3c)
+  ) %>%
+  group_by(pais, iso3c) %>%
+  fill(n, n_acum)
 
-timeseries_fallecimientos_lugares <- fallecimientos %>%
-  arrange(fecha_fallecimiento, departamento, provincia, distrito) %>%
-  group_by(fecha_fallecimiento, departamento, provincia, distrito) %>%
+timeseries_fallecimientos_departamento <- fallecimientos %>%
+  arrange(departamento, fecha_fallecimiento) %>%
+  group_by(departamento, fecha_fallecimiento) %>%
   tally() %>%
   mutate(
     n_acum = cumsum(n)
@@ -52,7 +81,19 @@ timeseries_fallecimientos_lugares <- fallecimientos %>%
     pais = "Peru",
     iso3c = "PER",
     .before = 1
-  )
+  ) %>%
+  complete(
+    fecha_fallecimiento = seq.Date(
+      min(fallecimientos$fecha_fallecimiento, na.rm = TRUE),
+      max(fallecimientos$fecha_fallecimiento, na.rm = TRUE),
+      by = "day"),
+    nesting(pais, iso3c, departamento)
+  ) %>%
+  group_by(pais, iso3c, departamento) %>%
+  fill(n, n_acum) %>%
+  arrange(departamento, fecha_fallecimiento) %>%
+  filter(!is.na(n) & !is.na(n_acum)) %>%
+  distinct()
 
 write_csv(
  timeseries_casos,
@@ -60,8 +101,8 @@ write_csv(
 )
 
 write_csv(
-  timeseries_casos_lugares,
-  path = "datos/timeseries-casos-lugares.csv"
+  timeseries_casos_departamento,
+  path = "datos/timeseries-casos-departamento.csv"
 )
 
 write_csv(
@@ -70,6 +111,6 @@ write_csv(
 )
 
 write_csv(
-  timeseries_fallecimientos_lugares,
-  path = "datos/timeseries-fallecimientos-lugares.csv"
+  timeseries_fallecimientos_departamento,
+  path = "datos/timeseries-fallecimientos-departamento.csv"
 )

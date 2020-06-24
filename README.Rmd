@@ -46,6 +46,10 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 
 - Al menos a partir de ayer, ya aparecen nuevamente los valores definidos para el sexo en los datos.
 
+**2020-06-23**
+
+- Hay datos que tienen como fecha de el 2020-12-06, cuando podría parecer que es 2020-06-12, esto se ha corregido en los datos limpios en el repo, mas no el original.
+
 ## Información relevante
 
 Fuentes de datos:
@@ -151,11 +155,48 @@ ggsave(
   height = 4
 )
 
+ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv")
+
+ts_casos_dep_plot <- ggplot(
+  ts_casos_dep,
+  aes(x = fecha_resultado, y = n, group = departamento)
+) +
+  geom_point(aes(color = departamento), 
+             aes = .7, size = .5,
+             show.legend = FALSE) +
+  geom_smooth(method = "glm", formula = y ~ poly(x, 3)) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.title.x.bottom = element_text(hjust = 1)
+  ) +
+  labs(
+    x = "Fecha de resultado",
+    y = "",
+    title = "Positivos COVID-19 diarios por Departmento, de \"positivos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
+      max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Línea usando: y = A + Bx + Cx² + Dx³ // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  facet_wrap(~departamento, scales = "free_y", nrow = 5) 
+
+ggsave(
+  plot = ts_casos_dep_plot,
+  filename = "plots/positivos-diarios-por-departamento-minsa.png",
+  width = 10,
+  height = 8
+)
+
 ```
 
 !["Positivos por día. MINSA"](plots/positivos-por-dia-minsa.png)
 
 !["Positivos acumulados. MINSA"](plots/positivos-acumulados-minsa.png)
+
+!["Positivos por día y por Departamento. MINSA"](plots/positivos-diarios-por-departamento-minsa.png)
 
 ```{r echo=FALSE}
 plot_fall_df <- fallecimientos %>% 
@@ -235,12 +276,52 @@ ggsave(
   height = 4
 )
 
+ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv")
+
+ts_fallecimientos_dep_plot <- ggplot(
+  ts_fallecimientos_dep,
+  aes(x = fecha_fallecimiento, y = n, group = departamento)
+) +
+  geom_point(aes(color = departamento), 
+             aes = .7, size = .5, show.legend = FALSE) +
+  geom_smooth(method = "glm", formula = y ~ poly(x, 3)) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    axis.title.x.bottom = element_text(hjust = 1)
+  ) +
+  labs(
+    x = "Fecha de fallecimiento",
+    y = "",
+    title = "Fallecimientos COVID-19 diarios por Departmento, de \"fallecidos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
+      max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Línea usando: y = A + Bx + Cx² + Dx³ // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  facet_wrap(~departamento, scales = "free_y", nrow = 5) 
+
+ggsave(
+  plot = ts_fallecimientos_dep_plot,
+  filename = "plots/fallecimientos-diarios-por-departamento-minsa.png",
+  width = 10,
+  height = 8
+)
+
+
 ```
 
 
 !["Fallecimientos por día. MINSA"](plots/fallecimientos-por-dia-minsa.png)
 
 !["Fallecimientos acumulados. MINSA"](plots/fallecimientos-acumulados-minsa.png)
+
+
+!["Fallecimientos por día y por Departamento. MINSA"](plots/fallecimientos-diarios-por-departamento-minsa.png)
+
+
 
 ```{r echo=FALSE}
 plot_reconstruido_df <- reconstruido %>% 
