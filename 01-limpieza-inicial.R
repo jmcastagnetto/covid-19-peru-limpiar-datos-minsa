@@ -18,7 +18,18 @@ casos <- read_csv(
     na = c("", "NA", "NULL")
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO)
+    SEXO = str_to_title(SEXO),
+	# errores de fecha detectados 2020-06-23
+	FECHA_RESULTADO = if_else(
+	  FECHA_RESULTADO == lubridate::ymd("2020-12-06"),
+	  lubridate::ymd("2020-06-12"),
+	  FECHA_RESULTADO
+	),
+	FECHA_RESULTADO = if_else(
+	  FECHA_RESULTADO == lubridate::ymd("2020-11-06"),
+	  lubridate::ymd("2020-06-11"),
+	  FECHA_RESULTADO
+	)
   ) %>%
   mutate_at(
     vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX),
