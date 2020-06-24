@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-06-24 02:28:29 UTC
+**Última actualización**: 2020-06-24 02:32:58 UTC
 
 Notas
 -----
@@ -70,8 +70,6 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
-    summary(casos)
-
          uuid                departamento               provincia     
      Length:257447      LIMA       :145466   LIMA            :135020  
      Class :character   CALLAO     : 17145   CALLAO          : 16262  
@@ -97,8 +95,6 @@ Luego del primer paso de limpieza de datos:
                         Max.   :2020-06-21  
                         NA's   :1339        
 
-    summary(fallecimientos)
-
          uuid           fecha_fallecimiento       edad               sexo     
      Length:8223        Min.   :2020-03-19   Min.   :  0.00   Femenino :2398  
      Class :character   1st Qu.:2020-05-02   1st Qu.: 57.00   Masculino:5825  
@@ -123,8 +119,6 @@ Luego del primer paso de limpieza de datos:
      COMAS                 : 247   3rd Qu.: 75.75  
      (Other)               :5926   Max.   :104.86  
      NA's                  : 805   NA's   :757     
-
-    summary(reconstruido)
 
       uuid_caso              departamento      provincia    
      Length:93168       LIMA       :74265   LIMA    :73669  
@@ -162,23 +156,7 @@ Luego del primer paso de limpieza de datos:
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
 lugar en 29775 casos reconstruídos.
 
-    ## [1] "es_PE.utf8"
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   fecha_resultado = col_date(format = ""),
-    ##   pais = col_character(),
-    ##   iso3c = col_character(),
-    ##   departamento = col_character(),
-    ##   n = col_double(),
-    ##   n_acum = col_double()
-    ## )
-
-    ## Warning: Ignoring unknown parameters: aes
-
-    ## Warning: Removed 12 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 12 rows containing missing values (geom_point).
+    [1] "es_PE.utf8"
 
 ![“Positivos por día. MINSA”](plots/positivos-por-dia-minsa.png)
 
@@ -186,18 +164,6 @@ lugar en 29775 casos reconstruídos.
 
 ![“Positivos por día y por Departamento.
 MINSA”](plots/positivos-diarios-por-departamento-minsa.png)
-
-    ## Parsed with column specification:
-    ## cols(
-    ##   fecha_fallecimiento = col_date(format = ""),
-    ##   pais = col_character(),
-    ##   iso3c = col_character(),
-    ##   departamento = col_character(),
-    ##   n = col_double(),
-    ##   n_acum = col_double()
-    ## )
-
-    ## Warning: Ignoring unknown parameters: aes
 
 ![“Fallecimientos por día.
 MINSA”](plots/fallecimientos-por-dia-minsa.png)

@@ -3,6 +3,12 @@ output: md_document
 ---
 
 ```{r include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  comment = ""
+)
 library(tidyverse)
 load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 ```
