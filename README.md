@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-07-25 02:03:44 UTC
+**Última actualización**: 2020-07-25 17:32:32 UTC
 
 Notas
 -----
@@ -71,90 +71,90 @@ Fuentes de datos:
 Luego del primer paso de limpieza de datos:
 
          uuid                departamento               provincia     
-     Length:371096      LIMA       :183475   LIMA            :177214  
-     Class :character   CALLAO     : 20184   CALLAO          : 19148  
-     Mode  :character   PIURA      : 20054   EN INVESTIGACIÓN: 14721  
-                        LAMBAYEQUE : 16122   CHICLAYO        : 10851  
-                        LIMA REGION: 14767   AREQUIPA        : 10212  
-                        LA LIBERTAD: 13664   PIURA           :  9943  
-                        (Other)    :102830   (Other)         :129007  
+     Length:375961      LIMA       :185156   LIMA            :178704  
+     Class :character   CALLAO     : 20333   CALLAO          : 19286  
+     Mode  :character   PIURA      : 20206   EN INVESTIGACIÓN: 15122  
+                        LAMBAYEQUE : 16256   CHICLAYO        : 10934  
+                        LIMA REGION: 15314   AREQUIPA        : 10388  
+                        LA LIBERTAD: 13897   TRUJILLO        : 10119  
+                        (Other)    :104799   (Other)         :131408  
                        distrito      metododx          edad       
-     SAN JUAN DE LURIGANCHO: 17481   PCR:100489   Min.   :  0.00  
-     LIMA                  : 15841   PR :270607   1st Qu.: 31.00  
-     EN INVESTIGACIÓN      : 14721                Median : 42.00  
-     SAN MARTIN DE PORRES  : 12716                Mean   : 43.36  
-     CALLAO                : 10915                3rd Qu.: 55.00  
-     COMAS                 : 10822                Max.   :120.00  
-     (Other)               :288600                NA's   :791     
+     SAN JUAN DE LURIGANCHO: 17671   PCR:101936   Min.   :  0.00  
+     LIMA                  : 15921   PR :274025   1st Qu.: 31.00  
+     EN INVESTIGACIÓN      : 15122                Median : 42.00  
+     SAN MARTIN DE PORRES  : 12804                Mean   : 43.36  
+     CALLAO                : 10974                3rd Qu.: 55.00  
+     COMAS                 : 10899                Max.   :120.00  
+     (Other)               :292570                NA's   :794     
             sexo        fecha_resultado     
-     Femenino :159612   Min.   :2020-03-06  
-     Masculino:209486   1st Qu.:2020-05-14  
-     NA's     :  1998   Median :2020-06-02  
-                        Mean   :2020-06-03  
-                        3rd Qu.:2020-06-26  
-                        Max.   :2020-07-22  
+     Femenino :161945   Min.   :2020-03-06  
+     Masculino:212018   1st Qu.:2020-05-15  
+     NA's     :  1998   Median :2020-06-03  
+                        Mean   :2020-06-04  
+                        3rd Qu.:2020-06-27  
+                        Max.   :2020-07-23  
                         NA's   :522         
 
          uuid           fecha_fallecimiento       edad               sexo      
-     Length:17654       Min.   :2020-03-18   Min.   :  0.00   Femenino : 5187  
-     Class :character   1st Qu.:2020-05-08   1st Qu.: 57.00   Masculino:12467  
+     Length:17843       Min.   :2020-03-18   Min.   :  0.00   Femenino : 5231  
+     Class :character   1st Qu.:2020-05-08   1st Qu.: 57.00   Masculino:12612  
      Mode  :character   Median :2020-06-05   Median : 66.00                    
-                        Mean   :2020-06-02   Mean   : 65.63                    
-                        3rd Qu.:2020-06-27   3rd Qu.: 75.00                    
-                        Max.   :2020-07-22   Max.   :107.00                    
+                        Mean   :2020-06-03   Mean   : 65.62                    
+                        3rd Qu.:2020-06-28   3rd Qu.: 75.00                    
+                        Max.   :2020-07-23   Max.   :107.00                    
                                                                                
        fecha_nac               departamento     provincia   
-     Min.   :1912-12-15   LIMA       :8331   LIMA    :7295  
-     1st Qu.:1944-06-27   LA LIBERTAD:1248   TRUJILLO: 906  
-     Median :1953-07-17   PIURA      :1225   CALLAO  : 827  
-     Mean   :1954-04-12   LAMBAYEQUE :1197   CHICLAYO: 663  
-     3rd Qu.:1962-11-28   CALLAO     : 987   AREQUIPA: 580  
-     Max.   :2020-02-12   ANCASH     : 782   (Other) :6045  
-     NA's   :1533         (Other)    :3884   NA's    :1338  
+     Min.   :1912-12-15   LIMA       :8413   LIMA    :7370  
+     1st Qu.:1944-07-24   LA LIBERTAD:1262   TRUJILLO: 916  
+     Median :1953-07-23   PIURA      :1232   CALLAO  : 838  
+     Mean   :1954-04-21   LAMBAYEQUE :1201   CHICLAYO: 665  
+     3rd Qu.:1962-11-28   CALLAO     : 998   AREQUIPA: 599  
+     Max.   :2020-02-12   ANCASH     : 788   (Other) :6117  
+     NA's   :1012         (Other)    :3949   NA's    :1338  
                        distrito       edad_calc     
-     SAN JUAN DE LURIGANCHO:  853   Min.   :  0.17  
-     LIMA                  :  645   1st Qu.: 57.53  
-     CALLAO                :  553   Median : 66.90  
-     SAN MARTIN DE PORRES  :  545   Mean   : 66.15  
-     VILLA EL SALVADOR     :  518   3rd Qu.: 75.94  
-     (Other)               :13735   Max.   :107.53  
-     NA's                  :  805   NA's   :1533    
+     SAN JUAN DE LURIGANCHO:  863   Min.   :  0.17  
+     LIMA                  :  650   1st Qu.: 57.50  
+     CALLAO                :  561   Median : 66.88  
+     SAN MARTIN DE PORRES  :  549   Mean   : 66.12  
+     VILLA EL SALVADOR     :  522   3rd Qu.: 75.89  
+     (Other)               :13893   Max.   :107.53  
+     NA's                  :  805   NA's   :1012    
 
       uuid_caso              departamento       provincia     
-     Length:231985      LIMA       :180795   LIMA    :180795  
-     Class :character   CALLAO     : 18708   CALLAO  : 18708  
+     Length:239499      LIMA       :187104   LIMA    :187104  
+     Class :character   CALLAO     : 19431   CALLAO  : 19431  
      Mode  :character   LA LIBERTAD:  6772   TRUJILLO:  6522  
-                        LAMBAYEQUE :  5363   CHICLAYO:  5016  
-                        ANCASH     :  4910   SANTA   :  4627  
-                        PIURA      :  4843   PIURA   :  2904  
-                        (Other)    : 10594   (Other) : 13413  
-                       distrito     metododx          edad       
-     SAN JUAN DE LURIGANCHO:45270   PCR: 69266   Min.   :  0.00  
-     LIMA                  :22878   PR :162719   1st Qu.: 50.00  
-     SAN MARTIN DE PORRES  :20619                Median : 58.00  
-     COMAS                 :16458                Mean   : 57.77  
-     CALLAO                :15731                3rd Qu.: 66.00  
-     VILLA EL SALVADOR     :12422                Max.   :101.00  
-     (Other)               :98607                                
+                        LAMBAYEQUE :  5547   CHICLAYO:  5200  
+                        ANCASH     :  4955   SANTA   :  4668  
+                        PIURA      :  4896   PIURA   :  2905  
+                        (Other)    : 10794   (Other) : 13669  
+                       distrito      metododx          edad       
+     SAN JUAN DE LURIGANCHO: 46843   PCR: 71809   Min.   :  0.00  
+     LIMA                  : 24360   PR :167690   1st Qu.: 50.00  
+     SAN MARTIN DE PORRES  : 21052                Median : 58.00  
+     COMAS                 : 16658                Mean   : 57.78  
+     CALLAO                : 16425                3rd Qu.: 66.00  
+     VILLA EL SALVADOR     : 12949                Max.   :101.00  
+     (Other)               :101212                                
             sexo        fecha_resultado      uuid_fallecimiento
-     Femenino : 45192   Min.   :2020-03-07   Length:231985     
-     Masculino:186793   1st Qu.:2020-04-29   Class :character  
-                        Median :2020-05-19   Mode  :character  
-                        Mean   :2020-05-17                     
-                        3rd Qu.:2020-06-02                     
+     Femenino : 46532   Min.   :2020-03-07   Length:239499     
+     Masculino:192967   1st Qu.:2020-04-29   Class :character  
+                        Median :2020-05-18   Mode  :character  
+                        Mean   :2020-05-16                     
+                        3rd Qu.:2020-06-01                     
                         Max.   :2020-07-21                     
                                                                
-     fecha_fallecimiento    fecha_nac            edad_calc      coincidencias   
-     Min.   :2020-03-19   Min.   :1919-01-11   Min.   :  0.30   Min.   : 1.000  
-     1st Qu.:2020-06-08   1st Qu.:1953-12-23   1st Qu.: 50.29   1st Qu.: 2.000  
-     Median :2020-06-22   Median :1962-01-28   Median : 58.41   Median : 4.000  
-     Mean   :2020-06-20   Mean   :1962-03-12   Mean   : 58.27   Mean   : 4.735  
-     3rd Qu.:2020-07-09   3rd Qu.:1970-03-12   3rd Qu.: 66.50   3rd Qu.: 7.000  
-     Max.   :2020-07-22   Max.   :2020-02-12   Max.   :101.48   Max.   :21.000  
-                                                                                
+     fecha_fallecimiento    fecha_nac            edad_calc      coincidencias  
+     Min.   :2020-03-19   Min.   :1919-01-11   Min.   :  0.26   Min.   : 1.00  
+     1st Qu.:2020-06-06   1st Qu.:1953-12-21   1st Qu.: 50.28   1st Qu.: 2.00  
+     Median :2020-06-21   Median :1962-01-13   Median : 58.42   Median : 4.00  
+     Mean   :2020-06-18   Mean   :1962-03-09   Mean   : 58.28   Mean   : 4.97  
+     3rd Qu.:2020-07-08   3rd Qu.:1970-03-12   3rd Qu.: 66.50   3rd Qu.: 7.00  
+     Max.   :2020-07-22   Max.   :2020-02-12   Max.   :101.48   Max.   :24.00  
+                                                                               
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
-lugar en 43530 casos reconstruídos.
+lugar en 43648 casos reconstruídos.
 
     [1] "es_PE.utf8"
 
