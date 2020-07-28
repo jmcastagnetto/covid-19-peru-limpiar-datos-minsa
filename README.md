@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-07-28 15:17:21 UTC
+**Última actualización**: 2020-07-28 15:28:32 UTC
 
 Notas
 -----
@@ -59,6 +59,13 @@ Notas
 -   Hay datos que tienen como fecha de el 2020-12-06, cuando podría
     parecer que es 2020-06-12, esto se ha corregido en los datos limpios
     en el repo, mas no el original.
+
+**2020-07-28**
+
+-   Luego de varios días sin actualización (al menos 3 días), los datos
+    abiertos han sido actualizados.
+-   Las fechas en los registros ha cambiado del formato DD/MM/YYY (y
+    algunos MM/DD/YYYY) a YYYYMMDD
 
 Información relevante
 ---------------------
