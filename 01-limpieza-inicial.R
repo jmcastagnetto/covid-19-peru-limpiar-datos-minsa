@@ -13,23 +13,23 @@ casos <- read_csv(
       METODODX = col_character(),
       EDAD = col_integer(),
       SEXO = col_character(),
-      FECHA_RESULTADO = col_date(format = "%d/%m/%Y")
+      FECHA_RESULTADO = col_date(format = "%Y%m%d")
     ),
     na = c("", "NA", "NULL")
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO),
+    SEXO = str_to_title(SEXO)#,
 	# errores de fecha detectados 2020-06-23
-	FECHA_RESULTADO = if_else(
-	  FECHA_RESULTADO == lubridate::ymd("2020-12-06"),
-	  lubridate::ymd("2020-06-12"),
-	  FECHA_RESULTADO
-	),
-	FECHA_RESULTADO = if_else(
-	  FECHA_RESULTADO == lubridate::ymd("2020-11-06"),
-	  lubridate::ymd("2020-06-11"),
-	  FECHA_RESULTADO
-	)
+# 	FECHA_RESULTADO = if_else(
+# 	  FECHA_RESULTADO == lubridate::ymd("2020-12-06"),
+# 	  lubridate::ymd("2020-06-12"),
+# 	  FECHA_RESULTADO
+# 	),
+# 	FECHA_RESULTADO = if_else(
+# 	  FECHA_RESULTADO == lubridate::ymd("2020-11-06"),
+# 	  lubridate::ymd("2020-06-11"),
+# 	  FECHA_RESULTADO
+# 	)
   ) %>%
   mutate_at(
     vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX),
@@ -51,10 +51,10 @@ fallecimientos <- read_csv(
   "datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     UUID = col_character(),
-    FECHA_FALLECIMIENTO = col_date(format = "%d/%m/%Y"),
+    FECHA_FALLECIMIENTO = col_date(format = "%Y%m%d"),
     EDAD_DECLARADA = col_number(),
     SEXO = col_character(),
-    FECHA_NAC = col_date(format = "%d/%m/%Y"),
+    FECHA_NAC = col_date(format = "%Y%m%d"),
     DEPARTAMENTO = col_character(),
     PROVINCIA = col_character(),
     DISTRITO = col_character()
