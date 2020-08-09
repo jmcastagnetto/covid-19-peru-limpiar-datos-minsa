@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-08-08 00:15:10 UTC
+**Última actualización**: 2020-08-09 03:51:28 UTC
 
 Notas
 -----
@@ -78,74 +78,74 @@ Fuentes de datos:
 Luego del primer paso de limpieza de datos:
 
          uuid                departamento               provincia     
-     Length:455409      LIMA       :215058   LIMA            :206070  
-     Class :character   CALLAO     : 22354   CALLAO          : 21198  
-     Mode  :character   PIURA      : 22031   EN INVESTIGACIÓN: 20655  
-                        LIMA REGION: 18969   AREQUIPA        : 15303  
-                        LAMBAYEQUE : 18185   CHICLAYO        : 12197  
-                        AREQUIPA   : 17191   TRUJILLO        : 12027  
-                        (Other)    :141621   (Other)         :167959  
-                       distrito      metododx          edad       
-     EN INVESTIGACIÓN      : 20655   PCR:119211   Min.   :  0.00  
-     SAN JUAN DE LURIGANCHO: 20558   PR :336198   1st Qu.: 31.00  
-     LIMA                  : 17930                Median : 42.00  
-     SAN MARTIN DE PORRES  : 14415                Mean   : 43.31  
-     COMAS                 : 12599                3rd Qu.: 55.00  
-     CALLAO                : 11831                Max.   :120.00  
-     (Other)               :357421                NA's   :40      
+     Length:463875      LIMA       :217966   LIMA            :208701  
+     Class :character   CALLAO     : 22594   CALLAO          : 21423  
+     Mode  :character   PIURA      : 22184   EN INVESTIGACIÓN: 21209  
+                        LIMA REGION: 19190   AREQUIPA        : 16223  
+                        LAMBAYEQUE : 18341   CHICLAYO        : 12285  
+                        AREQUIPA   : 18190   TRUJILLO        : 12226  
+                        (Other)    :145410   (Other)         :171808  
+                       distrito      metododx          edad      
+     EN INVESTIGACIÓN      : 21209   PCR:120969   Min.   :  0.0  
+     SAN JUAN DE LURIGANCHO: 20809   PR :342906   1st Qu.: 31.0  
+     LIMA                  : 18130                Median : 42.0  
+     SAN MARTIN DE PORRES  : 14577                Mean   : 43.3  
+     COMAS                 : 12785                3rd Qu.: 55.0  
+     CALLAO                : 11923                Max.   :120.0  
+     (Other)               :364442                NA's   :49     
             sexo        fecha_resultado     
-     Femenino :201879   Min.   :2020-03-06  
-     Masculino:253530   1st Qu.:2020-05-19  
-                        Median :2020-06-12  
-                        Mean   :2020-06-13  
-                        3rd Qu.:2020-07-14  
-                        Max.   :2020-08-05  
+     Femenino :206039   Min.   :2020-03-06  
+     Masculino:257836   1st Qu.:2020-05-20  
+                        Median :2020-06-13  
+                        Mean   :2020-06-14  
+                        3rd Qu.:2020-07-16  
+                        Max.   :2020-08-06  
                                             
 
          uuid           fecha_fallecimiento       edad               sexo      
-     Length:20424       Min.   :2020-03-18   Min.   :  0.00   Femenino : 5961  
-     Class :character   1st Qu.:2020-05-12   1st Qu.: 57.00   Masculino:14463  
-     Mode  :character   Median :2020-06-10   Median : 66.00                    
-                        Mean   :2020-06-09   Mean   : 65.61                    
-                        3rd Qu.:2020-07-07   3rd Qu.: 75.00                    
-                        Max.   :2020-08-05   Max.   :107.00                    
-                                             NA's   :3                         
+     Length:20649       Min.   :2020-03-18   Min.   :  0.00   Femenino : 6034  
+     Class :character   1st Qu.:2020-05-12   1st Qu.: 57.00   Masculino:14615  
+     Mode  :character   Median :2020-06-11   Median : 66.00                    
+                        Mean   :2020-06-09   Mean   : 65.63                    
+                        3rd Qu.:2020-07-08   3rd Qu.: 75.00                    
+                        Max.   :2020-08-06   Max.   :107.00                    
+                                                                               
        fecha_nac               departamento     provincia   
-     Min.   :1912-12-15   LIMA       :9599   LIMA    :8374  
-     1st Qu.:1944-07-19   LA LIBERTAD:1397   TRUJILLO:1003  
-     Median :1953-08-23   PIURA      :1303   CALLAO  : 906  
-     Mean   :1954-05-07   LAMBAYEQUE :1249   AREQUIPA: 776  
-     3rd Qu.:1962-12-10   CALLAO     :1067   CHICLAYO: 704  
-     Max.   :2020-02-12   ICA        : 941   (Other) :7383  
-     NA's   :1769         (Other)    :4868   NA's    :1278  
+     Min.   :1912-12-15   LIMA       :9716   LIMA    :8482  
+     1st Qu.:1944-07-19   LA LIBERTAD:1412   TRUJILLO:1012  
+     Median :1953-08-23   PIURA      :1306   CALLAO  : 919  
+     Mean   :1954-05-07   LAMBAYEQUE :1251   AREQUIPA: 801  
+     3rd Qu.:1962-12-10   CALLAO     :1080   CHICLAYO: 704  
+     Max.   :2020-02-12   ICA        : 951   (Other) :7453  
+     NA's   :1994         (Other)    :4933   NA's    :1278  
                        distrito       edad_calc     
-     SAN JUAN DE LURIGANCHO: 1000   Min.   :  0.17  
-     LIMA                  :  718   1st Qu.: 57.48  
-     CALLAO                :  613   Median : 66.79  
-     SAN MARTIN DE PORRES  :  592   Mean   : 66.09  
-     VILLA EL SALVADOR     :  575   3rd Qu.: 75.89  
-     (Other)               :16178   Max.   :107.53  
-     NA's                  :  748   NA's   :1769    
+     SAN JUAN DE LURIGANCHO: 1017   Min.   :  0.17  
+     LIMA                  :  722   1st Qu.: 57.48  
+     CALLAO                :  619   Median : 66.79  
+     SAN MARTIN DE PORRES  :  600   Mean   : 66.09  
+     VILLA EL SALVADOR     :  580   3rd Qu.: 75.89  
+     (Other)               :16363   Max.   :107.53  
+     NA's                  :  748   NA's   :1994    
 
       uuid_caso              departamento       provincia     
-     Length:285924      LIMA       :225935   LIMA    :225935  
+     Length:285926      LIMA       :225935   LIMA    :225935  
      Class :character   CALLAO     : 20326   CALLAO  : 20326  
      Mode  :character   LA LIBERTAD:  8077   TRUJILLO:  7747  
                         LAMBAYEQUE :  5975   CHICLAYO:  5593  
                         ANCASH     :  5510   SANTA   :  5163  
                         PIURA      :  5273   AREQUIPA:  3221  
-                        (Other)    : 14828   (Other) : 17939  
+                        (Other)    : 14830   (Other) : 17941  
                        distrito      metododx          edad      
      SAN JUAN DE LURIGANCHO: 58503   PCR: 86309   Min.   :  0.0  
-     LIMA                  : 27582   PR :199615   1st Qu.: 50.0  
+     LIMA                  : 27582   PR :199617   1st Qu.: 50.0  
      SAN MARTIN DE PORRES  : 24058                Median : 58.0  
      COMAS                 : 19802                Mean   : 57.8  
      CALLAO                : 17234                3rd Qu.: 66.0  
      VILLA EL SALVADOR     : 15155                Max.   :101.0  
-     (Other)               :123590                               
+     (Other)               :123592                               
             sexo        fecha_resultado      uuid_fallecimiento
-     Femenino : 56484   Min.   :2020-03-07   Length:285924     
-     Masculino:229440   1st Qu.:2020-04-30   Class :character  
+     Femenino : 56484   Min.   :2020-03-07   Length:285926     
+     Masculino:229442   1st Qu.:2020-04-30   Class :character  
                         Median :2020-05-20   Mode  :character  
                         Mean   :2020-05-19                     
                         3rd Qu.:2020-06-05                     
@@ -161,7 +161,7 @@ Luego del primer paso de limpieza de datos:
                                                                                 
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
-lugar en 50216 casos reconstruídos.
+lugar en 50218 casos reconstruídos.
 
     [1] "es_PE.utf8"
 
