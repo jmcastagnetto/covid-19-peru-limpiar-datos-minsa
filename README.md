@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-08-16 05:09:17 UTC
+**Última actualización**: 2020-08-16 05:14:31 UTC
 
 Notas
 -----
@@ -77,6 +77,8 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
+### Casos positivos
+
          uuid                departamento               provincia     
      Length:507996      LIMA       :234183   LIMA            :223163  
      Class :character   CALLAO     : 23945   EN INVESTIGACIÓN: 24302  
@@ -102,6 +104,8 @@ Luego del primer paso de limpieza de datos:
                         Max.   :2020-08-12  
                                             
 
+### Fallecimientos
+
          uuid           fecha_fallecimiento       edad               sexo      
      Length:25648       Min.   :2020-03-18   Min.   :  0.00   Femenino : 7579  
      Class :character   1st Qu.:2020-05-17   1st Qu.: 57.00   Masculino:18069  
@@ -126,6 +130,8 @@ Luego del primer paso de limpieza de datos:
      VILLA EL SALVADOR     :  695   3rd Qu.: 75.95  
      (Other)               :20565   Max.   :107.53  
      NA's                  :  749   NA's   :4912    
+
+### Coincidencias reconstruídas
 
       uuid_caso              departamento       provincia     
      Length:338880      LIMA       :268135   LIMA    :268135  
@@ -162,6 +168,9 @@ Luego del primer paso de limpieza de datos:
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
 lugar en 57539 casos reconstruídos.
+
+Gráficos
+--------
 
     [1] "es_PE.utf8"
 

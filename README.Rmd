@@ -71,19 +71,28 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
+### Casos positivos
+
 ```{r comment=""}
 summary(casos)
 ```
 
+### Fallecimientos
+
+
 ```{r comment=""}
 summary(fallecimientos)
 ```
+
+### Coincidencias reconstruídas
 
 ```{r comment=""}
 summary(reconstruido)
 ```
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
+
+## Gráficos
 
 ```{r echo=FALSE}
 plot_df <- casos %>% 
