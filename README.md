@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-08-16 05:14:31 UTC
+**Última actualización**: 2020-08-16 05:18:42 UTC
 
 Notas
 -----
@@ -79,92 +79,671 @@ Luego del primer paso de limpieza de datos:
 
 ### Casos positivos
 
-         uuid                departamento               provincia     
-     Length:507996      LIMA       :234183   LIMA            :223163  
-     Class :character   CALLAO     : 23945   EN INVESTIGACIÓN: 24302  
-     Mode  :character   PIURA      : 23467   CALLAO          : 22715  
-                        AREQUIPA   : 21692   AREQUIPA        : 19256  
-                        LIMA REGION: 20346   TRUJILLO        : 13326  
-                        LAMBAYEQUE : 19369   CHICLAYO        : 12964  
-                        (Other)    :164994   (Other)         :192270  
-                       distrito      metododx          edad       
-     EN INVESTIGACIÓN      : 24302   PCR:129564   Min.   :  0.00  
-     SAN JUAN DE LURIGANCHO: 22255   PR :378432   1st Qu.: 30.00  
-     LIMA                  : 19380                Median : 42.00  
-     SAN MARTIN DE PORRES  : 15404                Mean   : 43.23  
-     COMAS                 : 13615                3rd Qu.: 55.00  
-     CALLAO                : 12688                Max.   :120.00  
-     (Other)               :400352                NA's   :61      
-            sexo        fecha_resultado     
-     Femenino :227825   Min.   :2020-03-06  
-     Masculino:280171   1st Qu.:2020-05-22  
-                        Median :2020-06-19  
-                        Mean   :2020-06-19  
-                        3rd Qu.:2020-07-23  
-                        Max.   :2020-08-12  
-                                            
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">casos</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">507996</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: character**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">uuid</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">507996</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: Date**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fecha_resultado</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-03-06</td>
+<td style="text-align: left;">2020-08-12</td>
+<td style="text-align: left;">2020-06-19</td>
+<td style="text-align: right;">160</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: factor**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">departamento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">LIM: 234183, CAL: 23945, PIU: 23467, ARE: 21692</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">provincia</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">197</td>
+<td style="text-align: left;">LIM: 223163, EN : 24302, CAL: 22715, ARE: 19256</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">distrito</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">1498</td>
+<td style="text-align: left;">EN : 24302, SAN: 22255, LIM: 19380, SAN: 15404</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">metododx</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">PR: 378432, PCR: 129564</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Mas: 280171, Fem: 227825</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: numeric**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">edad</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">43.23</td>
+<td style="text-align: right;">17.48</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: left;">▂▇▅▁▁</td>
+</tr>
+</tbody>
+</table>
 
 ### Fallecimientos
 
-         uuid           fecha_fallecimiento       edad               sexo      
-     Length:25648       Min.   :2020-03-18   Min.   :  0.00   Femenino : 7579  
-     Class :character   1st Qu.:2020-05-17   1st Qu.: 57.00   Masculino:18069  
-     Mode  :character   Median :2020-06-12   Median : 66.00                    
-                        Mean   :2020-06-11   Mean   : 65.67                    
-                        3rd Qu.:2020-07-08   3rd Qu.: 76.00                    
-                        Max.   :2020-08-12   Max.   :107.00                    
-                                                                               
-       fecha_nac               departamento      provincia   
-     Min.   :1912-12-15   LIMA       :11365   LIMA    :9977  
-     1st Qu.:1944-06-27   LA LIBERTAD: 1914   TRUJILLO:1355  
-     Median :1953-08-13   PIURA      : 1722   CALLAO  :1284  
-     Mean   :1954-04-30   LAMBAYEQUE : 1530   CHICLAYO: 930  
-     3rd Qu.:1962-12-22   CALLAO     : 1445   AREQUIPA: 883  
-     Max.   :2020-02-25   ICA        : 1347   (Other) :9940  
-     NA's   :4912         (Other)    : 6325   NA's    :1279  
-                       distrito       edad_calc     
-     SAN JUAN DE LURIGANCHO: 1160   Min.   :  0.17  
-     LIMA                  :  895   1st Qu.: 57.46  
-     CALLAO                :  874   Median : 66.84  
-     SAN MARTIN DE PORRES  :  710   Mean   : 66.12  
-     VILLA EL SALVADOR     :  695   3rd Qu.: 75.95  
-     (Other)               :20565   Max.   :107.53  
-     NA's                  :  749   NA's   :4912    
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">fallecimientos</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">25648</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: character**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">uuid</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25648</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: Date**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fecha_fallecimiento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">2020-03-18</td>
+<td style="text-align: left;">2020-08-12</td>
+<td style="text-align: left;">2020-06-12</td>
+<td style="text-align: right;">147</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fecha_nac</td>
+<td style="text-align: right;">4912</td>
+<td style="text-align: right;">0.81</td>
+<td style="text-align: left;">1912-12-15</td>
+<td style="text-align: left;">2020-02-25</td>
+<td style="text-align: left;">1953-08-13</td>
+<td style="text-align: right;">12539</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: factor**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sexo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Mas: 18069, Fem: 7579</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">departamento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">LIM: 11365, LA : 1914, PIU: 1722, LAM: 1530</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">provincia</td>
+<td style="text-align: right;">1279</td>
+<td style="text-align: right;">0.95</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">192</td>
+<td style="text-align: left;">LIM: 9977, TRU: 1355, CAL: 1284, CHI: 930</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">distrito</td>
+<td style="text-align: right;">749</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">911</td>
+<td style="text-align: left;">SAN: 1160, LIM: 895, CAL: 874, SAN: 710</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: numeric**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">edad</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">65.67</td>
+<td style="text-align: right;">14.13</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">57.00</td>
+<td style="text-align: right;">66.00</td>
+<td style="text-align: right;">76.00</td>
+<td style="text-align: right;">107.00</td>
+<td style="text-align: left;">▁▁▆▇▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">edad_calc</td>
+<td style="text-align: right;">4912</td>
+<td style="text-align: right;">0.81</td>
+<td style="text-align: right;">66.12</td>
+<td style="text-align: right;">14.14</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">57.46</td>
+<td style="text-align: right;">66.84</td>
+<td style="text-align: right;">75.95</td>
+<td style="text-align: right;">107.53</td>
+<td style="text-align: left;">▁▁▆▇▁</td>
+</tr>
+</tbody>
+</table>
 
 ### Coincidencias reconstruídas
 
-      uuid_caso              departamento       provincia     
-     Length:338880      LIMA       :268135   LIMA    :268135  
-     Class :character   CALLAO     : 24437   CALLAO  : 24437  
-     Mode  :character   LA LIBERTAD:  9061   TRUJILLO:  8674  
-                        LAMBAYEQUE :  6490   CHICLAYO:  6058  
-                        ANCASH     :  6146   SANTA   :  5738  
-                        PIURA      :  5716   AREQUIPA:  4203  
-                        (Other)    : 18895   (Other) : 21635  
-                       distrito      metododx          edad       
-     SAN JUAN DE LURIGANCHO: 69492   PCR:102465   Min.   :  0.00  
-     LIMA                  : 33023   PR :236415   1st Qu.: 50.00  
-     SAN MARTIN DE PORRES  : 28355                Median : 58.00  
-     COMAS                 : 22983                Mean   : 57.73  
-     CALLAO                : 20863                3rd Qu.: 66.00  
-     ATE                   : 17281                Max.   :101.00  
-     (Other)               :146883                                
-            sexo        fecha_resultado      uuid_fallecimiento
-     Femenino : 67635   Min.   :2020-03-07   Length:338880     
-     Masculino:271245   1st Qu.:2020-05-01   Class :character  
-                        Median :2020-05-21   Mode  :character  
-                        Mean   :2020-05-22                     
-                        3rd Qu.:2020-06-08                     
-                        Max.   :2020-08-10                     
-                                                               
-     fecha_fallecimiento    fecha_nac            edad_calc      coincidencias   
-     Min.   :2020-03-19   Min.   :1919-01-11   Min.   :  0.26   Min.   : 1.000  
-     1st Qu.:2020-06-11   1st Qu.:1954-01-09   1st Qu.: 50.37   1st Qu.: 2.000  
-     Median :2020-07-03   Median :1961-11-29   Median : 58.60   Median : 4.000  
-     Mean   :2020-06-30   Mean   :1962-04-05   Mean   : 58.24   Mean   : 5.793  
-     3rd Qu.:2020-07-24   3rd Qu.:1970-02-08   3rd Qu.: 66.51   3rd Qu.: 8.000  
-     Max.   :2020-08-11   Max.   :2020-02-25   Max.   :101.48   Max.   :29.000  
-                                                                                
+<table>
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">reconstruido</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">338880</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: character**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">uuid_caso</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">122102</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uuid_fallecimiento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">15881</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: Date**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">min</th>
+<th style="text-align: left;">max</th>
+<th style="text-align: left;">median</th>
+<th style="text-align: right;">n_unique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fecha_resultado</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-03-07</td>
+<td style="text-align: left;">2020-08-10</td>
+<td style="text-align: left;">2020-05-21</td>
+<td style="text-align: right;">156</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fecha_fallecimiento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-03-19</td>
+<td style="text-align: left;">2020-08-11</td>
+<td style="text-align: left;">2020-07-03</td>
+<td style="text-align: right;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fecha_nac</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1919-01-11</td>
+<td style="text-align: left;">2020-02-25</td>
+<td style="text-align: left;">1961-11-29</td>
+<td style="text-align: right;">10549</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: factor**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: left;">ordered</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: left;">top_counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">departamento</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">LIM: 268135, CAL: 24437, LA : 9061, LAM: 6490</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">provincia</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">138</td>
+<td style="text-align: left;">LIM: 268135, CAL: 24437, TRU: 8674, CHI: 6058</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">distrito</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">414</td>
+<td style="text-align: left;">SAN: 69492, LIM: 33023, SAN: 28355, COM: 22983</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">metododx</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">PR: 236415, PCR: 102465</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">FALSE</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Mas: 271245, Fem: 67635</td>
+</tr>
+</tbody>
+</table>
+
+**Variable type: numeric**
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">edad</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">57.73</td>
+<td style="text-align: right;">12.24</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">50.00</td>
+<td style="text-align: right;">58.0</td>
+<td style="text-align: right;">66.00</td>
+<td style="text-align: right;">101.00</td>
+<td style="text-align: left;">▁▁▇▆▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">edad_calc</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">58.24</td>
+<td style="text-align: right;">12.24</td>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">50.37</td>
+<td style="text-align: right;">58.6</td>
+<td style="text-align: right;">66.51</td>
+<td style="text-align: right;">101.48</td>
+<td style="text-align: left;">▁▁▇▆▁</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">coincidencias</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.79</td>
+<td style="text-align: right;">4.94</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">8.00</td>
+<td style="text-align: right;">29.00</td>
+<td style="text-align: left;">▇▃▁▁▁</td>
+</tr>
+</tbody>
+</table>
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
 lugar en 57539 casos reconstruídos.

@@ -74,20 +74,20 @@ Luego del primer paso de limpieza de datos:
 ### Casos positivos
 
 ```{r comment=""}
-summary(casos)
+skimr::skim(casos)
 ```
 
 ### Fallecimientos
 
 
 ```{r comment=""}
-summary(fallecimientos)
+skimr::skim(fallecimientos)
 ```
 
 ### Coincidencias reconstruídas
 
 ```{r comment=""}
-summary(reconstruido)
+skimr::skim(reconstruido)
 ```
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
