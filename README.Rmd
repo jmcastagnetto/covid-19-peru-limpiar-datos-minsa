@@ -193,12 +193,12 @@ ts_casos_dep_plot <- ggplot(
                       lubridate::now(tzone = "UTC"), " UTC"),
     caption = "Línea usando: y = A + Bx + Cx² + Dx³ // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
   ) +
-  facet_wrap(~departamento, scales = "free_y", nrow = 5) 
+  facet_wrap(~departamento, scales = "free_y", ncol = 7) 
 
 ggsave(
   plot = ts_casos_dep_plot,
   filename = "plots/positivos-diarios-por-departamento-minsa.png",
-  width = 10,
+  width = 12,
   height = 8
 )
 
@@ -337,6 +337,7 @@ ggsave(
 
 ```{r echo=FALSE}
 plot_reconstruido_df <- reconstruido %>% 
+  filter(coincidencias <= 3) %>%
   mutate(
     dias_caso_fall = lubridate::interval(
       fecha_resultado,
@@ -355,7 +356,7 @@ plot_reconstruido_dist <- ggplot(
   labs(
     x = "Días entre prueba positiva y fallecimiento",
     y = "",
-    title = "Distribución de detección a fallecimiento por número de registros coincidentes",
+    title = "Detección a fallecimiento (coincidencias = [1, 3])",
     subtitle = paste0(
       "Coincidencias estimadas usando sexo, edad y lugar. Actualizado el: ",
       lubridate::now(tzone = "UTC"), " UTC"),
