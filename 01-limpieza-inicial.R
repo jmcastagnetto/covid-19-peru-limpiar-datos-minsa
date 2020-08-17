@@ -111,7 +111,7 @@ reconstruido <- reconstruido %>%
 
 write_csv(
   reconstruido,
-  path = "datos/casos_fallecimientos_reconstruccion_posible.csv"
+  path = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
 )
 
 save(
