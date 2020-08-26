@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-08-25 19:18:15 UTC
+**Última actualización**: 2020-08-26 15:54:07 UTC
 
 Notas
 -----
