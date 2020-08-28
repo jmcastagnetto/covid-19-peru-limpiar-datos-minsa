@@ -11,13 +11,14 @@ sha1sum --status -c sha1sum-orig.txt
 if [ $? -eq 0 ]
 then
 	echo "Datos no han cambiado"
+	rm datos/originales/*.csv
 else
+	sha1sum datos/originales/*.csv > sha1sum-orig.txt
 	# Pre-proceso de los datos de casos
 	iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
 
 	# Pre-proceso de los datos de fallecidos
 	iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
-	#gzip -9f datos/FALLECIDOS_*.csv
 
 	# Limpieza inicial
 	Rscript 01-limpieza-inicial.R
@@ -28,7 +29,9 @@ else
 	# Regenerar el README
 	Rscript build-readme.R
 
+	gzip -9f datos/*.csv 
+	gzip -9f datos/originales/*.csv
+
 	# cacular y guardar los sha256 de los archivos de datos
-	sha256sum -b datos/* datos/originales/* > sha256sum-archivos-datos.txt
-	sha1sum datos/originales/*.csv > sha1sum-orig.txt
+	sha256sum -b datos/*.csv.gz datos/originales/*.csv.gz > sha256sum-archivos-datos.txt
 fi
