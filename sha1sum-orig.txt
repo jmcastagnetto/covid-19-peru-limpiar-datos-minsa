@@ -1,2 +1,2 @@
-5108ebf86e220065818eea676a25ddc591942593  datos/originales/fallecidos_covid.csv
-f91a45ec96d0ee63e91512833b6126eed62d82b5  datos/originales/positivos_covid.csv
+1c20287767dc37aedb492df486df9e9ed3c5afa1  datos/originales/fallecidos_covid.csv
+ef51798a9974f944fa77900381ef52761f7a23be  datos/originales/positivos_covid.csv
