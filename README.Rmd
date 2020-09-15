@@ -62,6 +62,11 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 - Luego de varios días sin actualización (al menos 3 días), los datos abiertos han sido actualizados.
 - Las fechas en los registros ha cambiado del formato DD/MM/YYY (y algunos MM/DD/YYYY) a YYYYMMDD
 
+**2020-09-14**
+
+- Modificado el código de proceso de datos pues hay un campo mas: `FECHA_CORTE`
+
+
 ## Información relevante
 
 Fuentes de datos:

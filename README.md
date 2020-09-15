@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-09-14 22:21:59 UTC
+**Última actualización**: 2020-09-15 16:18:20 UTC
 
 Notas
 -----
@@ -67,6 +67,11 @@ Notas
 -   Las fechas en los registros ha cambiado del formato DD/MM/YYY (y
     algunos MM/DD/YYYY) a YYYYMMDD
 
+**2020-09-14**
+
+-   Modificado el código de proceso de datos pues hay un campo mas:
+    `FECHA_CORTE`
+
 Información relevante
 ---------------------
 
@@ -108,7 +113,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Date</td>
-<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor</td>
@@ -116,7 +121,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">________________________</td>
@@ -174,6 +179,15 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">fecha_corte</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">fecha_resultado</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
@@ -245,19 +259,6 @@ Luego del primer paso de limpieza de datos:
 **Variable type: numeric**
 
 <table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 9%" />
-<col style="width: 13%" />
-<col style="width: 11%" />
-<col style="width: 5%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 5%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -275,19 +276,6 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">fecha_corte</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: left;">▁▁▇▁▁</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">150</td>
 <td style="text-align: right;">1</td>
@@ -334,7 +322,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Date</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor</td>
@@ -342,7 +330,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">________________________</td>
@@ -400,6 +388,15 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">fecha_corte</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">fecha_fallecimiento</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -408,7 +405,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">2020-06-20</td>
 <td style="text-align: right;">178</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">fecha_nac</td>
 <td style="text-align: right;">2618</td>
 <td style="text-align: right;">0.91</td>
@@ -471,20 +468,7 @@ Luego del primer paso de limpieza de datos:
 
 **Variable type: numeric**
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 8%" />
-<col style="width: 11%" />
-<col style="width: 10%" />
-<col style="width: 5%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 7%" />
-<col style="width: 10%" />
-<col style="width: 10%" />
-<col style="width: 5%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -502,19 +486,6 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">fecha_corte</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: left;">▁▁▇▁▁</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
@@ -527,7 +498,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">108.00</td>
 <td style="text-align: left;">▁▁▆▇▁</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">edad_calc</td>
 <td style="text-align: right;">2618</td>
 <td style="text-align: right;">0.91</td>
@@ -574,7 +545,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Date</td>
-<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">factor</td>
@@ -582,7 +553,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="odd">
 <td style="text-align: left;">numeric</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">________________________</td>
@@ -650,6 +621,15 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">fecha_corte.x</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">fecha_resultado</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
@@ -657,6 +637,15 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">2020-08-31</td>
 <td style="text-align: left;">2020-05-24</td>
 <td style="text-align: right;">177</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fecha_corte.y</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: left;">2020-09-12</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fecha_fallecimiento</td>
@@ -739,19 +728,6 @@ Luego del primer paso de limpieza de datos:
 **Variable type: numeric**
 
 <table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 8%" />
-<col style="width: 11%" />
-<col style="width: 9%" />
-<col style="width: 4%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 4%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -769,19 +745,6 @@ Luego del primer paso de limpieza de datos:
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">fecha_corte.x</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: left;">▁▁▇▁▁</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
@@ -793,19 +756,6 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">66.00</td>
 <td style="text-align: right;">104.00</td>
 <td style="text-align: left;">▁▁▇▅▁</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">fecha_corte.y</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: right;">20200912.00</td>
-<td style="text-align: left;">▁▁▇▁▁</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">edad_calc</td>

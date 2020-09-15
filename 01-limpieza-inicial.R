@@ -6,6 +6,7 @@ library(tidyverse)
 casos <- read_csv(
   "datos/positivos_covid-utf8.csv",
   col_types = cols(
+      FECHA_CORTE = col_date(format = "%Y%m%d"),
       UUID = col_character(),
       DEPARTAMENTO = col_character(),
       PROVINCIA = col_character(),
@@ -18,18 +19,7 @@ casos <- read_csv(
     na = c("", "NA", "NULL")
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO)#,
-	# errores de fecha detectados 2020-06-23
-# 	FECHA_RESULTADO = if_else(
-# 	  FECHA_RESULTADO == lubridate::ymd("2020-12-06"),
-# 	  lubridate::ymd("2020-06-12"),
-# 	  FECHA_RESULTADO
-# 	),
-# 	FECHA_RESULTADO = if_else(
-# 	  FECHA_RESULTADO == lubridate::ymd("2020-11-06"),
-# 	  lubridate::ymd("2020-06-11"),
-# 	  FECHA_RESULTADO
-# 	)
+    SEXO = str_to_title(SEXO)
   ) %>%
   mutate_at(
     vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX),
@@ -50,6 +40,7 @@ file.remove("datos/positivos_covid-utf8.csv")
 fallecimientos <- read_csv(
   "datos/fallecidos_covid-utf8.csv",
   col_types = cols(
+    FECHA_CORTE = col_date(format = "%Y%m%d"),
     UUID = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%Y%m%d"),
     EDAD_DECLARADA = col_number(),
