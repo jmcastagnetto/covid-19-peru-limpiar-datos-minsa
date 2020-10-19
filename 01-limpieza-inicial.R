@@ -66,7 +66,7 @@ fallecimientos <- read_csv(
 
 write_csv(
   fallecimientos,
-  path = "datos/fallecidos_covid-utf8-limpio.csv"
+  file = "datos/fallecidos_covid-utf8-limpio.csv"
 )
 
 # limpiar archivos extra
@@ -102,7 +102,7 @@ reconstruido <- reconstruido %>%
 
 write_csv(
   reconstruido,
-  path = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
+  file = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
 )
 
 save(
