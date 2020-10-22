@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-10-20 22:07:56 UTC
+**Última actualización**: 2020-10-22 00:44:05 UTC
 
 Notas
 -----
@@ -93,7 +93,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">868675</td>
+<td style="text-align: left;">870876</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -157,7 +157,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">868675</td>
+<td style="text-align: right;">870876</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -182,9 +182,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -192,9 +192,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-06</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: left;">2020-07-31</td>
-<td style="text-align: right;">226</td>
+<td style="text-align: right;">227</td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +219,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">26</td>
-<td style="text-align: left;">LIM: 364277, ARE: 43500, PIU: 37369, CAL: 35477</td>
+<td style="text-align: left;">LIM: 365176, ARE: 43529, PIU: 37433, CAL: 35649</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -227,7 +227,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 338706, EN : 45773, ARE: 37799, CAL: 33659</td>
+<td style="text-align: left;">LIM: 339548, EN : 45909, ARE: 37826, CAL: 33831</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -235,7 +235,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1629</td>
-<td style="text-align: left;">EN : 45773, SAN: 33417, LIM: 30419, SAN: 22331</td>
+<td style="text-align: left;">EN : 45909, SAN: 33453, LIM: 30465, SAN: 22373</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -243,7 +243,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">PR: 672407, PCR: 196268</td>
+<td style="text-align: left;">PR: 674191, PCR: 196685</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -251,7 +251,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 456297, Fem: 412378</td>
+<td style="text-align: left;">Mas: 457249, Fem: 413627</td>
 </tr>
 </tbody>
 </table>
@@ -279,8 +279,8 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">30</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">42.32</td>
-<td style="text-align: right;">17.83</td>
+<td style="text-align: right;">42.31</td>
+<td style="text-align: right;">17.84</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">29</td>
 <td style="text-align: right;">41</td>
@@ -302,7 +302,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">33759</td>
+<td style="text-align: left;">33820</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -366,7 +366,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">33759</td>
+<td style="text-align: right;">33820</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -391,9 +391,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -401,13 +401,13 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">2020-03-18</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: left;">2020-06-26</td>
-<td style="text-align: right;">213</td>
+<td style="text-align: right;">214</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fecha_nac</td>
-<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2076</td>
 <td style="text-align: right;">0.94</td>
 <td style="text-align: left;">1912-03-19</td>
 <td style="text-align: left;">2020-08-20</td>
@@ -437,7 +437,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">Mas: 23463, Fem: 10286, 11: 7, 10: 3</td>
+<td style="text-align: left;">Mas: 23497, Fem: 10313, 11: 7, 10: 3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">departamento</td>
@@ -445,7 +445,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 15178, LA : 2263, PIU: 2008, CAL: 1819</td>
+<td style="text-align: left;">LIM: 15212, LA : 2264, PIU: 2009, CAL: 1820</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">provincia</td>
@@ -453,15 +453,15 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">0.96</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 13465, CAL: 1658, TRU: 1573, ARE: 1248</td>
+<td style="text-align: left;">LIM: 13497, CAL: 1659, TRU: 1574, ARE: 1252</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">distrito</td>
 <td style="text-align: right;">749</td>
 <td style="text-align: right;">0.98</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">1108</td>
-<td style="text-align: left;">SAN: 1527, LIM: 1117, CAL: 1054, SAN: 955</td>
+<td style="text-align: right;">1109</td>
+<td style="text-align: left;">SAN: 1531, LIM: 1119, CAL: 1055, SAN: 959</td>
 </tr>
 </tbody>
 </table>
@@ -490,7 +490,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: right;">65.91</td>
-<td style="text-align: right;">14.38</td>
+<td style="text-align: right;">14.39</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">57.00</td>
 <td style="text-align: right;">67.00</td>
@@ -500,7 +500,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="even">
 <td style="text-align: left;">edad_calc</td>
-<td style="text-align: right;">2015</td>
+<td style="text-align: right;">2076</td>
 <td style="text-align: right;">0.94</td>
 <td style="text-align: right;">66.42</td>
 <td style="text-align: right;">14.33</td>
@@ -525,7 +525,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">634829</td>
+<td style="text-align: left;">634867</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -589,7 +589,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">202709</td>
+<td style="text-align: right;">202734</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -624,9 +624,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte.x</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -642,9 +642,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte.y</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
-<td style="text-align: left;">2020-10-17</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
+<td style="text-align: left;">2020-10-18</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -688,7 +688,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 490588, CAL: 48881, LA : 15802, LAM: 12425</td>
+<td style="text-align: left;">LIM: 490604, CAL: 48889, LA : 15802, LAM: 12425</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -696,7 +696,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">158</td>
-<td style="text-align: left;">LIM: 490588, CAL: 48881, TRU: 15009, CHI: 11684</td>
+<td style="text-align: left;">LIM: 490604, CAL: 48889, TRU: 15009, CHI: 11684</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -704,7 +704,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">544</td>
-<td style="text-align: left;">SAN: 123298, LIM: 60752, SAN: 51327, COM: 41981</td>
+<td style="text-align: left;">SAN: 123299, LIM: 60761, SAN: 51327, COM: 41981</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -712,7 +712,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">PR: 443882, PCR: 190947</td>
+<td style="text-align: left;">PR: 443920, PCR: 190947</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -720,7 +720,7 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 494197, Fem: 140632, 10: 0, 11: 0</td>
+<td style="text-align: left;">Mas: 494223, Fem: 140644, 10: 0, 11: 0</td>
 </tr>
 </tbody>
 </table>
@@ -787,7 +787,7 @@ Luego del primer paso de limpieza de datos:
 </table>
 
 Hay coincidencias entre casos y fallecimientos, usando edad, sexo y
-lugar en 92211 casos reconstruídos.
+lugar en 92230 casos reconstruídos.
 
 Gráficos
 --------
