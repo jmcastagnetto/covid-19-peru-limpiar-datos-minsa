@@ -3,7 +3,7 @@ library(tidyverse)
 
 # casos -------------------------------------------------------------------
 
-casos <- read_csv(
+casos <- read_csv2(
   "datos/positivos_covid-utf8.csv",
   col_types = cols(
       FECHA_CORTE = col_date(format = "%Y%m%d"),
@@ -33,11 +33,11 @@ write_csv(
 )
 
 # limpiar archivos extra
-file.remove("datos/positivos_covid-utf8.csv")
+#file.remove("datos/positivos_covid-utf8.csv")
 
 # fallecimientos ----------------------------------------------------------
 
-fallecimientos <- read_csv(
+fallecimientos <- read_csv2(
   "datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
@@ -70,7 +70,7 @@ write_csv(
 )
 
 # limpiar archivos extra
-file.remove("datos/fallecidos_covid-utf8.csv")
+#file.remove("datos/fallecidos_covid-utf8.csv")
 
 # unir datos --------------------------------------------------------------
 

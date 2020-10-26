@@ -66,6 +66,10 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 
 - Modificado el código de proceso de datos pues hay un campo mas: `FECHA_CORTE`
 
+**2020-10-25**
+
+- Tanto los datos de casos positivos, como los de fallecimentos, tienen ahora un formato distinto, en lugar de usar coma (",") para separar campos, hoy aparecen con punto y coma (";")
+
 
 ## Información relevante
 
