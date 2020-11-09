@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-11-05 01:35:21 UTC
+**Última actualización**: 2020-11-09 02:56:02 UTC
 
 Notas
 -----
@@ -77,6 +77,17 @@ Notas
 -   Tanto los datos de casos positivos, como los de fallecimentos,
     tienen ahora un formato distinto, en lugar de usar coma (“,”) para
     separar campos, hoy aparecen con punto y coma (“;”)
+
+**2020-11-08**
+
+-   Al menos desde el 2020-11-04, no han habido actualizaciones de los
+    datos abiertos.
+-   El hash sha1 de los archivos no ha cambiado hasta ahora:
+
+<!-- -->
+
+    26ea469be125d1d0c4e8f9dcedf6692ece12acbb  datos/originales/fallecidos_covid.csv
+    ada0b5da4371b9308e4170ecb53014843e4cb3a2  datos/originales/positivos_covid.csv
 
 Información relevante
 ---------------------
