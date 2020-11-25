@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# ignore intermediate files
+datos/fallecidos_covid-utf8.csv.gz
+datos/positivos_covid-utf8.csv.gz
