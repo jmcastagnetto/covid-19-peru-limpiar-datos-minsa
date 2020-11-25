@@ -13,6 +13,11 @@ then
 	echo "Datos no han cambiado"
 	rm datos/originales/*.csv
 else
+	# archivos ahora parece que a veces vienen en UFT-8 con BOM
+	# lo cual es innecesario, asi que se necesita remover esto
+	sed -i 's/\xef\xbb\xbf//' datos/originales/positivos_covid.csv
+	sed -i 's/\xef\xbb\xbf//' datos/originales/fallecidos_covid.csv
+
 	sha1sum datos/originales/*.csv > sha1sum-orig.txt
 	# Pre-proceso de los datos de casos
 	iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
