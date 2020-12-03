@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2020-12-02 21:54:27 UTC
+**Última actualización**: 2020-12-03 23:45:52 UTC
 
 Notas
 -----
@@ -413,9 +413,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: left;">2020-11-28</td>
-<td style="text-align: left;">2020-11-28</td>
-<td style="text-align: left;">2020-11-28</td>
+<td style="text-align: left;">2020-12-09</td>
+<td style="text-align: left;">2020-12-09</td>
+<td style="text-align: left;">2020-12-09</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -664,9 +664,9 @@ Luego del primer paso de limpieza de datos:
 <td style="text-align: left;">fecha_corte.y</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-11-28</td>
-<td style="text-align: left;">2020-11-28</td>
-<td style="text-align: left;">2020-11-28</td>
+<td style="text-align: left;">2020-12-09</td>
+<td style="text-align: left;">2020-12-09</td>
+<td style="text-align: left;">2020-12-09</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
