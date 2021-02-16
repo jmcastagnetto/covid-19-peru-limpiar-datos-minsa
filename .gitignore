@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 
+datos/*.Rdata
 tests/*
 
 # ignore intermediate files
