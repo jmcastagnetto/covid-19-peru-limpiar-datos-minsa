@@ -1,5 +1,6 @@
+library(rmarkdown)
 # regenerate README.md
-rmarkdown::render(
+render(
   input = "README.Rmd",
   output_format = "md_document",
   output_file = "README.md"
