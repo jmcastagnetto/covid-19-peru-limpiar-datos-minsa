@@ -40,4 +40,8 @@ else
 
 	# cacular y guardar los sha256 de los archivos de datos
 	sha256sum -b datos/*.csv.gz datos/originales/*.csv.gz > sha256sum-archivos-datos.txt
+
+	now=`date -I`
+	git commit -a -m "Actualizado el $now"
+	HOME=/home/jesus git push origin main
 fi
