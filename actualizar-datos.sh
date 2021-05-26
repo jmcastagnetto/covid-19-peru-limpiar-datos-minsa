@@ -1,19 +1,29 @@
 #! /bin/bash -x
 
+prev_pos=`cat positivos-size.txt`
+curr_pos=`curl --silent --insecure --head https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download | grep -FI content-length | cut -d ' ' -f2`
+prev_fal=`cat fallecidos-size.txt`
+curr_fal=`curl --silent --insecure --head  https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download | grep -FI content-length | cut -d ' ' -f2`
+
 # descargar archivos
-wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6447/download -O datos/originales/positivos_covid.csv
-wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6460/download -O datos/originales/fallecidos_covid.csv
+#wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6447/download -O datos/originales/positivos_covid.csv
+#wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6460/download -O datos/originales/fallecidos_covid.csv
 
 # para ver si los archivos descargados han cambiado
+# sha1sum --status -c sha1sum-orig.txt
 
-sha1sum --status -c sha1sum-orig.txt
-
-if [ $? -eq 0 ]
+#if [ $? -eq 0 ]
+if [ curr_pos == prev_pos ] && [ curr_fal == prev_fal ]
 then
 	echo "Datos no han cambiado"
 	rm datos/originales/*.csv
 else
-	sha1sum datos/originales/*.csv > sha1sum-orig.txt
+	echo $curr_pos > positivos-size.txt
+	echo $curr_fal > fallecidos-size.txt
+	#sha1sum datos/originales/*.csv > sha1sum-orig.txt
+
+    curl --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
+    curl --insecure --parallel https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download --output datos/originales/fallecidos_covid.csv
 
 	# archivos ahora parece que a veces vienen en UFT-8 con BOM
 	# lo cual es innecesario, asi que se necesita remover esto
