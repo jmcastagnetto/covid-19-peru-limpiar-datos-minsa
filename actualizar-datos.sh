@@ -1,8 +1,8 @@
 #! /bin/bash -x
 
 # descargar archivos
-wget https://www.datosabiertos.gob.pe/node/6447/download -O datos/originales/positivos_covid.csv
-wget https://www.datosabiertos.gob.pe/node/6460/download -O datos/originales/fallecidos_covid.csv
+wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6447/download -O datos/originales/positivos_covid.csv
+wget --no-check-certificate https://www.datosabiertos.gob.pe/node/6460/download -O datos/originales/fallecidos_covid.csv
 
 # para ver si los archivos descargados han cambiado
 
