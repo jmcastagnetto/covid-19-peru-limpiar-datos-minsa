@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2021-05-26 16:55:54 UTC
+**Última actualización**: 2021-05-27 03:03:59 UTC
 
 ## Notas
 
@@ -324,7 +324,7 @@ Data summary
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">68053</td>
+<td style="text-align: left;">68470</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -390,7 +390,7 @@ Data summary
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">68053</td>
+<td style="text-align: right;">68470</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -400,7 +400,7 @@ Data summary
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1584</td>
+<td style="text-align: right;">1588</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -425,9 +425,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: left;">2021-05-22</td>
-<td style="text-align: left;">2021-05-22</td>
-<td style="text-align: left;">2021-05-22</td>
+<td style="text-align: left;">2021-05-24</td>
+<td style="text-align: left;">2021-05-24</td>
+<td style="text-align: left;">2021-05-24</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -435,13 +435,13 @@ Data summary
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">2020-03-18</td>
-<td style="text-align: left;">2021-05-22</td>
-<td style="text-align: left;">2020-10-22</td>
-<td style="text-align: right;">431</td>
+<td style="text-align: left;">2021-05-24</td>
+<td style="text-align: left;">2020-10-26</td>
+<td style="text-align: right;">433</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fecha_nac</td>
-<td style="text-align: right;">36460</td>
+<td style="text-align: right;">36877</td>
 <td style="text-align: right;">0.46</td>
 <td style="text-align: left;">1912-03-19</td>
 <td style="text-align: left;">2020-08-20</td>
@@ -471,7 +471,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 44815, Fem: 23238</td>
+<td style="text-align: left;">Mas: 45062, Fem: 23408</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">departamento</td>
@@ -479,7 +479,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 29423, LA : 4145, CAL: 3424, PIU: 3293</td>
+<td style="text-align: left;">LIM: 29552, LA : 4168, CAL: 3436, PIU: 3316</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">provincia</td>
@@ -487,15 +487,15 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">202</td>
-<td style="text-align: left;">LIM: 26354, CAL: 3389, TRU: 2835, ARE: 2312</td>
+<td style="text-align: left;">LIM: 26466, CAL: 3401, TRU: 2848, ARE: 2345</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">distrito</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
-<td style="text-align: right;">1502</td>
-<td style="text-align: left;">SAN: 2777, LIM: 2035, CAL: 1965, SAN: 1900</td>
+<td style="text-align: right;">1506</td>
+<td style="text-align: left;">SAN: 2788, LIM: 2043, CAL: 1972, SAN: 1905</td>
 </tr>
 </tbody>
 </table>
@@ -523,7 +523,7 @@ Data summary
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1.00</td>
-<td style="text-align: right;">65.60</td>
+<td style="text-align: right;">65.59</td>
 <td style="text-align: right;">15.01</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">57.00</td>
@@ -534,7 +534,7 @@ Data summary
 </tr>
 <tr class="even">
 <td style="text-align: left;">edad_calc</td>
-<td style="text-align: right;">36460</td>
+<td style="text-align: right;">36877</td>
 <td style="text-align: right;">0.46</td>
 <td style="text-align: right;">66.42</td>
 <td style="text-align: right;">14.34</td>
@@ -688,9 +688,9 @@ Data summary
 <td style="text-align: left;">fecha_corte.y</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2021-05-22</td>
-<td style="text-align: left;">2021-05-22</td>
-<td style="text-align: left;">2021-05-22</td>
+<td style="text-align: left;">2021-05-24</td>
+<td style="text-align: left;">2021-05-24</td>
+<td style="text-align: left;">2021-05-24</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
