@@ -22,8 +22,8 @@ else
 	echo $curr_fal > fallecidos-size.txt
 	#sha1sum datos/originales/*.csv > sha1sum-orig.txt
 
-    curl --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
-    curl --insecure --parallel https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download --output datos/originales/fallecidos_covid.csv
+    curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
+    curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download --output datos/originales/fallecidos_covid.csv
 
 	# archivos ahora parece que a veces vienen en UFT-8 con BOM
 	# lo cual es innecesario, asi que se necesita remover esto
