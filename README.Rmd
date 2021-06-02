@@ -137,11 +137,12 @@ plot_casos <- ggplot(
   aes(x = fecha_resultado, y = n, group = sexo, fill = sexo)
 ) +
   geom_col() +
+  scale_x_date() +
   labs(
     fill = "Sexo",
     x = "Fecha de resultado",
     y = "",
-    title = "Positivos COVID-19 por día, de \"positivos_covid.csv\" del MINSA",
+    title = "Positivos COVID-19 por día (MINSA)",
     subtitle = paste0(
       "Del ", min(plot_df$fecha_resultado), " al ",
       max(plot_df$fecha_resultado),
@@ -176,13 +177,14 @@ plot_casos_acum <- ggplot(
   plot_acum_df,
   aes(x = fecha_resultado, y = n_acum)
 ) +
-  geom_point(size = .5) +
+ # geom_point(size = .5) +
   geom_line() +
   scale_y_continuous(labels = scales::comma) +
+  scale_x_date() +
   labs(
     x = "Fecha de resultado",
     y = "",
-    title = "Positivos COVID-19 acumulados, de \"positivos_covid.csv\" del MINSA",
+    title = "Positivos COVID-19 acumulados (MINSA)",
     subtitle = paste0(
       "Del ", min(plot_df$fecha_resultado), " al ",
       max(plot_df$fecha_resultado),
@@ -203,7 +205,7 @@ ggsave(
   height = 4
 )
 
-ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv.xz")
+ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv")
 
 ts_casos_dep_plot <- ggplot(
   ts_casos_dep,
@@ -213,15 +215,17 @@ ts_casos_dep_plot <- ggplot(
              alpha = .7, size = .5,
              show.legend = FALSE) +
   geom_smooth(method = "gam") +
+  scale_x_date() +
   theme_minimal() +
   theme(
     plot.title.position = "plot",
-    axis.title.x.bottom = element_text(hjust = 1)
+    axis.title.x.bottom = element_text(hjust = 1),
+    axis.text.x.bottom = element_text(angle = 90, hjust = 1)
   ) +
   labs(
     x = "Fecha de resultado",
     y = "",
-    title = "Positivos COVID-19 diarios por Departmento, de \"positivos_covid.csv\" del MINSA",
+    title = "Positivos COVID-19 diarios por Departmento (MINSA)",
     subtitle = paste0(
       "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
       max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
@@ -258,11 +262,12 @@ plot_fallecimientos <- ggplot(
       group = sexo, fill = sexo)
 ) +
   geom_col() +
+  scale_x_date() +
   labs(
     fill = "Sexo",
     x = "Fecha de fallecimiento",
     y = "",
-    title = "Fallecimientos COVID-19 por día, de \"fallecidos_covid.csv\" del MINSA",
+    title = "Fallecimientos COVID-19 por día (MINSA)",
     subtitle = paste0(
       "Del ", min(plot_fall_df$fecha_fallecimiento), " al ",
       max(plot_fall_df$fecha_fallecimiento),
@@ -274,7 +279,8 @@ plot_fallecimientos <- ggplot(
   theme(
     plot.title.position = "plot",
     legend.position = c(.2, .8),
-    axis.title.x.bottom = element_text(hjust = 1)
+    axis.title.x.bottom = element_text(hjust = 1),
+    axis.text.x.bottom = element_text(angle = 90, hjust = 1)
   )
 
 ggsave(
@@ -302,7 +308,7 @@ fall_clas_plot <- ggplot(
     fill = "Criterio",
     x = "Fecha de fallecimiento",
     y = "",
-    title = "Fallecimientos COVID-19 por día, de \"fallecidos_covid.csv\" del MINSA",
+    title = "Fallecimientos COVID-19 por día (MINSA)",
     subtitle = paste0(
       "Del ", min(plot_fall_df$fecha_fallecimiento), " al ",
       max(plot_fall_df$fecha_fallecimiento),
@@ -337,13 +343,13 @@ plot_fallecimientos_acum <- ggplot(
   plot_fall_acum_df,
   aes(x = fecha_fallecimiento, y = n_acum)
 ) +
-  geom_point(size = .5) +
+  #geom_point(size = .5) +
   geom_line() +
   scale_y_continuous(labels = scales::comma) +
   labs(
     x = "Fecha de fallecimiento",
     y = "",
-    title = "Fallecimientos COVID-19 acumulados, de \"fallecidos_covid.csv\" del MINSA",
+    title = "Fallecimientos COVID-19 acumulados (MINSA)",
     subtitle = paste0(
       "Del ", min(plot_df$fecha_resultado), " al ",
       max(plot_df$fecha_resultado),
@@ -364,7 +370,7 @@ ggsave(
   height = 4
 )
 
-ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv.xz")
+ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv")
 
 ts_fallecimientos_dep_plot <- ggplot(
   ts_fallecimientos_dep,
@@ -373,15 +379,17 @@ ts_fallecimientos_dep_plot <- ggplot(
   geom_point(aes(color = departamento), 
              alpha = .7, size = .5, show.legend = FALSE) +
   geom_smooth(method = "gam") +
+  scale_x_date() +
   theme_minimal() +
   theme(
     plot.title.position = "plot",
-    axis.title.x.bottom = element_text(hjust = 1)
+    axis.title.x.bottom = element_text(hjust = 1),
+    axis.text.x.bottom = element_text(angle = 90, hjust = 1)
   ) +
   labs(
     x = "Fecha de fallecimiento",
     y = "",
-    title = "Fallecimientos COVID-19 diarios por Departmento, de \"fallecidos_covid.csv\" del MINSA",
+    title = "Fallecimientos COVID-19 diarios por Departmento (MINSA)",
     subtitle = paste0(
       "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
       max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
