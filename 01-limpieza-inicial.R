@@ -1,9 +1,9 @@
 library(tidyverse)
-
+library(vroom)
 
 # casos -------------------------------------------------------------------
 
-casos <- read_csv2(
+casos <- vroom(
   "datos/positivos_covid-utf8.csv",
   col_types = cols(
       FECHA_CORTE = col_date(format = "%Y%m%d"),
@@ -27,9 +27,9 @@ casos <- read_csv2(
   ) %>%
   janitor::clean_names()
 
-write_csv(
+vroom_write(
   casos,
-  path = "datos/positivos_covid-utf8-limpio.csv"
+  path = "datos/positivos_covid-utf8-limpio.csv.gz"
 )
 
 # limpiar archivos extra
@@ -37,7 +37,7 @@ write_csv(
 
 # fallecimientos ----------------------------------------------------------
 
-fallecimientos <- read_csv2(
+fallecimientos <- vroom(
   "datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
@@ -45,7 +45,8 @@ fallecimientos <- read_csv2(
     FECHA_FALLECIMIENTO = col_date(format = "%Y%m%d"),
     EDAD_DECLARADA = col_number(),
     SEXO = col_character(),
-    FECHA_NAC = col_date(format = "%Y%m%d"),
+    CLASIFICACION_DEF = col_character(),
+    UBIGEO = col_character(),
     DEPARTAMENTO = col_character(),
     PROVINCIA = col_character(),
     DISTRITO = col_character()
@@ -55,19 +56,25 @@ fallecimientos <- read_csv2(
     EDAD = EDAD_DECLARADA
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO),
-    EDAD_CALC = round(lubridate::interval(FECHA_NAC, FECHA_FALLECIMIENTO) / lubridate::years(), 2)
+    SEXO = str_to_title(SEXO)
   ) %>%
   mutate_at(
-    vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO),
+    vars(SEXO, CLASIFICACION_DEF,
+         UBIGEO, DEPARTAMENTO,
+         PROVINCIA, DISTRITO),
     factor
   ) %>%
   janitor::clean_names()
 
-write_csv(
+vroom_write(
   fallecimientos,
-  file = "datos/fallecidos_covid-utf8-limpio.csv"
+  path = "datos/fallecidos_covid-utf8-limpio.csv.gz"
 )
+
+fid <- unique(fallecimientos$uuid)
+pid <- unique(casos$uuid)
+
+sum(fid %in% pid)
 
 # limpiar archivos extra
 #file.remove("datos/fallecidos_covid-utf8.csv")
@@ -80,8 +87,7 @@ reconstruido <- casos %>%
     by = c("sexo", "departamento", "provincia", "distrito", "edad")
   ) %>%
   filter(!is.na(uuid.y) &
-           fecha_resultado < fecha_fallecimiento &
-           fecha_nac < fecha_resultado) %>%
+           fecha_resultado < fecha_fallecimiento) %>%
   distinct() %>%
   rename(
     uuid_caso = uuid.x,
@@ -100,9 +106,9 @@ reconstruido <- reconstruido %>%
     by = "uuid_caso"
   )
 
-write_csv(
+vroom_write(
   reconstruido,
-  file = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
+  path = "datos/casos_fallecimientos_reconstruccion_posible.csv.gz"
 )
 
 save(

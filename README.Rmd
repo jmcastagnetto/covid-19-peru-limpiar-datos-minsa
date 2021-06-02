@@ -85,6 +85,11 @@ load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
 ada0b5da4371b9308e4170ecb53014843e4cb3a2  datos/originales/positivos_covid.csv
 ```
 
+**2021-06-02**
+
+- A partir de hoy los datos de fallecidos por COVID-19 usan los criterios publicados en [Criterios técnicos para actualizar la cifra de fallecidos por COVID-19 en el Perú](https://www.gob.pe/institucion/pcm/informes-publicaciones/1943691-criterios-tecnicos-para-actualizar-la-cifra-de-fallecidos-por-covid-19-en-el-peru), y se ha cambiado la estructura de los datos. Ahora los datos de fallecidos indican en un campo el criterio empleado para la clasificación.
+
+
 ## Información relevante
 
 Fuentes de datos:
@@ -107,13 +112,11 @@ skimr::skim(casos)
 skimr::skim(fallecimientos)
 ```
 
-### Coincidencias reconstruídas
+### Reconstrucción de casos a fallecidos
 
 ```{r comment=""}
 skimr::skim(reconstruido)
 ```
-
-Hay coincidencias entre casos y fallecimientos, usando edad, sexo y lugar en `r nrow(filter(reconstruido, coincidencias == 1))` casos reconstruídos.
 
 ## Gráficos
 
@@ -199,16 +202,16 @@ ggsave(
   height = 4
 )
 
-ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv")
+ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv.gz")
 
 ts_casos_dep_plot <- ggplot(
   ts_casos_dep,
   aes(x = fecha_resultado, y = n, group = departamento)
 ) +
   geom_point(aes(color = departamento), 
-             aes = .7, size = .5,
+             alpha = .7, size = .5,
              show.legend = FALSE) +
-  geom_smooth(method = "glm", formula = y ~ poly(x, 3)) +
+  geom_smooth(method = "gam") +
   theme_minimal() +
   theme(
     plot.title.position = "plot",
@@ -280,6 +283,46 @@ ggsave(
   height = 4
 )
 
+fall_clas_df <- fallecimientos %>% 
+  mutate(
+    clasificacion_def = factor(clasificacion_def) %>% 
+      fct_rev()
+  ) %>% 
+  group_by(fecha_fallecimiento, clasificacion_def) %>% 
+  tally() 
+
+fall_clas_plot <- ggplot(
+  fall_clas_df,
+  aes(x = fecha_fallecimiento, y = n, fill = clasificacion_def)
+) +
+  geom_area(color = "grey30", size = .2) +
+  scale_fill_brewer(type = "qual", palette = "Dark2") +
+    labs(
+    fill = "Criterio",
+    x = "Fecha de fallecimiento",
+    y = "",
+    title = "Fallecimientos COVID-19 por día, de \"fallecidos_covid.csv\" del MINSA",
+    subtitle = paste0(
+      "Del ", min(plot_fall_df$fecha_fallecimiento), " al ",
+      max(plot_fall_df$fecha_fallecimiento),
+      ". Actualizado el: ",
+                      lubridate::now(tzone = "UTC"), " UTC"),
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title.position = "plot",
+    legend.position = c(.1, .8),
+    axis.title.x.bottom = element_text(hjust = 1)
+  )
+
+ggsave(
+  plot = fall_clas_plot,
+  filename = "plots/fallecimientos-diarios-por-criterio.png",
+  width = 12,
+  height = 7
+)
+
 plot_fall_acum_df <- fallecimientos %>% 
   group_by(fecha_fallecimiento) %>% 
   tally() %>% 
@@ -320,15 +363,15 @@ ggsave(
   height = 4
 )
 
-ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv")
+ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv.gz")
 
 ts_fallecimientos_dep_plot <- ggplot(
   ts_fallecimientos_dep,
   aes(x = fecha_fallecimiento, y = n, group = departamento)
 ) +
   geom_point(aes(color = departamento), 
-             aes = .7, size = .5, show.legend = FALSE) +
-  geom_smooth(method = "glm", formula = y ~ poly(x, 3)) +
+             alpha = .7, size = .5, show.legend = FALSE) +
+  geom_smooth(method = "gam") +
   theme_minimal() +
   theme(
     plot.title.position = "plot",
@@ -359,6 +402,8 @@ ggsave(
 
 
 !["Fallecimientos por día. MINSA"](plots/fallecimientos-por-dia-minsa.png)
+
+!["Fallecimentos por día, por criterio usado"](plots/fallecimientos-diarios-por-criterio.png)
 
 !["Fallecimientos acumulados. MINSA"](plots/fallecimientos-acumulados-minsa.png)
 
@@ -406,7 +451,6 @@ ggsave(
   width = 6.5,
   height = 4
 )
-
 
 ```
 
