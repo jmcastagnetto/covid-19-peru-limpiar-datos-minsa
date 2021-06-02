@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2021-06-02 03:03:16 UTC
+**Última actualización**: 2021-06-02 15:04:03 UTC
 
 ## Notas
 
@@ -113,7 +113,7 @@ Luego del primer paso de limpieza de datos:
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">1955469</td>
+<td style="text-align: left;">1961087</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -179,7 +179,7 @@ Data summary
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1955469</td>
+<td style="text-align: right;">1961087</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -204,9 +204,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2021-05-29</td>
-<td style="text-align: left;">2021-05-29</td>
-<td style="text-align: left;">2021-05-29</td>
+<td style="text-align: left;">2021-05-31</td>
+<td style="text-align: left;">2021-05-31</td>
+<td style="text-align: left;">2021-05-31</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -214,9 +214,9 @@ Data summary
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-06</td>
-<td style="text-align: left;">2021-05-29</td>
-<td style="text-align: left;">2020-12-02</td>
-<td style="text-align: right;">448</td>
+<td style="text-align: left;">2021-05-31</td>
+<td style="text-align: left;">2020-12-04</td>
+<td style="text-align: right;">450</td>
 </tr>
 </tbody>
 </table>
@@ -241,7 +241,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">26</td>
-<td style="text-align: left;">LIM: 814120, CAL: 95176, ARE: 84313, PIU: 77925</td>
+<td style="text-align: left;">LIM: 815495, CAL: 95248, ARE: 84867, PIU: 78219</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -249,7 +249,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 747441, EN : 101612, CAL: 90737, ARE: 69203</td>
+<td style="text-align: left;">LIM: 748632, EN : 101908, CAL: 90805, ARE: 69631</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -257,7 +257,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1694</td>
-<td style="text-align: left;">EN : 101612, SAN: 70213, LIM: 68325, SAN: 49292</td>
+<td style="text-align: left;">EN : 101908, SAN: 70292, LIM: 68445, SAN: 49363</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -265,7 +265,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">PR: 920014, PCR: 582902, AG: 452553</td>
+<td style="text-align: left;">PR: 920952, PCR: 583967, AG: 456168</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -273,7 +273,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 1003317, Fem: 952151</td>
+<td style="text-align: left;">Mas: 1006133, Fem: 954953</td>
 </tr>
 </tbody>
 </table>
@@ -670,9 +670,9 @@ Data summary
 <td style="text-align: left;">fecha_corte.x</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2021-05-29</td>
-<td style="text-align: left;">2021-05-29</td>
-<td style="text-align: left;">2021-05-29</td>
+<td style="text-align: left;">2021-05-31</td>
+<td style="text-align: left;">2021-05-31</td>
+<td style="text-align: left;">2021-05-31</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
