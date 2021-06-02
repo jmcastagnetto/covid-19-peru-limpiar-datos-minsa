@@ -45,11 +45,11 @@ else
 	# Regenerar el README
 	Rscript build-readme.R
 
-	gzip -9f datos/*.csv 
-	gzip -9f datos/originales/*.csv
+	xz -T 3 -9e -f datos/*.csv 
+	xz -T 3 -9e -f datos/originales/*.csv
 
 	# cacular y guardar los sha256 de los archivos de datos
-	sha256sum -b datos/*.csv.gz datos/originales/*.csv.gz > sha256sum-archivos-datos.txt
+	sha256sum -b datos/*.csv.xz datos/originales/*.csv.xz > sha256sum-archivos-datos.txt
 
 	now=`date -I`
 	git commit -a -m "Actualizado el $now"

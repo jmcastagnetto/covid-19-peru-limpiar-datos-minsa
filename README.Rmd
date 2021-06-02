@@ -88,6 +88,7 @@ ada0b5da4371b9308e4170ecb53014843e4cb3a2  datos/originales/positivos_covid.csv
 **2021-06-02**
 
 - A partir de hoy los datos de fallecidos por COVID-19 usan los criterios publicados en [Criterios técnicos para actualizar la cifra de fallecidos por COVID-19 en el Perú](https://www.gob.pe/institucion/pcm/informes-publicaciones/1943691-criterios-tecnicos-para-actualizar-la-cifra-de-fallecidos-por-covid-19-en-el-peru), y se ha cambiado la estructura de los datos. Ahora los datos de fallecidos indican en un campo el criterio empleado para la clasificación.
+- Debido al tamaño de los nuevos archivos de datos, estoy cambiando de formato de compresión, usando ahora [xz](https://tukaani.org/xz/) en lugar de [gzip](https://en.wikipedia.org/wiki/Gzip)
 
 
 ## Información relevante
@@ -202,7 +203,7 @@ ggsave(
   height = 4
 )
 
-ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv.gz")
+ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv.xz")
 
 ts_casos_dep_plot <- ggplot(
   ts_casos_dep,
@@ -226,7 +227,7 @@ ts_casos_dep_plot <- ggplot(
       max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Línea usando: y = A + Bx + Cx² + Dx³ // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Línea usando un modelo GAM // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
   ) +
   facet_wrap(~departamento, scales = "free_y", ncol = 7) 
 
@@ -363,7 +364,7 @@ ggsave(
   height = 4
 )
 
-ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv.gz")
+ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv.xz")
 
 ts_fallecimientos_dep_plot <- ggplot(
   ts_fallecimientos_dep,
@@ -386,7 +387,7 @@ ts_fallecimientos_dep_plot <- ggplot(
       max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Línea usando: y = A + Bx + Cx² + Dx³ // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Línea usando un modelo GAM // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
   ) +
   facet_wrap(~departamento, scales = "free_y", nrow = 5) 
 
@@ -459,14 +460,14 @@ ggsave(
 
 Los archivos "limpios" son:
 
-- [datos/fallecidos_covid-utf8-limpio.csv.gz](datos/fallecidos_covid-utf8-limpio.csv.gz)
-- [datos/positivos_covid-utf8-limpio.csv.gz](datos/positivos_covid-utf8-limpio.csv.gz)
+- [datos/fallecidos_covid-utf8-limpio.csv.xz](datos/fallecidos_covid-utf8-limpio.csv.xz)
+- [datos/positivos_covid-utf8-limpio.csv.xz](datos/positivos_covid-utf8-limpio.csv.xz)
 
 Y algunos reconstruidos a partir de los anteriores:
 
-- [datos/casos_fallecimientos_reconstruccion_posible.csv.gz](datos/casos_fallecimientos_reconstruccion_posible.csv.gz)
-- [datos/timeseries-casos.csv.gz](datos/timeseries-casos.csv.gz)
-- [datos/timeseries-casos-lugares.csv.gz](datos/timeseries-casos-lugares.csv.gz)
-- [datos/timeseries-fallecimientos.csv.gz](datos/timeseries-fallecimientos.csv.gz)
-- [datos/timeseries-fallecimientos-lugares.csv.gz](datos/timeseries-fallecimientos-lugares.csv.gz)
+- [datos/casos_fallecimientos_reconstruccion_posible.csv.xz](datos/casos_fallecimientos_reconstruccion_posible.csv.xz)
+- [datos/timeseries-casos.csv.xz](datos/timeseries-casos.csv.xz)
+- [datos/timeseries-casos-lugares.csv.xz](datos/timeseries-casos-lugares.csv.xz)
+- [datos/timeseries-fallecimientos.csv.xz](datos/timeseries-fallecimientos.csv.xz)
+- [datos/timeseries-fallecimientos-lugares.csv.xz](datos/timeseries-fallecimientos-lugares.csv.xz)
 

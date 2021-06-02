@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2021-06-02 21:47:53 UTC
+**Última actualización**: 2021-06-02 22:22:23 UTC
 
 ## Notas
 
@@ -102,6 +102,9 @@
     y se ha cambiado la estructura de los datos. Ahora los datos de
     fallecidos indican en un campo el criterio empleado para la
     clasificación.
+-   Debido al tamaño de los nuevos archivos de datos, estoy cambiando de
+    formato de compresión, usando ahora [xz](https://tukaani.org/xz/) en
+    lugar de [gzip](https://en.wikipedia.org/wiki/Gzip)
 
 ## Información relevante
 
@@ -553,7 +556,7 @@ Data summary
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">2194424</td>
+<td style="text-align: left;">454570</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -619,7 +622,7 @@ Data summary
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">443832</td>
+<td style="text-align: right;">286902</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -629,7 +632,7 @@ Data summary
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">84911</td>
+<td style="text-align: right;">42760</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -665,8 +668,8 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-07</td>
 <td style="text-align: left;">2021-05-30</td>
-<td style="text-align: left;">2020-08-12</td>
-<td style="text-align: right;">445</td>
+<td style="text-align: left;">2020-10-04</td>
+<td style="text-align: right;">442</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fecha_corte.y</td>
@@ -681,25 +684,17 @@ Data summary
 <td style="text-align: left;">fecha_fallecimiento</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2020-03-26</td>
+<td style="text-align: left;">2020-03-28</td>
 <td style="text-align: left;">2021-05-31</td>
-<td style="text-align: left;">2021-03-13</td>
-<td style="text-align: right;">430</td>
+<td style="text-align: left;">2021-04-04</td>
+<td style="text-align: right;">425</td>
 </tr>
 </tbody>
 </table>
 
 **Variable type: factor**
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 9%" />
-<col style="width: 12%" />
-<col style="width: 7%" />
-<col style="width: 8%" />
-<col style="width: 46%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -717,7 +712,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">CAL: 650970, LA : 253331, LAM: 189565, ANC: 156595</td>
+<td style="text-align: left;">CAL: 46959, ARE: 37351, PIU: 34036, LA : 33538</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -725,7 +720,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">191</td>
-<td style="text-align: left;">CAL: 650970, TRU: 243279, CHI: 184188, SAN: 137009</td>
+<td style="text-align: left;">CAL: 46959, ARE: 33657, TRU: 27031, CHI: 20442</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -733,7 +728,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1172</td>
-<td style="text-align: left;">CAL: 506375, TRU: 209506, CHI: 164053, CHI: 100058</td>
+<td style="text-align: left;">BEL: 21677, CAL: 14078, TRU: 13338, CHI: 11731</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -741,7 +736,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">PR: 1354437, PCR: 587523, AG: 252464</td>
+<td style="text-align: left;">PR: 249937, PCR: 110417, AG: 94216</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -749,7 +744,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 1494776, Fem: 699648, Ind: 0</td>
+<td style="text-align: left;">Mas: 240318, Fem: 214252, Ind: 0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clasificacion_def</td>
@@ -757,7 +752,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Cri: 1072686, Cri: 442884, Cri: 331994, Cri: 147108</td>
+<td style="text-align: left;">Cri: 234596, Cri: 90027, Cri: 68412, Cri: 28942</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ubigeo</td>
@@ -765,7 +760,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1249</td>
-<td style="text-align: left;">701: 506375, 130: 209506, 140: 164053, 218: 100058</td>
+<td style="text-align: left;">701: 20379, 701: 14078, 130: 13338, 140: 11731</td>
 </tr>
 </tbody>
 </table>
@@ -793,27 +788,27 @@ Data summary
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">58.15</td>
-<td style="text-align: right;">13.29</td>
+<td style="text-align: right;">48.88</td>
+<td style="text-align: right;">15.53</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">49</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">48</td>
 <td style="text-align: right;">59</td>
-<td style="text-align: right;">67</td>
 <td style="text-align: right;">108</td>
-<td style="text-align: left;">▁▂▇▅▁</td>
+<td style="text-align: left;">▁▇▇▃▁</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">coincidencias</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">17.56</td>
-<td style="text-align: right;">19.49</td>
+<td style="text-align: right;">1.94</td>
+<td style="text-align: right;">0.81</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">23</td>
-<td style="text-align: right;">118</td>
-<td style="text-align: left;">▇▂▁▁▁</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">▇▁▇▁▆</td>
 </tr>
 </tbody>
 </table>
@@ -847,13 +842,13 @@ coincidentes”](plots/deteccion-fallecimiento-por-coincidentes.png)
 
 Los archivos “limpios” son:
 
--   [datos/fallecidos\_covid-utf8-limpio.csv.gz](datos/fallecidos_covid-utf8-limpio.csv.gz)
--   [datos/positivos\_covid-utf8-limpio.csv.gz](datos/positivos_covid-utf8-limpio.csv.gz)
+-   [datos/fallecidos\_covid-utf8-limpio.csv.xz](datos/fallecidos_covid-utf8-limpio.csv.xz)
+-   [datos/positivos\_covid-utf8-limpio.csv.xz](datos/positivos_covid-utf8-limpio.csv.xz)
 
 Y algunos reconstruidos a partir de los anteriores:
 
--   [datos/casos\_fallecimientos\_reconstruccion\_posible.csv.gz](datos/casos_fallecimientos_reconstruccion_posible.csv.gz)
--   [datos/timeseries-casos.csv.gz](datos/timeseries-casos.csv.gz)
--   [datos/timeseries-casos-lugares.csv.gz](datos/timeseries-casos-lugares.csv.gz)
--   [datos/timeseries-fallecimientos.csv.gz](datos/timeseries-fallecimientos.csv.gz)
--   [datos/timeseries-fallecimientos-lugares.csv.gz](datos/timeseries-fallecimientos-lugares.csv.gz)
+-   [datos/casos\_fallecimientos\_reconstruccion\_posible.csv.xz](datos/casos_fallecimientos_reconstruccion_posible.csv.xz)
+-   [datos/timeseries-casos.csv.xz](datos/timeseries-casos.csv.xz)
+-   [datos/timeseries-casos-lugares.csv.xz](datos/timeseries-casos-lugares.csv.xz)
+-   [datos/timeseries-fallecimientos.csv.xz](datos/timeseries-fallecimientos.csv.xz)
+-   [datos/timeseries-fallecimientos-lugares.csv.xz](datos/timeseries-fallecimientos-lugares.csv.xz)
