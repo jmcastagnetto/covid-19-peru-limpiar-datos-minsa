@@ -56,7 +56,14 @@ fallecimientos <- vroom(
     EDAD = EDAD_DECLARADA
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO)
+    SEXO = str_to_title(SEXO),
+    CLASIFICACION_DEF = str_replace_all(
+      CLASIFICACION_DEF,
+      c(
+        "logic" = "lógic",
+        "clinico" = "clínico"
+      )
+    )
   ) %>%
   mutate_at(
     vars(SEXO, CLASIFICACION_DEF,
