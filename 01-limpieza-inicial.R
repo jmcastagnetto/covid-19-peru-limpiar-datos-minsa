@@ -29,6 +29,7 @@ casos <- vroom(
 
 vroom_write(
   casos,
+  delim = ",",
   path = "datos/positivos_covid-utf8-limpio.csv"
 )
 
@@ -75,6 +76,7 @@ fallecimientos <- vroom(
 
 vroom_write(
   fallecimientos,
+  delim = ",",
   path = "datos/fallecidos_covid-utf8-limpio.csv"
 )
 
@@ -116,6 +118,7 @@ reconstruido <- reconstruido %>%
 
 vroom_write(
   reconstruido,
+  delim = ",",
   path = "datos/casos_fallecimientos_reconstruccion_posible.csv"
 )
 
