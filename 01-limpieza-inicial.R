@@ -30,7 +30,7 @@ casos <- vroom(
 vroom_write(
   casos,
   delim = ",",
-  path = "datos/positivos_covid-utf8-limpio.csv"
+  file = "datos/positivos_covid-utf8-limpio.csv"
 )
 
 # limpiar archivos extra
@@ -77,7 +77,7 @@ fallecimientos <- vroom(
 vroom_write(
   fallecimientos,
   delim = ",",
-  path = "datos/fallecidos_covid-utf8-limpio.csv"
+  file = "datos/fallecidos_covid-utf8-limpio.csv"
 )
 
 fid <- unique(fallecimientos$uuid)
@@ -119,7 +119,7 @@ reconstruido <- reconstruido %>%
 vroom_write(
   reconstruido,
   delim = ",",
-  path = "datos/casos_fallecimientos_reconstruccion_posible.csv"
+  file = "datos/casos_fallecimientos_reconstruccion_posible.csv"
 )
 
 save(
