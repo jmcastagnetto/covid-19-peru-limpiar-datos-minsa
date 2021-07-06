@@ -4,7 +4,7 @@ library(vroom)
 # casos -------------------------------------------------------------------
 
 casos <- vroom(
-  "datos/positivos_covid-utf8.csv",
+  "datos/originales/positivos_covid.csv",
   col_types = cols(
       FECHA_CORTE = col_date(format = "%Y%m%d"),
       UUID = col_character(),
@@ -39,7 +39,7 @@ vroom_write(
 # fallecimientos ----------------------------------------------------------
 
 fallecimientos <- vroom(
-  "datos/fallecidos_covid-utf8.csv",
+  "datos/originales/fallecidos_covid.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
     UUID = col_character(),
