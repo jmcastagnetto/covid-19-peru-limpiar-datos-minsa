@@ -34,10 +34,10 @@ else
 	sed -i 's/\xef\xbb\xbf//' datos/originales/fallecidos_covid.csv
 
 	# Pre-proceso de los datos de casos (ahora vienen en UTF-8)
-	# iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
+	iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
 
 	# Pre-proceso de los datos de fallecidos (ahora vienen en UTF-8)
-	# iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
+	iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
 
 	# Limpieza inicial
 	Rscript 01-limpieza-inicial.R
