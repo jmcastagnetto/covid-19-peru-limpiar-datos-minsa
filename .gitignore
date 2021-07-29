@@ -9,3 +9,4 @@ tests/*
 # ignore intermediate files
 datos/fallecidos_covid-utf8.csv.xz
 datos/positivos_covid-utf8.csv.xz
+datos/originales/*.aria2
