@@ -8,9 +8,15 @@
 #prev_fal=`cat fallecidos-size.txt`
 #curr_fal=`curl --silent --insecure --head  https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download | grep -FI content-length | cut -d ' ' -f2`
 
-# descargar archivos
-curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
-curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Md37cjXmjT9qYSa/download --output datos/originales/fallecidos_covid.csv
+# descargar archivos - antiguos URLs
+#curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
+#curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download --output datos/originales/fallecidos_covid.csv
+
+# URLs actuales
+# positivos
+aria2c -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/AC2adyLkHCKjmfm/download
+# fallecidos
+aria2c -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download
 
 # para ver si los archivos descargados han cambiado
 sha1sum --status -c sha1sum-orig.txt
@@ -30,14 +36,14 @@ else
 
 	# archivos ahora parece que a veces vienen en UTF-8 con BOM
 	# lo cual es innecesario, asi que se necesita remover el BOM
-	sed -i 's/\xef\xbb\xbf//' datos/originales/positivos_covid.csv
-	sed -i 's/\xef\xbb\xbf//' datos/originales/fallecidos_covid.csv
+#	sed -i 's/\xef\xbb\xbf//' datos/originales/positivos_covid.csv
+#	sed -i 's/\xef\xbb\xbf//' datos/originales/fallecidos_covid.csv
 
 	# Pre-proceso de los datos de casos (ahora vienen en UTF-8)
-	iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
+#	iconv  -f ISO_8859-1 -t UTF-8  datos/originales/positivos_covid.csv > datos/positivos_covid-utf8.csv
 
 	# Pre-proceso de los datos de fallecidos (ahora vienen en UTF-8)
-	iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
+#	iconv -f ISO_8859-1 -t UTF-8 datos/originales/fallecidos_covid.csv > datos/fallecidos_covid-utf8.csv
 
 	# Limpieza inicial
 	Rscript 01-limpieza-inicial.R

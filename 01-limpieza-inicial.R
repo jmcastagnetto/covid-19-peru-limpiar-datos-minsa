@@ -4,8 +4,8 @@ library(vroom)
 # casos -------------------------------------------------------------------
 
 casos <- vroom(
-#  "datos/originales/positivos_covid.csv",
-  "datos/positivos_covid-utf8.csv",
+  "datos/originales/positivos_covid.csv",
+#  "datos/positivos_covid-utf8.csv",
   col_types = cols(
       FECHA_CORTE = col_date(format = "%Y%m%d"),
       UUID = col_character(),
@@ -15,7 +15,8 @@ casos <- vroom(
       METODODX = col_character(),
       EDAD = col_integer(),
       SEXO = col_character(),
-      FECHA_RESULTADO = col_date(format = "%Y%m%d")
+      FECHA_RESULTADO = col_date(format = "%Y%m%d"),
+	  UBIGEO = col_character()
     ),
     na = c("", "NA", "NULL")
   ) %>%
@@ -23,7 +24,7 @@ casos <- vroom(
     SEXO = str_to_title(SEXO)
   ) %>%
   mutate_at(
-    vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX),
+    vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX, UBIGEO),
     factor
   ) %>%
   janitor::clean_names()
@@ -40,8 +41,8 @@ vroom_write(
 # fallecimientos ----------------------------------------------------------
 
 fallecimientos <- vroom(
-  #"datos/originales/fallecidos_covid.csv",
-  "datos/fallecidos_covid-utf8.csv",
+  "datos/originales/fallecidos_covid.csv",
+  #"datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
     UUID = col_character(),
@@ -85,6 +86,7 @@ vroom_write(
 fid <- unique(fallecimientos$uuid)
 pid <- unique(casos$uuid)
 
+cat("IDs de fallecidos en positivos ")
 sum(fid %in% pid)
 
 # limpiar archivos extra
