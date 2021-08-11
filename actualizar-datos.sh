@@ -14,9 +14,9 @@
 
 # URLs actuales
 # positivos
-aria2c -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/AC2adyLkHCKjmfm/download
+aria2c -q -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/AC2adyLkHCKjmfm/download
 # fallecidos
-aria2c -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download
+aria2c -q -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download
 
 # para ver si los archivos descargados han cambiado
 sha1sum --status -c sha1sum-orig.txt
