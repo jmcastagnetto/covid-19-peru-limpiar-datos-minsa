@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2021-08-25 16:43:02 UTC
+**Última actualización**: 2021-08-25 16:48:48 UTC
 
 ## Notas
 
@@ -87,6 +87,13 @@
 
 -   Los datos abiertos no se han actualizado desde el 2020-11-13 (última
     revisión: 2020-11-16, 23:15h PET)
+
+**2021-08-25**
+
+-   Debido a la “Datatón 2021” del MINSA, los datos ahora incluyen
+    `person_id` que se puede usar para poder enlazar información entre
+    datasets. He reorganizados los datos en función a esto, y
+    aprovechado para aumentar la información original.
 
 <!-- -->
 
@@ -1134,7 +1141,7 @@ Los archivos procesados y aumentados son:
 Y algunos reconstruidos a partir de los anteriores:
 
 -   [datos/positivos\_fallecidos\_reconstruccion.csv.xz](datos/positivos_fallecidos_reconstruccion.csv.xz)
--   [datos/timeseries\_positivos.csv.xz](datos/timeseries_positivos.csv.xz)
--   [datos/timeseries\_positivos\_departamento.csv.xz](datos/timeseries_positivos_departamento.csv.xz)
--   [datos/timeseries\_fallecidos.csv.xz](datos/timeseries_fallecidos.csv.xz)
--   [datos/timeseries\_fallecidos\_departamento.csv.xz](datos/timeseries_fallecidos_departamento.csv.xz)
+-   [datos/timeseries\_positivos.csv](datos/timeseries_positivos.csv.xz)
+-   [datos/timeseries\_positivos\_departamento.csv](datos/timeseries_positivos_departamento.csv)
+-   [datos/timeseries\_fallecidos.csv](datos/timeseries_fallecidos.csv)
+-   [datos/timeseries\_fallecidos\_departamento.csv](datos/timeseries_fallecidos_departamento.csv)
