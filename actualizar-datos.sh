@@ -47,14 +47,15 @@ else
 
 	# Limpieza inicial
 	Rscript 01-limpieza-inicial.R
-
+	# Casos - Fallecimientos
+	Rscript 02-reconstruir-casos-fallecidos.R
 	# Reconstruir timeseries
-	Rscript 02-reconstruir-timeseries.R
+	Rscript 03-reconstruir-timeseries.R
 
 	# Regenerar el README
 	Rscript build-readme.R
 
-	xz -T 3 -9e -f datos/*.csv 
+	#xz -T 3 -9e -f datos/*.csv
 	xz -T 3 -9e -f datos/originales/*.csv
 
 	# cacular y guardar los sha256 de los archivos de datos

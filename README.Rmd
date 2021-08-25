@@ -9,8 +9,10 @@ knitr::opts_chunk$set(
   message = FALSE,
   comment = ""
 )
-library(tidyverse)
-load("datos/datos_abiertos_minsa_covid-19_peru.Rdata")
+suppressPackageStartupMessages(library(tidyverse))
+positivos <- readRDS("datos/positivos_covid_aumentado.rds")
+fallecidos <- readRDS("datos/fallecidos_covid_aumentado.rds")
+reconstruido <- readRDS("datos/positivos_fallecidos_reconstruccion.rds")
 ```
 
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
@@ -103,17 +105,17 @@ Luego del primer paso de limpieza de datos:
 ### Casos positivos
 
 ```{r comment=""}
-skimr::skim(casos)
+skimr::skim(positivos)
 ```
 
 ### Fallecimientos
 
 
 ```{r comment=""}
-skimr::skim(fallecimientos)
+skimr::skim(fallecidos)
 ```
 
-### Reconstrucción de casos a fallecidos
+### Reconstrucción de positivos a fallecidos
 
 ```{r comment=""}
 skimr::skim(reconstruido)
@@ -122,7 +124,7 @@ skimr::skim(reconstruido)
 ## Gráficos
 
 ```{r echo=FALSE}
-plot_df <- casos %>% 
+plot_df <- positivos %>% 
   mutate(
     sexo = str_replace_na(sexo, "No registrado")
   ) %>% 
@@ -132,7 +134,7 @@ plot_df <- casos %>%
   arrange(fecha_resultado)
 
 Sys.setlocale("LC_TIME", "es_PE.utf8")
-plot_casos <- ggplot(
+plot_positivos <- ggplot(
   plot_df,
   aes(x = fecha_resultado, y = n, group = sexo, fill = sexo)
 ) +
@@ -148,7 +150,7 @@ plot_casos <- ggplot(
       max(plot_df$fecha_resultado),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_minimal() +
   theme(
@@ -158,13 +160,13 @@ plot_casos <- ggplot(
   )
 
 ggsave(
-  plot = plot_casos,
+  plot = plot_positivos,
   filename = "plots/positivos-por-dia-minsa.png",
   width = 6.5,
   height = 4
 )
 
-plot_acum_df <- casos %>% 
+plot_acum_df <- positivos %>% 
   group_by(fecha_resultado) %>% 
   tally() %>% 
   filter(!is.na(fecha_resultado)) %>% 
@@ -173,7 +175,7 @@ plot_acum_df <- casos %>%
     n_acum = cumsum(n)
   )
 
-plot_casos_acum <- ggplot(
+plot_positivos_acum <- ggplot(
   plot_acum_df,
   aes(x = fecha_resultado, y = n_acum)
 ) +
@@ -190,7 +192,7 @@ plot_casos_acum <- ggplot(
       max(plot_df$fecha_resultado),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_minimal() +
   theme(
@@ -199,16 +201,16 @@ plot_casos_acum <- ggplot(
   )
 
 ggsave(
-  plot = plot_casos_acum,
+  plot = plot_positivos_acum,
   filename = "plots/positivos-acumulados-minsa.png",
   width = 6.5,
   height = 4
 )
 
-ts_casos_dep <- read_csv("datos/timeseries-casos-departamento.csv")
+ts_positivos_dep <- read_csv("datos/timeseries_positivos_departamento.csv")
 
-ts_casos_dep_plot <- ggplot(
-  ts_casos_dep,
+ts_positivos_dep_plot <- ggplot(
+  ts_positivos_dep,
   aes(x = fecha_resultado, y = n, group = departamento)
 ) +
   geom_point(aes(color = departamento), 
@@ -227,16 +229,16 @@ ts_casos_dep_plot <- ggplot(
     y = "",
     title = "Positivos COVID-19 diarios por Departmento (MINSA)",
     subtitle = paste0(
-      "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
-      max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
+      "Del ", min(ts_positivos_dep$fecha_resultado, na.rm = TRUE), " al ",
+      max(ts_positivos_dep$fecha_resultado, na.rm = TRUE),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Línea usando un modelo GAM // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Línea usando un modelo GAM\nCódigo: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   facet_wrap(~departamento, scales = "free_y", ncol = 7) 
 
 ggsave(
-  plot = ts_casos_dep_plot,
+  plot = ts_positivos_dep_plot,
   filename = "plots/positivos-diarios-por-departamento-minsa.png",
   width = 12,
   height = 8
@@ -251,12 +253,12 @@ ggsave(
 !["Positivos por día y por Departamento. MINSA"](plots/positivos-diarios-por-departamento-minsa.png)
 
 ```{r echo=FALSE}
-plot_fall_df <- fallecimientos %>% 
+plot_fall_df <- fallecidos %>% 
   group_by(fecha_fallecimiento, sexo) %>% 
   tally() %>% 
   arrange(fecha_fallecimiento)
 
-plot_fallecimientos <- ggplot(
+plot_fallecidos <- ggplot(
   plot_fall_df,
   aes(x = fecha_fallecimiento, y = n, 
       group = sexo, fill = sexo)
@@ -273,7 +275,7 @@ plot_fallecimientos <- ggplot(
       max(plot_fall_df$fecha_fallecimiento),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_minimal() +
   theme(
@@ -284,13 +286,13 @@ plot_fallecimientos <- ggplot(
   )
 
 ggsave(
-  plot = plot_fallecimientos,
-  filename = "plots/fallecimientos-por-dia-minsa.png",
+  plot = plot_fallecidos,
+  filename = "plots/fallecidos-por-dia-minsa.png",
   width = 6.5,
   height = 4
 )
 
-fall_clas_df <- fallecimientos %>% 
+fall_clas_df <- fallecidos %>% 
   mutate(
     clasificacion_def = factor(clasificacion_def) %>% 
       fct_rev()
@@ -314,7 +316,7 @@ fall_clas_plot <- ggplot(
       max(plot_fall_df$fecha_fallecimiento),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_minimal() +
   theme(
@@ -325,12 +327,12 @@ fall_clas_plot <- ggplot(
 
 ggsave(
   plot = fall_clas_plot,
-  filename = "plots/fallecimientos-diarios-por-criterio.png",
+  filename = "plots/fallecidos-diarios-por-criterio.png",
   width = 12,
   height = 7
 )
 
-plot_fall_acum_df <- fallecimientos %>% 
+plot_fall_acum_df <- fallecidos %>% 
   group_by(fecha_fallecimiento) %>% 
   tally() %>% 
   filter(!is.na(fecha_fallecimiento)) %>% 
@@ -339,7 +341,7 @@ plot_fall_acum_df <- fallecimientos %>%
     n_acum = cumsum(n)
   )
 
-plot_fallecimientos_acum <- ggplot(
+plot_fallecidos_acum <- ggplot(
   plot_fall_acum_df,
   aes(x = fecha_fallecimiento, y = n_acum)
 ) +
@@ -355,7 +357,7 @@ plot_fallecimientos_acum <- ggplot(
       max(plot_df$fecha_resultado),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_minimal() +
   theme(
@@ -364,16 +366,16 @@ plot_fallecimientos_acum <- ggplot(
   )
 
 ggsave(
-  plot = plot_fallecimientos_acum,
-  filename = "plots/fallecimientos-acumulados-minsa.png",
+  plot = plot_fallecidos_acum,
+  filename = "plots/fallecidos-acumulados-minsa.png",
   width = 6.5,
   height = 4
 )
 
-ts_fallecimientos_dep <- read_csv("datos/timeseries-fallecimientos-departamento.csv")
+ts_fallecidos_dep <- read_csv("datos/timeseries_fallecidos_departamento.csv")
 
-ts_fallecimientos_dep_plot <- ggplot(
-  ts_fallecimientos_dep,
+ts_fallecidos_dep_plot <- ggplot(
+  ts_fallecidos_dep,
   aes(x = fecha_fallecimiento, y = n, group = departamento)
 ) +
   geom_point(aes(color = departamento), 
@@ -391,17 +393,17 @@ ts_fallecimientos_dep_plot <- ggplot(
     y = "",
     title = "Fallecimientos COVID-19 diarios por Departmento (MINSA)",
     subtitle = paste0(
-      "Del ", min(ts_casos_dep$fecha_resultado, na.rm = TRUE), " al ",
-      max(ts_casos_dep$fecha_resultado, na.rm = TRUE),
+      "Del ", min(ts_positivos_dep$fecha_resultado, na.rm = TRUE), " al ",
+      max(ts_positivos_dep$fecha_resultado, na.rm = TRUE),
       ". Actualizado el: ",
                       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Línea usando un modelo GAM // Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Línea usando un modelo GAM\nCódigo: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   facet_wrap(~departamento, scales = "free_y", nrow = 5) 
 
 ggsave(
-  plot = ts_fallecimientos_dep_plot,
-  filename = "plots/fallecimientos-diarios-por-departamento-minsa.png",
+  plot = ts_fallecidos_dep_plot,
+  filename = "plots/fallecidos-diarios-por-departamento-minsa.png",
   width = 10,
   height = 8
 )
@@ -410,43 +412,40 @@ ggsave(
 ```
 
 
-!["Fallecimientos por día. MINSA"](plots/fallecimientos-por-dia-minsa.png)
+!["Fallecimientos por día. MINSA"](plots/fallecidos-por-dia-minsa.png)
 
-!["Fallecimentos por día, por criterio usado"](plots/fallecimientos-diarios-por-criterio.png)
+!["Fallecimientos por día, por criterio usado"](plots/fallecidos-diarios-por-criterio.png)
 
-!["Fallecimientos acumulados. MINSA"](plots/fallecimientos-acumulados-minsa.png)
+!["Fallecimientos acumulados. MINSA"](plots/fallecidos-acumulados-minsa.png)
 
 
-!["Fallecimientos por día y por Departamento. MINSA"](plots/fallecimientos-diarios-por-departamento-minsa.png)
+!["Fallecimientos por día y por Departamento. MINSA"](plots/fallecidos-diarios-por-departamento-minsa.png)
 
 
 
 ```{r echo=FALSE}
 plot_reconstruido_df <- reconstruido %>% 
-  filter(coincidencias <= 3) %>%
   mutate(
     dias_caso_fall = lubridate::interval(
-      fecha_resultado,
-      fecha_fallecimiento
+      positivo_fecha_resultado,
+      fallecido_fecha_fallecimiento
     ) %/% lubridate::days()
   )
 
 plot_reconstruido_dist <- ggplot(
   plot_reconstruido_df,
-  aes(x = dias_caso_fall, y = sexo)
+  aes(x = dias_caso_fall, y = positivo_sexo)
 ) +
-  geom_violin(aes(fill = sexo), 
-              draw_quantiles = c(.25, .5, .75),
-              show.legend = FALSE) +
-  facet_wrap(~coincidencias) +
+  geom_boxplot(aes(color = positivo_sexo), show.legend = FALSE) +
+  scale_x_log10() +
   labs(
     x = "Días entre prueba positiva y fallecimiento",
     y = "",
-    title = "Detección a fallecimiento (coincidencias = [1, 3])",
+    title = "Detección a fallecimiento",
     subtitle = paste0(
-      "Coincidencias estimadas usando sexo, edad y lugar. Actualizado el: ",
+      "Coincidencias estimadas usando 'id_persona'. Actualizado el: ",
       lubridate::now(tzone = "UTC"), " UTC"),
-    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa // @jmcastagnetto, Jesus M. Castagnetto"
+    caption = "Código: https://github.com/jmcastagnetto/covid-19-peru-limpiar-datos-minsa\n@jmcastagnetto, Jesus M. Castagnetto"
   ) +
   theme_linedraw() +
   theme(
@@ -466,16 +465,16 @@ ggsave(
 !["Distribución de tiempos desde detección a fallecimiento, por número de registros coincidentes"](plots/deteccion-fallecimiento-por-coincidentes.png)
 
 
-Los archivos "limpios" son:
+Los archivos procesados y aumentados son:
 
-- [datos/fallecidos_covid-utf8-limpio.csv.xz](datos/fallecidos_covid-utf8-limpio.csv.xz)
-- [datos/positivos_covid-utf8-limpio.csv.xz](datos/positivos_covid-utf8-limpio.csv.xz)
+- [datos/fallecidos_covid_aumentado.csv.xz](datos/fallecidos_covid_aumentado.csv.xz)
+- [datos/positivos_covid_aumentado.csv.xz](datos/datos/positivos_covid_aumentado.csv.xz)
 
 Y algunos reconstruidos a partir de los anteriores:
 
-- [datos/casos_fallecimientos_reconstruccion_posible.csv.xz](datos/casos_fallecimientos_reconstruccion_posible.csv.xz)
-- [datos/timeseries-casos.csv.xz](datos/timeseries-casos.csv.xz)
-- [datos/timeseries-casos-lugares.csv.xz](datos/timeseries-casos-lugares.csv.xz)
-- [datos/timeseries-fallecimientos.csv.xz](datos/timeseries-fallecimientos.csv.xz)
-- [datos/timeseries-fallecimientos-lugares.csv.xz](datos/timeseries-fallecimientos-lugares.csv.xz)
+- [datos/positivos_fallecidos_reconstruccion.csv.xz](datos/positivos_fallecidos_reconstruccion.csv.xz)
+- [datos/timeseries_positivos.csv.xz](datos/timeseries_positivos.csv.xz)
+- [datos/timeseries_positivos_departamento.csv.xz](datos/timeseries_positivos_departamento.csv.xz)
+- [datos/timeseries_fallecidos.csv.xz](datos/timeseries_fallecidos.csv.xz)
+- [datos/timeseries_fallecidos_departamento.csv.xz](datos/timeseries_fallecidos_departamento.csv.xz)
 

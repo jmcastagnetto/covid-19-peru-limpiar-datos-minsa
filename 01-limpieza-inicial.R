@@ -1,14 +1,13 @@
-library(tidyverse)
+suppressPackageStartupMessages(library(tidyverse))
 library(vroom)
 
 # casos -------------------------------------------------------------------
 
 casos <- vroom(
   "datos/originales/positivos_covid.csv",
-#  "datos/positivos_covid-utf8.csv",
   col_types = cols(
       FECHA_CORTE = col_date(format = "%Y%m%d"),
-      UUID = col_character(),
+      id_persona = col_character(),
       DEPARTAMENTO = col_character(),
       PROVINCIA = col_character(),
       DISTRITO = col_character(),
@@ -16,12 +15,87 @@ casos <- vroom(
       EDAD = col_integer(),
       SEXO = col_character(),
       FECHA_RESULTADO = col_date(format = "%Y%m%d"),
-	  UBIGEO = col_character()
+      UBIGEO = col_character()
     ),
     na = c("", "NA", "NULL")
   ) %>%
   mutate(
-    SEXO = str_to_title(SEXO)
+    SEXO = str_to_title(SEXO),
+    rango_edad_veintiles = cut(
+      EDAD,
+      c(seq(0, 80, 20), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-19",
+                 "20-39",
+                 "40-59",
+                 "60-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_deciles = cut(
+      EDAD,
+      c(seq(0, 80, 10), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-9",
+                 "10-19",
+                 "20-29",
+                 "30-39",
+                 "40-49",
+                 "50-59",
+                 "60-69",
+                 "70-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_quintiles = cut(
+      EDAD,
+      c(seq(0, 80, 5), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c(
+        "0-4",
+        "5-9",
+        "10-14",
+        "15-19",
+        "20-24",
+        "25-29",
+        "30-34",
+        "35-39",
+        "40-44",
+        "45-49",
+        "50-54",
+        "55-59",
+        "60-64",
+        "65-69",
+        "70-74",
+        "75-79",
+        "80+"
+      ),
+      ordered_result = TRUE
+    ),
+    rango_edad_owid = cut(
+      EDAD,
+      c(0, 18, 25, 50, 60, 70, 80, 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-17",
+                 "18-24",
+                 "25-49",
+                 "50-59",
+                 "60-69",
+                 "70-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_veintiles = fct_explicit_na(rango_edad_veintiles, "Desconocido"),
+    rango_edad_deciles = fct_explicit_na(rango_edad_deciles, "Desconocido"),
+    rango_edad_quintiles = fct_explicit_na(rango_edad_quintiles, "Desconocido"),
+    rango_edad_owid = fct_explicit_na(rango_edad_owid, "(Missing)"),
+    SEXO = replace_na(SEXO, "No registrado"),
+    epi_week = lubridate::epiweek(FECHA_RESULTADO),
+    epi_year = lubridate::epiyear(FECHA_RESULTADO)
   ) %>%
   mutate_at(
     vars(SEXO, DEPARTAMENTO, PROVINCIA, DISTRITO, METODODX, UBIGEO),
@@ -32,20 +106,22 @@ casos <- vroom(
 vroom_write(
   casos,
   delim = ",",
-  file = "datos/positivos_covid-utf8-limpio.csv"
+  file = "datos/positivos_covid_aumentado.csv.xz"
 )
 
-# limpiar archivos extra
-#file.remove("datos/positivos_covid-utf8.csv")
+saveRDS(
+  casos,
+  file = "datos/positivos_covid_aumentado.rds",
+  compress = "xz"
+)
 
-# fallecimientos ----------------------------------------------------------
+# fallecidos ----------------------------------------------------------
 
-fallecimientos <- vroom(
+fallecidos <- vroom(
   "datos/originales/fallecidos_covid.csv",
-  #"datos/fallecidos_covid-utf8.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
-    UUID = col_character(),
+    id_persona = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%Y%m%d"),
     EDAD_DECLARADA = col_number(),
     SEXO = col_character(),
@@ -67,7 +143,82 @@ fallecimientos <- vroom(
         "logic" = "lógic",
         "clinico" = "clínico"
       )
-    )
+    ),
+    rango_edad_veintiles = cut(
+      EDAD,
+      c(seq(0, 80, 20), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-19",
+                 "20-39",
+                 "40-59",
+                 "60-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_deciles = cut(
+      EDAD,
+      c(seq(0, 80, 10), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-9",
+                 "10-19",
+                 "20-29",
+                 "30-39",
+                 "40-49",
+                 "50-59",
+                 "60-69",
+                 "70-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_quintiles = cut(
+      EDAD,
+      c(seq(0, 80, 5), 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c(
+        "0-4",
+        "5-9",
+        "10-14",
+        "15-19",
+        "20-24",
+        "25-29",
+        "30-34",
+        "35-39",
+        "40-44",
+        "45-49",
+        "50-54",
+        "55-59",
+        "60-64",
+        "65-69",
+        "70-74",
+        "75-79",
+        "80+"
+      ),
+      ordered_result = TRUE
+    ),
+    rango_edad_owid = cut(
+      EDAD,
+      c(0, 18, 25, 50, 60, 70, 80, 130),
+      include.lowest = TRUE,
+      right = FALSE,
+      labels = c("0-17",
+                 "18-24",
+                 "25-49",
+                 "50-59",
+                 "60-69",
+                 "70-79",
+                 "80+"),
+      ordered_result = TRUE
+    ),
+    rango_edad_veintiles = fct_explicit_na(rango_edad_veintiles, "Desconocido"),
+    rango_edad_deciles = fct_explicit_na(rango_edad_deciles, "Desconocido"),
+    rango_edad_quintiles = fct_explicit_na(rango_edad_quintiles, "Desconocido"),
+    rango_edad_owid = fct_explicit_na(rango_edad_owid, "(Missing)"),
+    SEXO = replace_na(SEXO, "No registrado"),
+    epi_week = lubridate::epiweek(FECHA_FALLECIMIENTO),
+    epi_year = lubridate::epiyear(FECHA_FALLECIMIENTO)
   ) %>%
   mutate_at(
     vars(SEXO, CLASIFICACION_DEF,
@@ -78,57 +229,13 @@ fallecimientos <- vroom(
   janitor::clean_names()
 
 vroom_write(
-  fallecimientos,
+  fallecidos,
   delim = ",",
-  file = "datos/fallecidos_covid-utf8-limpio.csv"
+  file = "datos/fallecidos_covid_aumentado.csv.xz"
 )
 
-fid <- unique(fallecimientos$uuid)
-pid <- unique(casos$uuid)
-
-cat("IDs de fallecidos en positivos ")
-sum(fid %in% pid)
-
-# limpiar archivos extra
-#file.remove("datos/fallecidos_covid-utf8.csv")
-
-# unir datos --------------------------------------------------------------
-
-reconstruido <- casos %>%
-  full_join(
-    fallecimientos,
-    by = c("sexo", "departamento", "provincia", "distrito", "edad")
-  ) %>%
-  filter(!is.na(uuid.y) &
-           fecha_resultado < fecha_fallecimiento) %>%
-  distinct() %>%
-  rename(
-    uuid_caso = uuid.x,
-    uuid_fallecimiento = uuid.y
-  ) %>%
-  arrange(uuid_caso)
-
-reconstruido <- reconstruido %>%
-  left_join(
-    reconstruido %>%
-      group_by(uuid_caso) %>%
-      tally() %>%
-      rename(
-        coincidencias = n
-      ),
-    by = "uuid_caso"
-  ) %>%
-  filter(!is.na(fecha_fallecimiento) & coincidencias <= 3)
-
-vroom_write(
-  reconstruido,
-  delim = ",",
-  file = "datos/casos_fallecimientos_reconstruccion_posible.csv"
+saveRDS(
+  fallecidos,
+  file = "datos/fallecidos_covid_aumentado.rds",
+  compress = "xz"
 )
-
-save(
-  casos, fallecimientos, reconstruido,
-  file = "datos/datos_abiertos_minsa_covid-19_peru.Rdata"
-)
-
-
