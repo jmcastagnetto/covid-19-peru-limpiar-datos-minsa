@@ -20,12 +20,12 @@ reconstruido <- readRDS("datos/positivos_fallecidos_reconstruccion.rds")
 
 **Última actualización**: `r lubridate::now(tzone = "UTC")` UTC
 
-<details>
-
-<summary>
 
 ## Notas 
 
+<details>
+<summary>
+Detalles específicos sobre los datos
 </summary>
 
 **2020-05-22**
@@ -114,12 +114,10 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
-<details>
-<summary>
-
 ### Casos positivos
 
-</summary>
+<details>
+<summary>Análisis exploratorio de los datos de positivos</summary>
 
 
 ```{r comment=""}
@@ -128,12 +126,10 @@ skimr::skim(positivos)
 
 </details>
 
-<details>
-<summary>
-
 ### Fallecimientos
 
-</summary>
+<details>
+<summary>Análisis exploratorio de los datos de fallecidos</summary>
 
 
 ```{r comment=""}
@@ -143,12 +139,10 @@ skimr::skim(fallecidos)
 </details>
 
 
-<details>
-<summary>
-
 ### Reconstrucción de positivos a fallecidos
 
-</summary>
+<details>
+<summary>Análisis exporatorios de la consolidación entre positivos y fallecidos</summary>
 
 
 ```{r comment=""}
@@ -282,7 +276,6 @@ ggsave(
 )
 
 ```
-
 
 
 <details>

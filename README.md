@@ -1,12 +1,12 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2022-01-08 23:12:31 UTC
-
-<details>
-<summary>
+**Última actualización**: 2022-01-08 23:28:52 UTC
 
 ## Notas
 
+<details>
+<summary>
+Detalles específicos sobre los datos
 </summary>
 
 **2020-05-22**
@@ -129,11 +129,11 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
-<details>
-<summary>
-
 ### Casos positivos
 
+<details>
+<summary>
+Análisis exploratorio de los datos de positivos
 </summary>
 
 <table>
@@ -420,11 +420,12 @@ Data summary
 </table>
 
 </details>
-<details>
-<summary>
 
 ### Fallecimientos
 
+<details>
+<summary>
+Análisis exploratorio de los datos de fallecidos
 </summary>
 
 <table>
@@ -711,11 +712,12 @@ Data summary
 </table>
 
 </details>
-<details>
-<summary>
 
 ### Reconstrucción de positivos a fallecidos
 
+<details>
+<summary>
+Análisis exporatorios de la consolidación entre positivos y fallecidos
 </summary>
 
 <table>
