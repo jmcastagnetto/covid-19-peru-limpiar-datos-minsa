@@ -1,8 +1,13 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2022-01-08 08:07:54 UTC
+**Última actualización**: 2022-01-08 23:12:31 UTC
+
+<details>
+<summary>
 
 ## Notas
+
+</summary>
 
 **2020-05-22**
 
@@ -113,6 +118,8 @@
     formato de compresión, usando ahora [xz](https://tukaani.org/xz/) en
     lugar de [gzip](https://en.wikipedia.org/wiki/Gzip)
 
+</details>
+
 ## Información relevante
 
 Fuentes de datos:
@@ -122,7 +129,12 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
+<details>
+<summary>
+
 ### Casos positivos
+
+</summary>
 
 <table>
 <caption>Data summary</caption>
@@ -407,7 +419,13 @@ Data summary
 </tbody>
 </table>
 
+</details>
+<details>
+<summary>
+
 ### Fallecimientos
+
+</summary>
 
 <table>
 <caption>Data summary</caption>
@@ -692,7 +710,13 @@ Data summary
 </tbody>
 </table>
 
+</details>
+<details>
+<summary>
+
 ### Reconstrucción de positivos a fallecidos
+
+</summary>
 
 <table>
 <caption>Data summary</caption>
@@ -1107,31 +1131,81 @@ Data summary
 </tbody>
 </table>
 
+</details>
+
 ## Gráficos
 
-    [1] "es_PE.utf8"
+<details>
+<summary>
+Casos positivos por dia (MINSA)
+</summary>
 
 ![“Positivos por día. MINSA”](plots/positivos-por-dia-minsa.png)
 
+</details>
+<details>
+<summary>
+Casos positivos acumulados (MINSA)
+</summary>
+
 ![“Positivos acumulados. MINSA”](plots/positivos-acumulados-minsa.png)
+
+</details>
+<details>
+<summary>
+Casos positivos por dia y Departamento (MINSA)
+</summary>
 
 ![“Positivos por día y por Departamento.
 MINSA”](plots/positivos-diarios-por-departamento-minsa.png)
 
+</details>
+<details>
+<summary>
+Fallecimientos por día (MINSA)
+</summary>
+
 ![“Fallecimientos por día. MINSA”](plots/fallecidos-por-dia-minsa.png)
+
+</details>
+<details>
+<summary>
+Fallecimientos por día y criterio (MINSA)
+</summary>
 
 ![“Fallecimientos por día, por criterio
 usado”](plots/fallecidos-diarios-por-criterio.png)
 
+</details>
+<details>
+<summary>
+Fallecimientos acumulados (MINSA)
+</summary>
+
 ![“Fallecimientos acumulados.
 MINSA”](plots/fallecidos-acumulados-minsa.png)
+
+</details>
+<details>
+<summary>
+Fallecimientos por día y Departamento (MINSA)
+</summary>
 
 ![“Fallecimientos por día y por Departamento.
 MINSA”](plots/fallecidos-diarios-por-departamento-minsa.png)
 
+</details>
+<details>
+<summary>
+Distribución de tiempos desde detección a fallecimiento, por número de
+registros coincidentes
+</summary>
+
 ![“Distribución de tiempos desde detección a fallecimiento, por número
 de registros
 coincidentes”](plots/deteccion-fallecimiento-por-coincidentes.png)
+
+</details>
 
 Los archivos procesados y aumentados son:
 

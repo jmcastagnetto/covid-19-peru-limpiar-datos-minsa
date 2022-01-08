@@ -20,7 +20,13 @@ reconstruido <- readRDS("datos/positivos_fallecidos_reconstruccion.rds")
 
 **Última actualización**: `r lubridate::now(tzone = "UTC")` UTC
 
+<details>
+
+<summary>
+
 ## Notas 
+
+</summary>
 
 **2020-05-22**
 
@@ -96,6 +102,8 @@ ada0b5da4371b9308e4170ecb53014843e4cb3a2  datos/originales/positivos_covid.csv
 - A partir de hoy los datos de fallecidos por COVID-19 usan los criterios publicados en [Criterios técnicos para actualizar la cifra de fallecidos por COVID-19 en el Perú](https://www.gob.pe/institucion/pcm/informes-publicaciones/1943691-criterios-tecnicos-para-actualizar-la-cifra-de-fallecidos-por-covid-19-en-el-peru), y se ha cambiado la estructura de los datos. Ahora los datos de fallecidos indican en un campo el criterio empleado para la clasificación.
 - Debido al tamaño de los nuevos archivos de datos, estoy cambiando de formato de compresión, usando ahora [xz](https://tukaani.org/xz/) en lugar de [gzip](https://en.wikipedia.org/wiki/Gzip)
 
+</details>
+
 
 ## Información relevante
 
@@ -106,26 +114,51 @@ Fuentes de datos:
 
 Luego del primer paso de limpieza de datos:
 
+<details>
+<summary>
+
 ### Casos positivos
+
+</summary>
+
 
 ```{r comment=""}
 skimr::skim(positivos)
 ```
 
+</details>
+
+<details>
+<summary>
+
 ### Fallecimientos
+
+</summary>
 
 
 ```{r comment=""}
 skimr::skim(fallecidos)
 ```
 
+</details>
+
+
+<details>
+<summary>
+
 ### Reconstrucción de positivos a fallecidos
+
+</summary>
+
 
 ```{r comment=""}
 skimr::skim(reconstruido)
 ```
 
+</details>
+
 ## Gráficos
+
 
 ```{r echo=FALSE}
 plot_df <- positivos %>% 
@@ -137,7 +170,7 @@ plot_df <- positivos %>%
   filter(!is.na(fecha_resultado)) %>% 
   arrange(fecha_resultado)
 
-Sys.setlocale("LC_TIME", "es_PE.utf8")
+dummy <- Sys.setlocale("LC_TIME", "es_PE.utf8")
 plot_positivos <- ggplot(
   plot_df,
   aes(x = fecha_resultado, y = n, group = sexo, fill = sexo)
@@ -250,11 +283,28 @@ ggsave(
 
 ```
 
+
+
+<details>
+<summary>Casos positivos por dia (MINSA)</summary>
+
 !["Positivos por día. MINSA"](plots/positivos-por-dia-minsa.png)
+
+</details>
+
+<details>
+<summary>Casos positivos acumulados (MINSA)</summary>
 
 !["Positivos acumulados. MINSA"](plots/positivos-acumulados-minsa.png)
 
+</details>
+
+<details>
+<summary>Casos positivos por dia y Departamento (MINSA)</summary>
+
 !["Positivos por día y por Departamento. MINSA"](plots/positivos-diarios-por-departamento-minsa.png)
+
+</details>
 
 ```{r echo=FALSE}
 plot_fall_df <- fallecidos %>% 
@@ -415,16 +465,33 @@ ggsave(
 
 ```
 
+<details>
+<summary>Fallecimientos por día (MINSA)</summary>
 
 !["Fallecimientos por día. MINSA"](plots/fallecidos-por-dia-minsa.png)
 
+</details>
+
+<details>
+<summary>Fallecimientos por día y criterio (MINSA)</summary>
+
 !["Fallecimientos por día, por criterio usado"](plots/fallecidos-diarios-por-criterio.png)
+
+</details>
+
+<details>
+<summary>Fallecimientos acumulados (MINSA)</summary>
 
 !["Fallecimientos acumulados. MINSA"](plots/fallecidos-acumulados-minsa.png)
 
+</details>
+
+<details>
+<summary>Fallecimientos por día y Departamento (MINSA)</summary>
 
 !["Fallecimientos por día y por Departamento. MINSA"](plots/fallecidos-diarios-por-departamento-minsa.png)
 
+</details>
 
 
 ```{r echo=FALSE}
@@ -466,8 +533,13 @@ ggsave(
 
 ```
 
+
+<details>
+<summary>Distribución de tiempos desde detección a fallecimiento, por número de registros coincidentes</summary>
+
 !["Distribución de tiempos desde detección a fallecimiento, por número de registros coincidentes"](plots/deteccion-fallecimiento-por-coincidentes.png)
 
+</details>
 
 Los archivos procesados y aumentados son:
 
