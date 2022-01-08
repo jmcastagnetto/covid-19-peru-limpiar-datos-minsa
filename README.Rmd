@@ -142,7 +142,7 @@ skimr::skim(fallecidos)
 ### Reconstrucción de positivos a fallecidos
 
 <details>
-<summary>Análisis exporatorios de la consolidación entre positivos y fallecidos</summary>
+<summary>Análisis exploratorio de la consolidación entre positivos y fallecidos</summary>
 
 
 ```{r comment=""}

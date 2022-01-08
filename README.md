@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 
-**Última actualización**: 2022-01-08 23:28:52 UTC
+**Última actualización**: 2022-01-08 23:31:06 UTC
 
 ## Notas
 
@@ -717,7 +717,7 @@ Data summary
 
 <details>
 <summary>
-Análisis exporatorios de la consolidación entre positivos y fallecidos
+Análisis exploratorio de la consolidación entre positivos y fallecidos
 </summary>
 
 <table>
