@@ -16,7 +16,7 @@ reconstruido <- readRDS("datos/positivos_fallecidos_reconstruccion.rds")
 ```
 
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
-
+[![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
 **Última actualización**: `r lubridate::now(tzone = "UTC")` UTC
 

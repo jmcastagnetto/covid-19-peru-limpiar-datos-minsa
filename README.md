@@ -1,6 +1,7 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
+[![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
-**Última actualización**: 2022-01-23 08:09:58 UTC
+**Última actualización**: 2022-01-24 06:48:32 UTC
 
 ## Notas
 
