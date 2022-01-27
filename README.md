@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/266025854.svg)](https://zenodo.org/badge/latestdoi/266025854)
 [![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
-**Última actualización**: 2022-01-26 08:09:53 UTC
+**Última actualización**: 2022-01-27 08:09:51 UTC
 
 ## Notas
 
@@ -146,7 +146,7 @@ Análisis exploratorio de los datos de positivos
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">3020756</td>
+<td style="text-align: left;">3070358</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -207,12 +207,12 @@ Data summary
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">id_persona</td>
-<td style="text-align: right;">55458</td>
+<td style="text-align: right;">56389</td>
 <td style="text-align: right;">0.98</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">2803218</td>
+<td style="text-align: right;">2846769</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -237,9 +237,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-01-24</td>
-<td style="text-align: left;">2022-01-24</td>
-<td style="text-align: left;">2022-01-24</td>
+<td style="text-align: left;">2022-01-25</td>
+<td style="text-align: left;">2022-01-25</td>
+<td style="text-align: left;">2022-01-25</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -247,9 +247,9 @@ Data summary
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-06</td>
-<td style="text-align: left;">2022-01-24</td>
-<td style="text-align: left;">2021-03-23</td>
-<td style="text-align: right;">688</td>
+<td style="text-align: left;">2022-01-25</td>
+<td style="text-align: left;">2021-03-25</td>
+<td style="text-align: right;">689</td>
 </tr>
 </tbody>
 </table>
@@ -282,7 +282,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 1377870, ARE: 165084, CAL: 131160, PIU: 129468</td>
+<td style="text-align: left;">LIM: 1398250, ARE: 169720, CAL: 132625, PIU: 132290</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -290,7 +290,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 1188402, EN : 145702, ARE: 137833, CAL: 124844</td>
+<td style="text-align: left;">LIM: 1206188, EN : 147856, ARE: 141870, CAL: 126167</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -298,7 +298,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1700</td>
-<td style="text-align: left;">EN : 145702, LIM: 117387, SAN: 100613, SAN: 74218</td>
+<td style="text-align: left;">EN : 147856, LIM: 119716, SAN: 101769, SAN: 75180</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -306,7 +306,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">AG: 1158784, PR: 955884, PCR: 906088</td>
+<td style="text-align: left;">AG: 1196676, PR: 955884, PCR: 917798</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -314,15 +314,15 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">Mas: 1512385, Fem: 1508370, No : 1</td>
+<td style="text-align: left;">Mas: 1535617, Fem: 1534740, No : 1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ubigeo</td>
-<td style="text-align: right;">145702</td>
+<td style="text-align: right;">147856</td>
 <td style="text-align: right;">0.95</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1850</td>
-<td style="text-align: left;">150: 117387, 150: 100613, 150: 74218, 150: 72852</td>
+<td style="text-align: left;">150: 119716, 150: 101769, 150: 75180, 150: 74189</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_veintiles</td>
@@ -330,7 +330,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">20-: 1325236, 40-: 981941, 60-: 396000, 0-1: 251393</td>
+<td style="text-align: left;">20-: 1349161, 40-: 996852, 60-: 401159, 0-1: 256125</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_deciles</td>
@@ -338,7 +338,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">30-: 705093, 20-: 620143, 40-: 561955, 50-: 419986</td>
+<td style="text-align: left;">30-: 717580, 20-: 631581, 40-: 571033, 50-: 425819</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_quintiles</td>
@@ -346,7 +346,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">30-: 370801, 25-: 367039, 35-: 334292, 40-: 298789</td>
+<td style="text-align: left;">30-: 377459, 25-: 373944, 35-: 340121, 40-: 303829</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_owid</td>
@@ -354,7 +354,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">25-: 1634087, 50-: 419986, 18-: 315208, 60-: 263198</td>
+<td style="text-align: left;">25-: 1662557, 50-: 425819, 18-: 320869, 60-: 266693</td>
 </tr>
 </tbody>
 </table>
@@ -382,8 +382,8 @@ Data summary
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">347</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">40.67</td>
-<td style="text-align: right;">17.39</td>
+<td style="text-align: right;">40.64</td>
+<td style="text-align: right;">17.38</td>
 <td style="text-align: right;">-79</td>
 <td style="text-align: right;">28</td>
 <td style="text-align: right;">38</td>
@@ -395,11 +395,11 @@ Data summary
 <td style="text-align: left;">epi_week</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">18.91</td>
-<td style="text-align: right;">14.82</td>
+<td style="text-align: right;">18.68</td>
+<td style="text-align: right;">14.83</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">17</td>
+<td style="text-align: right;">16</td>
 <td style="text-align: right;">31</td>
 <td style="text-align: right;">53</td>
 <td style="text-align: left;">▇▅▃▃▂</td>
@@ -408,8 +408,8 @@ Data summary
 <td style="text-align: left;">epi_year</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">2020.90</td>
-<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">2020.91</td>
+<td style="text-align: right;">0.76</td>
 <td style="text-align: right;">2020</td>
 <td style="text-align: right;">2020</td>
 <td style="text-align: right;">2021</td>
@@ -438,7 +438,7 @@ Análisis exploratorio de los datos de fallecidos
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">204587</td>
+<td style="text-align: left;">204769</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -453,26 +453,22 @@ Análisis exploratorio de los datos de fallecidos
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">factor</td>
 <td style="text-align: left;">10</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">3</td>
-</tr>
 <tr class="even">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">________________________</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Group variables</td>
 <td style="text-align: left;">None</td>
 </tr>
@@ -480,35 +476,6 @@ Análisis exploratorio de los datos de fallecidos
 </table>
 
 Data summary
-
-**Variable type: character**
-
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">skim_variable</th>
-<th style="text-align: right;">n_missing</th>
-<th style="text-align: right;">complete_rate</th>
-<th style="text-align: right;">min</th>
-<th style="text-align: right;">max</th>
-<th style="text-align: right;">empty</th>
-<th style="text-align: right;">n_unique</th>
-<th style="text-align: right;">whitespace</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">id_persona</td>
-<td style="text-align: right;">3448</td>
-<td style="text-align: right;">0.98</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">201070</td>
-<td style="text-align: right;">0</td>
-</tr>
-</tbody>
-</table>
 
 **Variable type: Date**
 
@@ -529,9 +496,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-01-24</td>
-<td style="text-align: left;">2022-01-24</td>
-<td style="text-align: left;">2022-01-24</td>
+<td style="text-align: left;">2022-01-25</td>
+<td style="text-align: left;">2022-01-25</td>
+<td style="text-align: left;">2022-01-25</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -539,9 +506,9 @@ Data summary
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-03</td>
-<td style="text-align: left;">2022-01-24</td>
+<td style="text-align: left;">2022-01-25</td>
 <td style="text-align: left;">2021-01-27</td>
-<td style="text-align: right;">685</td>
+<td style="text-align: right;">686</td>
 </tr>
 </tbody>
 </table>
@@ -574,7 +541,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">Mas: 130148, Fem: 74436, .: 3</td>
+<td style="text-align: left;">Mas: 130241, Fem: 74525, .: 3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clasificacion_def</td>
@@ -582,7 +549,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Cri: 61878, Cri: 60343, Cri: 45201, Cri: 16279</td>
+<td style="text-align: left;">Cri: 61925, Cri: 60426, Cri: 45241, Cri: 16285</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">departamento</td>
@@ -590,7 +557,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 90354, PIU: 12397, LA : 10498, CAL: 10210</td>
+<td style="text-align: left;">LIM: 90450, PIU: 12406, LA : 10509, CAL: 10219</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -598,7 +565,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">196</td>
-<td style="text-align: left;">LIM: 82980, CAL: 10209, ARE: 8016, TRU: 7033</td>
+<td style="text-align: left;">LIM: 83071, CAL: 10218, ARE: 8019, TRU: 7038</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -606,7 +573,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1648</td>
-<td style="text-align: left;">LIM: 8385, SAN: 8319, SAN: 6447, CAL: 5903</td>
+<td style="text-align: left;">LIM: 8393, SAN: 8326, SAN: 6453, CAL: 5909</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ubigeo</td>
@@ -614,7 +581,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1783</td>
-<td style="text-align: left;">150: 8385, 150: 8319, 150: 6447, 070: 5903</td>
+<td style="text-align: left;">150: 8393, 150: 8326, 150: 6453, 070: 5909</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_veintiles</td>
@@ -622,7 +589,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">60-: 100784, 40-: 51843, 80+: 41217, 20-: 9327</td>
+<td style="text-align: left;">60-: 100854, 40-: 51859, 80+: 41297, 20-: 9338</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_deciles</td>
@@ -630,7 +597,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">60-: 51812, 70-: 48972, 80+: 41217, 50-: 34556</td>
+<td style="text-align: left;">60-: 51839, 70-: 49015, 80+: 41297, 50-: 34558</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_quintiles</td>
@@ -638,7 +605,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">80+: 41217, 65-: 26971, 70-: 25975, 60-: 24841</td>
+<td style="text-align: left;">80+: 41297, 65-: 26991, 70-: 25997, 60-: 24848</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_owid</td>
@@ -646,14 +613,27 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">60-: 51812, 70-: 48972, 80+: 41217, 50-: 34556</td>
+<td style="text-align: left;">60-: 51839, 70-: 49015, 80+: 41297, 50-: 34558</td>
 </tr>
 </tbody>
 </table>
 
 **Variable type: numeric**
 
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 12%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 4%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">skim_variable</th>
@@ -673,8 +653,8 @@ Data summary
 <tr class="odd">
 <td style="text-align: left;">edad</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">66.10</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">66.11</td>
 <td style="text-align: right;">15.44</td>
 <td style="text-align: right;">-9</td>
 <td style="text-align: right;">57</td>
@@ -684,11 +664,24 @@ Data summary
 <td style="text-align: left;">▁▁▇▇▁</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">uuid</td>
+<td style="text-align: right;">3443</td>
+<td style="text-align: right;">0.98</td>
+<td style="text-align: right;">26335219.43</td>
+<td style="text-align: right;">13973982.40</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">12178680</td>
+<td style="text-align: right;">36324102</td>
+<td style="text-align: right;">36653805</td>
+<td style="text-align: right;">37294826</td>
+<td style="text-align: left;">▂▁▁▁▇</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">epi_week</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">21.59</td>
-<td style="text-align: right;">11.76</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">21.58</td>
+<td style="text-align: right;">11.77</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: right;">21</td>
@@ -696,10 +689,10 @@ Data summary
 <td style="text-align: right;">53</td>
 <td style="text-align: left;">▆▇▇▃▂</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">epi_year</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">1.00</td>
 <td style="text-align: right;">2020.55</td>
 <td style="text-align: right;">0.52</td>
 <td style="text-align: right;">2020</td>
