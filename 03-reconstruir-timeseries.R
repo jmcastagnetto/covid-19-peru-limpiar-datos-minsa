@@ -31,23 +31,25 @@ timeseries_positivos_departamento <- positivos %>%
   mutate(
     n_acum = cumsum(n)
   ) %>%
-  add_column(
-    pais = "Peru",
-    iso3c = "PER",
-    .before = 1
-  ) %>%
+  group_by(departamento) %>%
   complete(
     fecha_resultado = seq.Date(
       min(positivos$fecha_resultado, na.rm = TRUE),
       max(positivos$fecha_resultado, na.rm = TRUE),
-      by = "day"),
-    nesting(pais, iso3c, departamento)
+      by = "day")
+  ) %>%
+  add_column(
+  pais = "Peru",
+  iso3c = "PER",
+  .before = 1
   ) %>%
   group_by(pais, iso3c, departamento) %>%
   fill(n, n_acum) %>%
   arrange(departamento, fecha_resultado) %>%
   filter(!is.na(n) & !is.na(n_acum)) %>%
-  distinct()
+  filter(!is.na(fecha_resultado)) %>%
+  distinct() %>%
+  ungroup()
 
 timeseries_fallecidos <- fallecidos %>%
   arrange(fecha_fallecimiento) %>%
@@ -78,23 +80,25 @@ timeseries_fallecidos_departamento <- fallecidos %>%
   mutate(
     n_acum = cumsum(n)
   ) %>%
+  group_by(departamento) %>%
+  complete(
+    fecha_fallecimiento = seq.Date(
+      min(fallecidos$fecha_fallecimiento, na.rm = TRUE),
+      max(fallecidos$fecha_fallecimiento, na.rm = TRUE),
+      by = "day")
+  ) %>%
   add_column(
     pais = "Peru",
     iso3c = "PER",
     .before = 1
   ) %>%
-  complete(
-    fecha_fallecimiento = seq.Date(
-      min(fallecidos$fecha_fallecimiento, na.rm = TRUE),
-      max(fallecidos$fecha_fallecimiento, na.rm = TRUE),
-      by = "day"),
-    nesting(pais, iso3c, departamento)
-  ) %>%
   group_by(pais, iso3c, departamento) %>%
   fill(n, n_acum) %>%
   arrange(departamento, fecha_fallecimiento) %>%
   filter(!is.na(n) & !is.na(n_acum)) %>%
-  distinct()
+  filter(!is.na(fecha_fallecimiento)) %>%
+  distinct() %>%
+  ungroup()
 
 write_csv(
  timeseries_positivos,

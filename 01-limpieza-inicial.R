@@ -121,7 +121,8 @@ fallecidos <- vroom(
   "datos/originales/fallecidos_covid.csv",
   col_types = cols(
     FECHA_CORTE = col_date(format = "%Y%m%d"),
-    id_persona = col_character(),
+    #id_persona = col_character(),
+    UUID = col_character(),
     FECHA_FALLECIMIENTO = col_date(format = "%Y%m%d"),
     EDAD_DECLARADA = col_number(),
     SEXO = col_character(),
@@ -133,7 +134,8 @@ fallecidos <- vroom(
   )
 ) %>%
   rename(
-    EDAD = EDAD_DECLARADA
+    EDAD = EDAD_DECLARADA,
+    id_persona = UUID
   ) %>%
   mutate(
     SEXO = str_to_title(SEXO),
