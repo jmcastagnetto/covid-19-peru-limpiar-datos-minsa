@@ -12,11 +12,15 @@
 #curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/Y8w3wHsEdYQSZRp/download --output datos/originales/positivos_covid.csv
 #curl --silent --insecure --parallel https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download --output datos/originales/fallecidos_covid.csv
 
+# old URLs
+# /snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/AC2adyLkHCKjmfm/download
+#/snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download
+
 # URLs actuales
 # positivos
-/snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/AC2adyLkHCKjmfm/download
+/snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o positivos_covid.csv --file-allocation=falloc https://files.minsa.gob.pe/s/eRqxR35ZCxrzNgr/download
 # fallecidos
-/snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://cloud.minsa.gob.pe/s/xJ2LQ3QyRW38Pe5/download
+/snap/bin/aria2c -q -c -x8 -d datos/originales --force-save -o fallecidos_covid.csv --file-allocation=falloc https://files.minsa.gob.pe/s/t9AFqRbXw3F55Ho/download
 
 # para ver si los archivos descargados han cambiado
 sha1sum --status -c sha1sum-orig.txt
