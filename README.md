@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
 -   **Repositorio creado el 2020-05-22 05:05:43 UTC**
--   **Última actualización**: 2022-07-17 08:11:35 UTC
+-   **Última actualización**: 2022-07-18 08:12:59 UTC
 
 ## Notas
 
@@ -147,7 +147,7 @@ Análisis exploratorio de los datos de positivos
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">3740861</td>
+<td style="text-align: left;">3749635</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -208,12 +208,12 @@ Data summary
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">id_persona</td>
-<td style="text-align: right;">68000</td>
+<td style="text-align: right;">68166</td>
 <td style="text-align: right;">0.98</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">3412784</td>
+<td style="text-align: right;">3420044</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -238,9 +238,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -248,9 +248,9 @@ Data summary
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-06</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: left;">2021-05-08</td>
-<td style="text-align: right;">860</td>
+<td style="text-align: right;">861</td>
 </tr>
 </tbody>
 </table>
@@ -283,7 +283,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 1711214, ARE: 235833, PIU: 160550, CAL: 151016</td>
+<td style="text-align: left;">LIM: 1715410, ARE: 236697, PIU: 160649, LA : 151315</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -291,7 +291,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 1489649, ARE: 199819, EN : 175122, CAL: 143102</td>
+<td style="text-align: left;">LIM: 1493607, ARE: 200613, EN : 175271, CAL: 143271</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -299,7 +299,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1702</td>
-<td style="text-align: left;">EN : 175122, LIM: 153419, SAN: 115812, JES: 95978</td>
+<td style="text-align: left;">EN : 175271, LIM: 153840, SAN: 116042, JES: 96271</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">metododx</td>
@@ -307,7 +307,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">AG: 1629950, PCR: 1155031, PR: 955880</td>
+<td style="text-align: left;">AG: 1635150, PCR: 1158605, PR: 955880</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sexo</td>
@@ -315,15 +315,15 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">Fem: 1898062, Mas: 1842798, No : 1</td>
+<td style="text-align: left;">Fem: 1903008, Mas: 1846626, No : 1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ubigeo</td>
-<td style="text-align: right;">175122</td>
+<td style="text-align: right;">175271</td>
 <td style="text-align: right;">0.95</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1852</td>
-<td style="text-align: left;">150: 153419, 150: 115812, 150: 95978, 150: 87301</td>
+<td style="text-align: left;">150: 153840, 150: 116042, 150: 96271, 150: 87515</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_veintiles</td>
@@ -331,7 +331,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">20-: 1639448, 40-: 1200798, 60-: 481518, 0-1: 336690</td>
+<td style="text-align: left;">20-: 1642959, 40-: 1203407, 60-: 482510, 0-1: 338160</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_deciles</td>
@@ -339,7 +339,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">30-: 873770, 20-: 765678, 40-: 692664, 50-: 508134</td>
+<td style="text-align: left;">30-: 875606, 20-: 767353, 40-: 694168, 50-: 509239</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_quintiles</td>
@@ -347,7 +347,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">30-: 460019, 25-: 454403, 35-: 413751, 40-: 369391</td>
+<td style="text-align: left;">30-: 460940, 25-: 455355, 35-: 414666, 40-: 370174</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_owid</td>
@@ -355,7 +355,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">25-: 2020837, 50-: 508134, 18-: 388896, 60-: 320058</td>
+<td style="text-align: left;">25-: 2025129, 50-: 509239, 18-: 389849, 60-: 320736</td>
 </tr>
 </tbody>
 </table>
@@ -396,7 +396,7 @@ Data summary
 <td style="text-align: left;">epi_week</td>
 <td style="text-align: right;">2023</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">17.26</td>
+<td style="text-align: right;">17.29</td>
 <td style="text-align: right;">14.35</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">4</td>
@@ -439,7 +439,7 @@ Análisis exploratorio de los datos de fallecidos
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">213801</td>
+<td style="text-align: left;">213825</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -500,12 +500,12 @@ Data summary
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">id_persona</td>
-<td style="text-align: right;">2613</td>
+<td style="text-align: right;">2620</td>
 <td style="text-align: right;">0.99</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">211117</td>
+<td style="text-align: right;">211134</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -530,9 +530,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -540,9 +540,9 @@ Data summary
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-03</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: left;">2021-02-02</td>
-<td style="text-align: right;">858</td>
+<td style="text-align: right;">859</td>
 </tr>
 </tbody>
 </table>
@@ -575,7 +575,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 135478, Fem: 78323</td>
+<td style="text-align: left;">Mas: 135479, Fem: 78346</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">clasificacion_def</td>
@@ -583,7 +583,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Cri: 66104, Cri: 63827, Cri: 46634, Cri: 16371</td>
+<td style="text-align: left;">Cri: 66012, Cri: 63837, Cri: 46726, Cri: 16373</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">departamento</td>
@@ -591,7 +591,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 93583, PIU: 13122, LA : 10888, CAL: 10542</td>
+<td style="text-align: left;">LIM: 93586, PIU: 13124, LA : 10889, CAL: 10539</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">provincia</td>
@@ -599,7 +599,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">196</td>
-<td style="text-align: left;">LIM: 85816, CAL: 10541, ARE: 8445, TRU: 7280</td>
+<td style="text-align: left;">LIM: 85818, CAL: 10538, ARE: 8449, TRU: 7282</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">distrito</td>
@@ -607,7 +607,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1662</td>
-<td style="text-align: left;">LIM: 8569, SAN: 8549, SAN: 6673, CAL: 6076</td>
+<td style="text-align: left;">LIM: 8574, SAN: 8549, SAN: 6673, CAL: 6073</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ubigeo</td>
@@ -615,7 +615,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1801</td>
-<td style="text-align: left;">150: 8569, 150: 8549, 150: 6673, 070: 6076</td>
+<td style="text-align: left;">150: 8574, 150: 8549, 150: 6673, 070: 6073</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_veintiles</td>
@@ -623,7 +623,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">60-: 104230, 40-: 53210, 80+: 44939, 20-: 9798</td>
+<td style="text-align: left;">60-: 104238, 40-: 53214, 80+: 44948, 20-: 9799</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_deciles</td>
@@ -631,7 +631,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">60-: 53261, 70-: 50969, 80+: 44939, 50-: 35407</td>
+<td style="text-align: left;">60-: 53255, 70-: 50983, 80+: 44948, 50-: 35410</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">rango_edad_quintiles</td>
@@ -639,7 +639,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">80+: 44939, 65-: 27753, 70-: 26874, 60-: 25508</td>
+<td style="text-align: left;">80+: 44948, 65-: 27753, 70-: 26883, 60-: 25502</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rango_edad_owid</td>
@@ -647,7 +647,7 @@ Data summary
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">60-: 53261, 70-: 50969, 80+: 44939, 50-: 35407</td>
+<td style="text-align: left;">60-: 53255, 70-: 50983, 80+: 44948, 50-: 35410</td>
 </tr>
 </tbody>
 </table>
@@ -689,7 +689,7 @@ Data summary
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">21.14</td>
-<td style="text-align: right;">11.84</td>
+<td style="text-align: right;">11.83</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">20</td>
@@ -731,7 +731,7 @@ Análisis exploratorio de la consolidación entre positivos y fallecidos
 </tr>
 <tr class="even">
 <td style="text-align: left;">Number of rows</td>
-<td style="text-align: left;">111747</td>
+<td style="text-align: left;">111774</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Number of columns</td>
@@ -789,9 +789,9 @@ Data summary
 <td style="text-align: left;">positivo_fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -799,17 +799,17 @@ Data summary
 <td style="text-align: right;">167</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-12</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: left;">2021-02-02</td>
-<td style="text-align: right;">843</td>
+<td style="text-align: right;">845</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -817,9 +817,9 @@ Data summary
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">2020-03-14</td>
-<td style="text-align: left;">2022-07-15</td>
+<td style="text-align: left;">2022-07-16</td>
 <td style="text-align: left;">2021-02-11</td>
-<td style="text-align: right;">849</td>
+<td style="text-align: right;">850</td>
 </tr>
 </tbody>
 </table>
@@ -852,7 +852,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 52653, CAL: 6271, ARE: 5877, LA : 5385</td>
+<td style="text-align: left;">LIM: 52660, CAL: 6270, ARE: 5879, LA : 5390</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">positivo_provincia</td>
@@ -860,7 +860,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">197</td>
-<td style="text-align: left;">LIM: 44474, EN : 6188, CAL: 6030, ARE: 4787</td>
+<td style="text-align: left;">LIM: 44482, EN : 6188, CAL: 6030, ARE: 4789</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">positivo_distrito</td>
@@ -868,7 +868,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1428</td>
-<td style="text-align: left;">EN : 6188, SAN: 4106, LIM: 3625, CAL: 2963</td>
+<td style="text-align: left;">EN : 6188, SAN: 4106, LIM: 3627, CAL: 2961</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">positivo_metododx</td>
@@ -876,7 +876,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">PCR: 41318, PR: 36890, AG: 33539</td>
+<td style="text-align: left;">PCR: 41335, PR: 36896, AG: 33543</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">positivo_sexo</td>
@@ -884,7 +884,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 71966, Fem: 39781, No : 0</td>
+<td style="text-align: left;">Mas: 71977, Fem: 39797, No : 0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">positivo_ubigeo</td>
@@ -892,7 +892,7 @@ Data summary
 <td style="text-align: right;">0.94</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1535</td>
-<td style="text-align: left;">150: 4106, 150: 3625, 070: 2963, 150: 2813</td>
+<td style="text-align: left;">150: 4106, 150: 3627, 070: 2961, 150: 2812</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">positivo_rango_edad_veintiles</td>
@@ -900,7 +900,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: left;">60-: 54649, 40-: 28975, 80+: 21869, 20-: 5446</td>
+<td style="text-align: left;">60-: 54658, 40-: 28981, 80+: 21880, 20-: 5447</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">positivo_rango_edad_deciles</td>
@@ -908,7 +908,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">10</td>
-<td style="text-align: left;">60-: 28579, 70-: 26070, 80+: 21869, 50-: 19212</td>
+<td style="text-align: left;">60-: 28574, 70-: 26084, 80+: 21880, 50-: 19215</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">positivo_rango_edad_quintiles</td>
@@ -916,7 +916,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">18</td>
-<td style="text-align: left;">80+: 21869, 65-: 14689, 60-: 13890, 70-: 13858</td>
+<td style="text-align: left;">80+: 21880, 65-: 14688, 60-: 13886, 70-: 13867</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">positivo_rango_edad_owid</td>
@@ -924,7 +924,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: left;">60-: 28579, 70-: 26070, 80+: 21869, 50-: 19212</td>
+<td style="text-align: left;">60-: 28574, 70-: 26084, 80+: 21880, 50-: 19215</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_sexo</td>
@@ -932,7 +932,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Mas: 70428, Fem: 41319</td>
+<td style="text-align: left;">Mas: 70434, Fem: 41340</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fallecido_clasificacion_def</td>
@@ -940,7 +940,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Cri: 50123, Cri: 33022, Cri: 12200, Cri: 8526</td>
+<td style="text-align: left;">Cri: 50047, Cri: 33105, Cri: 12209, Cri: 8532</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_departamento</td>
@@ -948,7 +948,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">25</td>
-<td style="text-align: left;">LIM: 50653, ARE: 5780, CAL: 5741, LA : 5560</td>
+<td style="text-align: left;">LIM: 50659, ARE: 5782, CAL: 5738, LA : 5564</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fallecido_provincia</td>
@@ -956,7 +956,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">196</td>
-<td style="text-align: left;">LIM: 45953, CAL: 5740, ARE: 4559, TRU: 3751</td>
+<td style="text-align: left;">LIM: 45959, CAL: 5737, ARE: 4561, TRU: 3756</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_distrito</td>
@@ -964,7 +964,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1569</td>
-<td style="text-align: left;">SAN: 4481, LIM: 4179, CAL: 3497, SAN: 3087</td>
+<td style="text-align: left;">SAN: 4481, LIM: 4182, CAL: 3494, SAN: 3089</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fallecido_ubigeo</td>
@@ -972,7 +972,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">FALSE</td>
 <td style="text-align: right;">1693</td>
-<td style="text-align: left;">150: 4481, 150: 4179, 070: 3497, 150: 3087</td>
+<td style="text-align: left;">150: 4481, 150: 4182, 070: 3494, 150: 3089</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_rango_edad_veintiles</td>
@@ -980,7 +980,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">5</td>
-<td style="text-align: left;">60-: 54989, 40-: 28905, 80+: 22071, 20-: 5037</td>
+<td style="text-align: left;">60-: 54998, 40-: 28912, 80+: 22082, 20-: 5037</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fallecido_rango_edad_deciles</td>
@@ -988,7 +988,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: left;">60-: 28750, 70-: 26239, 80+: 22071, 50-: 19251</td>
+<td style="text-align: left;">60-: 28745, 70-: 26253, 80+: 22082, 50-: 19255</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">fallecido_rango_edad_quintiles</td>
@@ -996,7 +996,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: left;">80+: 22071, 65-: 14800, 60-: 13950, 70-: 13928</td>
+<td style="text-align: left;">80+: 22082, 65-: 14799, 60-: 13946, 70-: 13936</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fallecido_rango_edad_owid</td>
@@ -1004,7 +1004,7 @@ Data summary
 <td style="text-align: right;">1.00</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">60-: 28750, 70-: 26239, 80+: 22071, 50-: 19251</td>
+<td style="text-align: left;">60-: 28745, 70-: 26253, 80+: 22082, 50-: 19255</td>
 </tr>
 </tbody>
 </table>
@@ -1045,12 +1045,12 @@ Data summary
 <td style="text-align: left;">id_persona</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">25456096.23</td>
-<td style="text-align: right;">14157821.84</td>
+<td style="text-align: right;">25453301.16</td>
+<td style="text-align: right;">14159058.21</td>
 <td style="text-align: right;">12</td>
-<td style="text-align: right;">11138089</td>
-<td style="text-align: right;">36214125</td>
-<td style="text-align: right;">36621304</td>
+<td style="text-align: right;">11132886</td>
+<td style="text-align: right;">36214114</td>
+<td style="text-align: right;">36621278</td>
 <td style="text-align: right;">39395164</td>
 <td style="text-align: left;">▃▂▁▁▇</td>
 </tr>
