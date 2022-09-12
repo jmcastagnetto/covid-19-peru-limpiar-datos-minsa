@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
 -   **Repositorio creado el 2020-05-22 05:05:43 UTC**
--   **Última actualización**: 2022-09-08 08:12:02 UTC
+-   **Última actualización**: 2022-09-12 23:02:38 UTC
 
 ## Notas
 
