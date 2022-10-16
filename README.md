@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/jmcastagnetto/covid-19-peru-limpiar-datos-minsa)](LICENSE)
 
 -   **Repositorio creado el 2020-05-22 05:05:43 UTC**
--   **Última actualización**: 2022-10-15 08:18:40 UTC
+-   **Última actualización**: 2022-10-16 08:18:46 UTC
 
 ## Notas
 
@@ -530,9 +530,9 @@ Data summary
 <td style="text-align: left;">fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-10-13</td>
-<td style="text-align: left;">2022-10-13</td>
-<td style="text-align: left;">2022-10-13</td>
+<td style="text-align: left;">2022-10-14</td>
+<td style="text-align: left;">2022-10-14</td>
+<td style="text-align: left;">2022-10-14</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
@@ -807,9 +807,9 @@ Data summary
 <td style="text-align: left;">fallecido_fecha_corte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2022-10-13</td>
-<td style="text-align: left;">2022-10-13</td>
-<td style="text-align: left;">2022-10-13</td>
+<td style="text-align: left;">2022-10-14</td>
+<td style="text-align: left;">2022-10-14</td>
+<td style="text-align: left;">2022-10-14</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
